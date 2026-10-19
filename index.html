@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homeland Minecraft | Твоя земля. Твоя історія.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo2.png">
+  <style>
+    /* Стильна плашка версій */
+    .version-strip {
+      display: inline-flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      margin: 1.2rem auto 0;
+      padding: 0.5rem 1.2rem;
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 9999px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+    }
+    .version-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .version-strip .v-support {
+      color: #34d399;
+      font-weight: 700;
+    }
+    .version-strip .v-recommended {
+      background: rgba(251, 191, 36, 0.12);
+      color: #fbbf24;
+      padding: 2px 10px;
+      border-radius: 9999px;
+      border: 1px solid rgba(251, 191, 36, 0.3);
+      font-weight: 600;
+    }
+    .version-warning-hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 0.5rem;
+      opacity: 0.85;
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Український комплекс серверів</p>
+      <h1 class="gradient-text">HOMELAND</h1>
+      <p class="motto-text">«Твоя земля. Твоя історія.»</p>
+      
+      <!-- ЧИСТИЙ ОПИС БЕЗ ДУЖОК -->
+      <p style="max-width: 750px; margin: 1.2rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+        Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
+      </p>
+
+      <!-- СТИЛЬНА ПЛАШКА ВЕРСІЙ -->
+      <div>
+        <div class="version-strip">
+          <span><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> Підтримка: <strong class="v-support">1.16.5+</strong></span>
+          <span style="opacity: 0.3;">|</span>
+          <span class="v-recommended"><i class="fa-solid fa-star"></i> Рекомендована: <strong>1.21.11</strong></span>
+        </div>
+        <p class="version-warning-hint">
+          <i class="fa-solid fa-circle-info"></i> Геймплей розрахований під 1.21.11 (на старіших версіях можливі візуальні баги).
+        </p>
+      </div>
+
+      <!-- IP БЛОКИ -->
+      <div class="ip-grid">
+        <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Java IP скопійовано!')">
+          <div style="text-align: left;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">JAVA EDITION (ПК)</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
+          </div>
+          <span class="cmd-badge">Скопіювати</span>
+        </div>
+
+        <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Bedrock IP скопійовано!')">
+          <div style="text-align: left;">
+            <div style="font-size: 0.8rem; color: var(--text-muted);">BEDROCK (ПОРТ: 30162)</div>
+            <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
+          </div>
+          <span class="cmd-badge">Скопіювати</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- КАРТКИ РОЗДІЛІВ -->
+    <div class="glass-card">
+      <div class="step-title" style="margin-bottom: 1.5rem;"><div class="step-num"><i class="fa-solid fa-compass"></i></div> Розділи та путівник сервера</div>
+      <div class="cards-grid">
+        
+        <!-- НОВИЙ БЛОК: ЗАРОБІТОК ТА ГАЙД НОВАЧКАМ -->
+        <a href="guide.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Новачкам & Економіка</span>
+          <h4><i class="fa-solid fa-coins" style="color: #fbbf24;"></i> Заробіток та Гайд</h4>
+          <p>Швидкий старт, професії /jobs, щогодинний скупник /seller, квести /bp та всі види заробітку.</p>
+        </a>
+
+        <a href="defence.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Оборона</span>
+          <h4><i class="fa-solid fa-shield-virus" style="color: var(--primary);"></i> ППО та Блекаути</h4>
+          <p>Повітряні тривоги, реактивні шахеди, сирени та міські електростанції.</p>
+        </a>
+
+        <a href="bosses.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Міфологія</span>
+          <h4><i class="fa-solid fa-skull" style="color: #fbbf24;"></i> Міфічні Боси</h4>
+          <p>Мавка, Польовик, Русалка, Відьма, Чорт та рейд-бос Вій.</p>
+        </a>
+
+        <a href="bloodnight.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Івент</span>
+          <h4><i class="fa-solid fa-droplet" style="color: #ef4444;"></i> Кривава Ніч</h4>
+          <p>Жорстке виживання, мутовані моби та глобальне PvP.</p>
+        </a>
+
+        <a href="warfare.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag blue">Політика</span>
+          <h4><i class="fa-solid fa-crosshairs" style="color: #60a5fa;"></i> Війни Націй</h4>
+          <p>Очки війни (War Score), пограбування банків та репарації.</p>
+        </a>
+
+        <a href="towns.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Інфраструктура</span>
+          <h4><i class="fa-solid fa-city" style="color: var(--primary);"></i> Міста та Заводи</h4>
+          <p>Дороги, копальні, заводи та розвиток міст.</p>
+        </a>
+
+        <a href="buildings.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Архітектура</span>
+          <h4><i class="fa-solid fa-building-columns" style="color: #fbbf24;"></i> Великі будівлі</h4>
+          <p>Регіональні пам'ятки, лімітовані будівлі та пасивний дохід.</p>
+        </a>
+
+        <a href="moon.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag blue">Космос</span>
+          <h4><i class="fa-solid fa-moon" style="color: #60a5fa;"></i> Зона «Місяць»</h4>
+          <p>Космічні битви, захоплення форпостів та анархія.</p>
+        </a>
+
+        <a href="brewery.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Крафти</span>
+          <h4><i class="fa-solid fa-wine-bottle" style="color: var(--primary);"></i> Броварня</h4>
+          <p>Рецепти варіння еліксирів, дистиляція та старіння напоїв.</p>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <div id="toast"></div>
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

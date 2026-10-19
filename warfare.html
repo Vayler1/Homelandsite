@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Війни Націй та Рейди | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">ВІЙСЬКОВА СИСТЕМА НАЦІЙ</h1>
+      <p class="motto-text">Війни держав, битви за панування, рейди банків та механіка War Score</p>
+    </div>
+
+    <!-- ГОЛОВНЕ ПОПЕРЕДЖЕННЯ ТА ОБМЕЖЕННЯ ВІЙНИ -->
+    <div class="warning-box">
+      <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div class="warning-text">
+        <span>ФІНАНСОВІ ТА СТАТУСНІ ОБМЕЖЕННЯ ВІЙНИ:</span> Під час активної війни <strong>заборонено знімати гроші</strong> з бюджету нації чи міст (дозволено лише класти). Вихід міста з нації коштує <strong>20 000 монет</strong>, а <strong>розпускати націю під час війни суворо заборонено</strong>!
+      </div>
+    </div>
+
+    <div class="glass-card">
+      
+      <!-- СЕКЦІЯ 1: ОГОЛОШЕННЯ ТА ПРАВИЛА PVP -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Оголошення війни, Захист 48 годин та PvP-логіка</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Війни ведуться <strong>виключно між націями</strong> (між окремими містами без держави воєн не існує). Мінімального розміру нації немає, а одна держава може вести кілька незалежних воєн одночасно.
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Ініціація</span>
+            <h4>📢 Оголошення</h4>
+            <p>Оголосити війну може лише <strong>Президент</strong> командою:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar attack ', 'Скопійовано!')">/homelandwar attack &lt;нація&gt;</span></p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Імунітет</span>
+            <h4>🛡️ Захист 48 годин</h4>
+            <p>Кожна новостворена нація захищена на <strong>48 годин</strong>. Проте якщо молода нація нападає сама — її захист <strong>зникає миттєво</strong>, відкриваючи її для ударів.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Бойовий режим</span>
+            <h4>⚔️ Логіка PvP 24/7</h4>
+            <p>PvP вмикається в усіх містах обох націй 24/7. Шкоду можуть завдавати <strong>лише учасники конфлікту</strong>. Треті нації та союзники втручатися не можуть!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Дипломатія</span>
+            <h4>🌐 Незалежність конфліктів</h4>
+            <p>Якщо Нація A воює з B і C, а D воює з B — кожен фронт має власний рахунок та розраховується незалежно від інших.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 2: WAR SCORE ТА АВТО-КАПІТУЛЯЦІЯ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Очки Війни (War Score) та Авто-капітуляція</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Війна більше не може тривати нескінченно при повній перевазі однієї сторони. Поточний War Score показується на інтерактивній карті (DynMap) у дужках біля назви нації:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>+10 Очок війни</h4>
+            <p>Нараховується за ліквідацію звичайного громадянина чи солдата ворожої нації.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Цінна ціль</span>
+            <h4>+50 Очок війни</h4>
+            <p>Нараховується за ліквідацію ворожого <strong>Мера міста</strong> або <strong>Президента нації</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Штурм</span>
+            <h4>+100 Очок війни</h4>
+            <p>Нараховується за успішне проведення рейду та розграбування ворожого міста.</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.06);">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4);">Тріумф</span>
+            <h4>🏆 1000 Очок = Перемога!</h4>
+            <p>Як тільки одна зі сторін досягає <strong>1000 очок</strong>, держава противника зазнає повної поразки й <strong>автоматично капітулює</strong> на вашу користь!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 3: РЕЙДИ МІСТ ТА ГРАБІЖ БАНКУ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #fbbf24;">3</div> Рейди Міст (Грабіж Банку Держави)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Якщо ворог сховався у безпечних зонах і не вступає у відкритий бій, ви можете завдати нищівного економічного удару прямо по його державній скарбниці:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⏰ Часове вікно</h4>
+            <p>Рейд можна розпочати <strong>ВИКЛЮЧНО з 18:00 до 20:00</strong> за реальним київським часом. Дозволено лише <strong>1 рейд на добу</strong> проти однієї нації.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚔️ Процес штурму</h4>
+            <p>Нападники заходять у вороже місто і пишуть команду:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar raid', 'Скопійовано!')">/homelandwar raid</span><br>
+            Штурм триває рівно <strong>10 хвилин</strong>. Хоча б один атакуючий повинен безперервно утримувати позицію в межах міста.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Куш переможців</span>
+            <h4>💰 Нагорода за успішний рейд</h4>
+            <p>• Нація-нападник отримує <strong>+100 Очок війни</strong>.<br>
+            • <strong>5% від усього балансу НАЦІЇ-захисника</strong> автоматично викрадається і зараховується в скарбницю нападників!</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🛡️ Умови захисту</h4>
+            <p>Якщо захисники ліквідують усіх штурмовиків або виб'ють їх за межі кордонів міста до закінчення 10 хвилин — рейд вважається повністю проваленим.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 4: ВІЙСЬКОВИЙ ЗБІР ТА ФІНАНСИ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">4</div> Військовий збір (Ціна війни для держави)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Війна виснажує економіку. Перебування у стані війни обкладається спеціальним динамічним щоденним податком:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>📊 Формула податку</h4>
+            <p><strong>Кількість жителів нації × 300 монет</strong>.<br>Тобто за кожного громадянина держава щодня сплачує до системи 300 монет під час Towny-клірингу.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🏛️ Списання з бюджету</h4>
+            <p>Податок списується безпосередньо з <strong>бюджету НАЦІЇ</strong> (він є загальним для всієї держави, а не для окремих міст). Сума на DynMap показує загальний податок нації.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚠️ Заборона виведення коштів</h4>
+            <p>Під час активної війни <strong>заборонено знімати гроші</strong> з балансу міст та держави командою withdraw. Дозволено лише поповнювати казну (deposit).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 5: ЗАВЕРШЕННЯ ВІЙНИ ТА КАПІТУЛЯЦІЯ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-handshake"></i></div> Завершення війни: Мирний договір або Капітуляція</div>
+        <div class="cards-grid">
+          
+          <!-- ЗВИЧАЙНИЙ МИР -->
+          <div class="card-item">
+            <span class="badge-tag emerald">Дипломатія</span>
+            <h4>✍️ Підписання миру (Обопільна згода)</h4>
+            <p style="margin-bottom: 0.5rem;">Війна не завершується автоматично за часом. Для припинення бойових дій потрібні дві команди:</p>
+            <p><strong>Крок 1 (Нападник):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar peace ', 'Скопійовано!')">/homelandwar peace &lt;нація&gt;</span></p>
+            <p style="margin-top: 0.5rem;"><strong>Крок 2 (Захисник):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar confirmpeace ', 'Скопійовано!')">/homelandwar confirmpeace &lt;нація&gt;</span></p>
+            <p style="margin-top: 0.5rem; font-size: 0.82rem;">Після цього PvP вимикається, а інші активні війни (якщо є) тривають далі.</p>
+          </div>
+
+          <!-- КАПІТУЛЯЦІЯ -->
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Поразка</span>
+            <h4>🏳️ Капітуляція та Репарації</h4>
+            <p style="margin-bottom: 0.5rem;">Повне визнання поразки у всіх війнах Президентом нації командою:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar capitulate ', 'Скопійовано!')">/homelandwar capitulate &lt;переможець&gt;</span></p>
+            <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6;">
+              <li>Усі війни нації негайно зупиняються, PvP вимикається.</li>
+              <li><strong>Репарації 20%:</strong> місто, що капітулювало, щодня платить <strong>20% від свого балансу протягом 7 днів</strong> у скарбницю нації-переможця.</li>
+              <li><strong>Блокування виходу:</strong> жодне місто не може вийти зі складу нації-переможця протягом <strong>7 днів</strong>.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

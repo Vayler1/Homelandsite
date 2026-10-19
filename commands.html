@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Довідник | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">ДОВІДНИК КОМАНД ТА ЕКОНОМІКИ</h1>
+      <p class="motto-text">Towny, Податки націй, Церква та перетворення Досвіду</p>
+    </div>
+
+    <div class="glass-card">
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-brands fa-discord"></i></div> Прив'язка Discord акаунту</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          1. У грі пропишіть команду: <span class="cmd-badge" onclick="copyText('/discord link', 'Скопійовано!')">/discord link</span><br>
+          2. Отриманий код надішліть у ПП боту <strong>@Homeland Survival#5789</strong> на нашому Discord сервері. <em>(Дозвольте повідомлення від спільних серверів у налаштуваннях конфіденційності, якщо бот закритий).</em>
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-church"></i></div> Церква, Священники та Весілля</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          Мер міста може збудувати регіональну <strong>Церкву</strong> та призначити Священника (вартість сану: 5 000 монет).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry', 'Скопійовано!')">/marry [гравець1] [гравець2]</span> — Священник проводить обряд (коштує 2500 з кожного).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry sethome', 'Скопійовано!')">/marry sethome</span> — Спільний дім для подружжя (12 500 монет).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry tp', 'Скопійовано!')">/marry tp</span> — Телепортація до партнера (5 000 монет).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry gift', 'Скопійовано!')">/marry gift</span> — Подарувати річ у руці (300 монет).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry divorce', 'Скопійовано!')">/marry divorce</span> — Розлучення у Священника (по 500 монет з кожного).
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-coins"></i></div> Система Податків Націй</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Базовий податок на місто — 10 монет за чанк. Коли ваша Нація зростає, росте й загальний податок:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item"><h4>Землі (0+ гравців)</h4><p>Базовий податок: 1 000 монет.</p></div>
+          <div class="card-item"><h4>Нація (10+ людей)</h4><p>Податок: 2 000. (+10% до податку міста)</p></div>
+          <div class="card-item"><h4>Герцогство (20+ людей)</h4><p>Податок: 3 000. (+20% до податку міста)</p></div>
+          <div class="card-item"><h4>Королівство (30+ людей)</h4><p>Податок: 8 000. (+30% до податку міста)</p></div>
+          <div class="card-item"><h4>Імперія (40+ людей)</h4><p>Податок: 15 000. (+40% до податку міста)</p></div>
+          <div class="card-item"><h4>Велика Імперія (60+)</h4><p>Податок: 20 000. (+50% до податку міста)</p></div>
+          <div class="card-item"><h4>Світова держава (100+)</h4><p>Податок: 30 000. (+60% до податку міста)</p></div>
+          <div class="card-item"><h4>Галактична імперія (150+)</h4><p>Податок: 40 000. (+70% до податку міста)</p></div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-terminal"></i></div> Повний список команд Міста (Towny)</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+          <em>Утримання міста коштує 40 монет в день (мають бути на депозиті). Перший приват чанку коштує 40 монет, кожен наступний дорожчає на 0.5% (максимум до 500 монет).</em>
+        </p>
+        <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t new', 'Скопійовано!')">/t new [назва]</span><p style="margin-top:4px;">Створити нове місто (200 монет).</p>
+            <span class="cmd-badge" onclick="copyText('/t claim', 'Скопійовано!')" style="margin-top:10px;">/t claim / unclaim</span><p style="margin-top:4px;">Заприватити або звільнити чанк.</p>
+            <span class="cmd-badge" onclick="copyText('/t deposit', 'Скопійовано!')" style="margin-top:10px;">/t deposit [сума]</span><p style="margin-top:4px;">Поповнити міський банк.</p>
+            <span class="cmd-badge" onclick="copyText('/t withdraw', 'Скопійовано!')" style="margin-top:10px;">/t withdraw [сума]</span><p style="margin-top:4px;">Зняти гроші (лише Мер).</p>
+            <span class="cmd-badge" onclick="copyText('/t invite', 'Скопійовано!')" style="margin-top:10px;">/t invite / kick [нік]</span><p style="margin-top:4px;">Запросити або вигнати гравця.</p>
+            <span class="cmd-badge" onclick="copyText('/t set taxes', 'Скопійовано!')" style="margin-top:10px;">/t set taxes [сума]</span><p style="margin-top:4px;">Встановити податок з гравців.</p>
+          </div>
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t spawn', 'Скопійовано!')">/t spawn</span><p style="margin-top:4px;">Телепортація до спавну міста.</p>
+            <span class="cmd-badge" onclick="copyText('/t set spawn', 'Скопійовано!')" style="margin-top:10px;">/t set homeblock & /t set spawn</span><p style="margin-top:4px;">Переставити спавн міста.</p>
+            <span class="cmd-badge" onclick="copyText('/plot forsale', 'Скопійовано!')" style="margin-top:10px;">/plot forsale [ціна]</span><p style="margin-top:4px;">Виставити плот на продаж містянам.</p>
+            <span class="cmd-badge" onclick="copyText('/plot claim', 'Скопійовано!')" style="margin-top:10px;">/plot claim / unclaim</span><p style="margin-top:4px;">Придбати/повернути плот місту.</p>
+            <span class="cmd-badge" onclick="copyText('/t toggle pvp', 'Скопійовано!')" style="margin-top:10px;">/t toggle pvp / fire / explosions</span><p style="margin-top:4px;">Увімкнути/вимкнути PvP, вогонь, вибухи.</p>
+            <span class="cmd-badge" onclick="copyText('/t trust add', 'Скопійовано!')" style="margin-top:10px;">/t trust add [нік]</span><p style="margin-top:4px;">Дати статус довіреного.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-flask"></i></div> Пакування Досвіду в склянки</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
+          Ви можете перетворювати ваш накопичений досвід у склянки з досвідом! Для цього візьміть звичайну порожню склянку, підійдіть до <strong>Маяка</strong> та натисніть по ньому <strong>ПКМ</strong>. Ваш досвід переллється у пляшечки з невеликою комісією.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <div id="toast"></div>
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

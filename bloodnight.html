@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Кривава Ніч | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text" style="background: linear-gradient(135deg, #ef4444, #f87171); -webkit-background-clip: text;">КРИВАВА НІЧ</h1>
+      <p class="motto-text">Головна подія виживання: темрява, мутації, орди монстрів та боси</p>
+    </div>
+
+    <!-- БЛОК ПОПЕРЕДЖЕННЯ ТА ПРАВИЛА PVP -->
+    <div class="warning-box">
+      <div class="warning-icon"><i class="fa-solid fa-skull-crossbones"></i></div>
+      <div class="warning-text">
+        <span>УВАГА, РЕЖИМ ТОТАЛЬНОГО PVP!</span> Під час Кривавої ночі у <strong>ВСІХ містах, заснованих понад 7 днів тому</strong>, автоматично вмикається вільне PvP. Команда <span class="cmd-badge">/tfly</span> суворо блокується. Якщо вас вбили під час цієї ночі — це <strong>не вважається гріфом</strong>!
+      </div>
+    </div>
+
+    <div class="glass-card">
+
+      <!-- СЕКЦІЯ 1: РОЗКЛАД ТА СПОВІЩЕННЯ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #ef4444;">1</div> Розклад, Сигнал тривоги та Захист новачків</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          • <strong>Періодичність:</strong> Кривава ніч розпочинається автоматично <strong>кожні 12 ігрових днів</strong>.<br>
+          • <strong>Оповіщення сервера:</strong> За кілька хвилин до початку весь сервер отримує попередження червоним текстом у чаті:<br>
+          <code style="display: inline-block; background: rgba(0,0,0,0.5); padding: 5px 12px; border-radius: 8px; border: 1px solid rgba(239,68,68,0.3); color: #fca5a5; font-family: monospace; margin: 6px 0;">[Сервер]: Настає Кривава ніч! Приготуйтеся до виживання!</code><br>
+          • <strong>Імунітет новачків:</strong> Гравців, які грають на сервері менше 2 реальних днів, агресивні орди не атакують (проте звичайні монстри поруч для них все одно стають посиленими).
+        </p>
+      </div>
+
+      <!-- СЕКЦІЯ 2: ПОСИЛЕННЯ ТА МУТАЦІЇ МОБІВ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #ef4444;">2</div> Мутація мобів та небезпечні ефекти</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Шанс появи монстрів у світі зростає у <strong>2–3 рази</strong>, а їхнє базове здоров'я збільшується на <strong>50–100%</strong>. Звичайні атаки наносять значно більше шкоди та накладають статус <strong>Ізсушіння (Wither)</strong>.
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Мутація</span>
+            <h4>🧟 Зомбі</h4>
+            <p>Отримують постійні ефекти <strong>Швидкості</strong> та <strong>Сили</strong>. Здатні миттєво доганяти гравця та пробивати броню.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Мутація</span>
+            <h4>🏹 Скелети</h4>
+            <p>Режим <strong>Швидкої Стрільби (Rapid Fire)</strong>. Випускають шквал стріл практично без перерви та з великої дистанції.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Мутація</span>
+            <h4>💥 Кріпери</h4>
+            <p><strong>Радіус вибуху збільшено</strong> у декілька разів. Можуть знести цілі загони гравців одним підривом.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(168,85,247,0.15); color: #c084fc; border: 1px solid rgba(168,85,247,0.3);">Особливість</span>
+            <h4>🐛 Смерть мобів (Ендерміти)</h4>
+            <p>Після вбивства будь-якого монстра на його місці миттєво з'являються агресивні <strong>Ендерміти</strong>, продовжуючи бій.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 3: ВАРДЕН БОС -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #ef4444;">3</div> Потужний — Головний Рейд-Бос Ночі</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          У розпал Кривавої ночі біля одного випадкового гравця на сервері спавниться <strong>Потужний</strong> (одночасно може існувати лише <strong>1 Потужний</strong> на всю ніч).
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⚔️ Призивачі (Evokers)</h4>
+            <p>Кожні <strong>30 секунд</strong> Потужний автоматично спавнить навколо себе групу призивачів (Evokers), які атакують гравців капканами та духами (Vex).</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⏳ Таймер життя</h4>
+            <p>Якщо гравці не встигнуть убити Потужного до сходу сонця (до закінчення Кривавої ночі), він автоматично помирає і зникає без дропу.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Легендарний Дроп</span>
+            <h4>🎁 Нагорода за ліквідацію</h4>
+            <p>За вбивство Потужного випадає: <strong>Зірка Незеру</strong> АБО <strong>3 Зілля Сили II рівня</strong>, а також сильно помножений звичайний дроп усіх ресурсів!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 4: РІДКІСНІ РЕСУРСИ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #fbbf24;">4</div> Унікальні Ресурси та Дроп з мобів</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Незважаючи на високий ризик загибелі, Кривава ніч є головним джерелом збагачення для сміливих воїнів. Тільки під час цієї події звичайні моби можуть залишити після себе рідкісні скарби:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4);">Топ-лут</span>
+            <h4>🔥 Незеритові обломки</h4>
+            <p>Рідкісний предмет, який за звичайних умов добувається лише в Незері. Під час Кривавої ночі є шанс вибити його з мутованих мобів.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Копалини</span>
+            <h4>💎 Алмази та Золото</h4>
+            <p>Шанс на випадання чистих алмазів, золотих злитків та заліза безпосередньо з убитих ординців.</p>
+          </div>
+
+          <div class="card-item">
+  <span class="badge-tag emerald">Тотеми безсмертя</span>
+  <h4>🗿 Тотеми Безсмертя</h4>
+  <p>Отримуйте тотеми безсмертя, які врятують вас від загибелі у критичний момент. Надійний захист під час небезпечних пригод, битв та виживання!</p>
+</div>
+        </div>
+      </div>
+
+
+    </div>
+  </main>
+
+  <footer>
+    <p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поміч Новачкам та Заробіток | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo2.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">ГАЙД ТА СПОСОБИ ЗАРОБІТКУ</h1>
+      <p class="motto-text">Від першого телепорту до мільйонних статків на сервері Homeland</p>
+    </div>
+
+    <div class="glass-card">
+
+      <!-- СЕКЦІЯ 1: ПЕРШІ КРОКИ НОВАЧКА -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Перші кроки у грі (Швидкий Старт)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Щойно ви зайшли на спавн, виконайте ці кроки для комфортного початку гри:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag emerald">Крок 1: Телепорт</span>
+            <h4>🌍 Вихід у світ</h4>
+            <p>Введіть команду <span class="cmd-badge" onclick="copyText('/rtp', 'Скопійовано!')">/rtp</span>. Відкриється меню з регіонами реальної України (Галичина, Волинь, Центр, Слобожанщина тощо). Оберіть бажаний край і вас випадково телепортує туди!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Крок 2: Пошук дому</span>
+            <h4>🏘️ Знайти місто</h4>
+            <p>Не будуйте наодинці! Введіть <span class="cmd-badge" onclick="copyText('/search', 'Скопійовано!')">/search</span> — мери міст онлайн побачать ваш запит і надішлють запрошення. Після прийняття напишіть <span class="cmd-badge" onclick="copyText('/t spawn', 'Скопійовано!')">/t spawn</span>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Власна держава</span>
+            <h4>🏛️ Створити місто</h4>
+            <p>Знайшли вільне місце? Відкрийте карту у <span class="cmd-badge" onclick="copyText('/menu', 'Скопійовано!')">/menu</span> та створіть власне поселення командою <span class="cmd-badge" onclick="copyText('/t new ', 'Скопійовано!')">/t new [назва]</span> (коштує 100–200 монет).</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(56, 189, 248, 0.3);">
+            <span class="badge-tag blue">Підтримка 24/7</span>
+            <h4>🤖 ШІ-Помічник</h4>
+            <p>Маєте запитання по грі? Запитайте в штучного інтелекту сервера прямо в чаті:<br>
+            <span class="cmd-badge" onclick="copyText('/ask ', 'Скопійовано!')">/ask [ваше питання]</span></p>
+          </div>
+        </div>
+      </div>
+
+<!-- СЕКЦІЯ 2: БАЗОВИЙ ЗАРОБІТОК ДЛЯ СТАРТУ -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Стартовий капітал (Як заробити перші гроші)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Найпростіші та найстабільніші методи заробітку без великих вкладень:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag emerald">Стабільний дохід</span>
+            <h4>💼 Професії (/jobs)</h4>
+            <p>Влаштуйтеся на роботу командою <span class="cmd-badge" onclick="copyText('/jobs', 'Скопійовано!')">/jobs</span>. Отримуйте монети за кожну зрубану колоду, викопану руду, виловлену рибу чи зібраний врожай.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Вигідний збут</span>
+            <h4>🔄 Щогодинний Скупник (/seller)</h4>
+            <p>Унікальний торговець <span class="cmd-badge" onclick="copyText('/seller', 'Скопійовано!')">/seller</span>. Кожні 60 хвилин він змінює товари та пропонує надвисокі ціни на певні ресурси. Слідкуйте за оновленнями!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Нагороди</span>
+            <h4>📜 Квести та BattlePass (/bp)</h4>
+            <p>Введіть команду <span class="cmd-badge" onclick="copyText('/bp', 'Скопійовано!')">/bp</span> і виконуйте щоденні завдання та квести. За кожен рівень ви отримуватимете грошові виплати та цінні речі.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag">Торгівля</span>
+            <h4>⚖️ Ринок гравців (/ah)</h4>
+            <p>Торгуйте з іншими людьми на аукціоні через <span class="cmd-badge" onclick="copyText('/ah', 'Скопійовано!')">/ah</span>. Продавайте руди, броню, чари або купуйте дешевше й перепродавайте дорожче.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Спавн</span>
+            <h4>🏪 Магазини на спавні (NPC)</h4>
+            <p>Пряма торгівля із сервером! У магазинах біля спавну можна продавати добуті ресурси за валюту, а також купувати необхідні блоки, їжу та інструменти в торгових NPC.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 3: ВИРОБНИЦТВО ТА БІЗНЕС -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">3</div> Промисловий заробіток (Заводи, Копальні, Крафти)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Коли ви освоїлися та маєте власне місто, переходьте до автоматизованого виробництва:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⛏️ Міські Копальні</h4>
+            <p>Побудуйте копальні у місті. Вони щодня видобувають чисті ресурси в скрині: вугілля (до 6 стаків), залізо (до 3 стаків), золото (до 96 шт) та <strong>діаманти (до 32 шт/добу)</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍞 Хлібний бізнес (Млин + Пекарня)</h4>
+            <p>Млин перетирає 2 пшениці в 1 хліб (до 2 стаків/год), а будівля <strong>Пекарня</strong> дозволяє автоматично здавати NPC до 128 буханців щогодини за солідні кошти.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍫 Виробництво Шоколаду</h4>
+            <p>Шоколадна фабрика виробляє партії шоколаду, які можна регулярно продавати через спеціалізований <strong>Магазин продажу шоколаду</strong> місцевим скупникам.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍺 Елітна Броварня (Brewery)</h4>
+            <p>Варіть дорогі витримані алкогольні напої (Віскі, Ром, «Кров Москаля»). Запечатуйте їх на <em>Столі Запломбування</em> і продавайте гравцям на аукціоні як розкіш із бафами.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🪵 Лісопереробка</h4>
+            <p>Будівля <strong>Лісопильня</strong> відкриває персонального NPC лісоруба, в якого можна збувати та вирізати вироби з дерева за значно вигіднішим тарифом.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🚌 Автобусна мережа</h4>
+            <p>Побудуйте Автовокзал і встановіть ціну квитка для приїжджих до 1000 монет (<span class="cmd-badge">/hbus setprice</span>). Кошти за переміщення йдуть прямо в бюджет міста!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 4: ПАСИВНИЙ ТА ВЕЛИКИЙ ДОХІД -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">4</div> Пасивний дохід, Туризм та Шедеври</div>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag gold">Пасивний дохід</span>
+            <h4>🏛️ Великі Будівлі</h4>
+            <p>Будуйте історичні пам'ятки регіону (від 10 чанків). За кожні 1000 очок цінності матеріалів місто отримує щоденні грошові виплати. Шедеври приносять <strong>+20% доходу</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">Ексклюзив</span>
+            <h4>⭐ Лімітовані будівлі</h4>
+            <p>Унікальні об'єкти (лише 1 на весь сервер). Приносять підвищену ставку: <strong>100 монет за кожні 1000 очок</strong> щодня прямо в казну.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Туризм</span>
+            <h4>🎡 ТРЦ, Парки, Готелі</h4>
+            <p>ТРЦ (від 16 чанків), аквапарки розваг, автодроми та готелі підвищують статус міста, генерують прибуток та приваблюють жителів-платників податків.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Церковний сан</span>
+            <h4>⛪ Послуги Священника</h4>
+            <p>Побудуйте міську Церкву та станьте Священником. Ви зможете брати офіційну плату за проведення обрядів одруження та розлучень через <span class="cmd-badge">/pay</span>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 5: РИЗИКОВИЙ ЗАРОБІТОК -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #ef4444;">5</div> Авантюрний заробіток (Високий ризик — шалений куш)</div>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag red" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Пограбування</span>
+            <h4>🏴‍☠️ Рейди банків націй</h4>
+            <p>З 18:00 до 20:00 атакуйте місто ворожої держави через <span class="cmd-badge">/homelandwar raid</span>. Утримайте позицію 10 хвилин і викрадіть <strong>5% від балансу банку всієї нації</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Космос</span>
+            <h4>🌙 Форпости на Місяці</h4>
+            <p>Захоплюйте місячні форпости командою <span class="cmd-badge">/forpost attack</span>. Кожна база щогодини виплачує кошти та постачає рідкісне <strong>Метеоритне Золото</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Полювання</span>
+            <h4>🩸 Фарм Кривавої Ночі</h4>
+            <p>Кожні 12 днів виходьте на полювання: з мобів вибивають чисті алмази, золото та <strong>Незеритові обломки</strong>, а з Вардена падає Зірка Незеру.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Державні виплати</span>
+            <h4>🛡️ Фонд відбудови міст</h4>
+            <p>Кожен ворожий шахед, що прилетів у місто, компенсується державою! Мер отримує від <strong>100 до 500 монет</strong> за влучання через команду <span class="cmd-badge">/rebuildfunds</span>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

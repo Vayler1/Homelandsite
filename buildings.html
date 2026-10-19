@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Шедеври Архітектури | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+<link rel="icon" type="image/png" href="logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">ВЕЛИКІ БУДІВЛІ ТА ШЕДЕВРИ</h1>
+      <p class="motto-text">Регіональні пам'ятки, архітектурне визнання та пасивний дохід</p>
+    </div>
+    <div class="glass-card">
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Оцінка та Шедеври</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          • <strong>Оцінка:</strong> Кожна будівля оцінюється за коефіцієнтом матеріалів. Декоративні блоки (ліхтарі, лави, картини) дають +1-2 бали.<br>
+          • <strong>Дохід:</strong> Адаптивний щоденний прибуток за кожні 1000 очок цінності вашої будівлі.<br>
+          • <strong>Шедеври:</strong> Якщо 80% архітекторів визнають будівлю «шедевром», ви отримуєте +20% до очків АБО унікальний баф для всіх жителів міста!<br>
+          • <strong>Лімітовані будівлі:</strong> Можуть будуватись будь-де (ліміт 1 на сервер). Дають 100 монет за 1000 очок та баф, але не можуть бути шедевром.
+        </p>
+      </div>
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Мапа Регіонів (Не повторювати будівлі!)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; text-align: center;">У кожному регіоні є свої унікальні пам'ятки. Будувати чужі — заборонено!</p>
+        
+        <!-- ТУТ ВИПРАВЛЕНО НАЗВУ НА image.png -->
+        <img src="image.png" class="zoomable-img" alt="Мапа регіонів Homeland" style="width: 100%; max-width: 800px; border-radius: 16px; margin: 1rem auto; display: block; border: 2px solid rgba(255, 255, 255, 0.1);">
+      </div>
+      
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-table"></i></div> Зайняті будівлі (База даних)</div>
+        <div style="width: 100%; height: 600px; border-radius: 16px; overflow: hidden; border: 2px solid rgba(16, 185, 129, 0.3);">
+          
+          <!-- ТУТ ВИПРАВЛЕНО ТА ПОВЕРНУТО ПОСИЛАННЯ НА ТАБЛИЦЮ -->
+          <iframe src="https://docs.google.com/spreadsheets/d/1JAmhrosjbsAlsgUrgvnRZydhpaHE7-U046Mh_GVRlvU/htmlembed?widget=true&amp;headers=false" style="width: 100%; height: 100%; border: none;"></iframe>
+        </div>
+      </div>
+    </div>
+  </main>
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <!-- Lightbox (Наближення картинки) -->
+  <div id="imageModal" class="image-modal">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" id="modalImage">
+  </div>
+  <script>
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    document.querySelectorAll(".zoomable-img").forEach(img => {
+      img.addEventListener("click", function() {
+        modal.style.display = "flex";
+        setTimeout(() => modal.classList.add("show"), 10);
+        modalImg.src = this.src;
+        document.body.style.overflow = "hidden";
+      });
+    });
+    document.querySelector(".image-modal-close").addEventListener("click", closeModal);
+    modal.addEventListener("click", e => { if(e.target !== modalImg) closeModal(); });
+    function closeModal() {
+      modal.classList.remove("show");
+      setTimeout(() => { modal.style.display = "none"; document.body.style.overflow = "auto"; }, 300);
+    }
+  </script>
+</body>
+</html>
