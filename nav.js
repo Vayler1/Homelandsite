@@ -10,7 +10,7 @@ const navItems = [
   { href: "bloodnight.html", text: "Кривава Ніч" },
   { href: "warfare.html", text: "Війни" },
   { href: "towns.html", text: "Міста" },
-  { href: "buildings.html", text: "Шедеври" },
+  { href: "buildings.html", text: "Великі будівлі" },
   { href: "moon.html", text: "Місяць" },
   { href: "brewery.html", text: "Броварня" },
   { href: "commands.html", text: "Довідник" }
