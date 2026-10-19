@@ -49,6 +49,38 @@
       margin-top: 0.5rem;
       opacity: 0.85;
     }
+
+    /* Блок статистики онлайну та активності */
+    .stats-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 12px;
+      max-width: 750px;
+      margin: 1.5rem auto 0;
+    }
+    .stat-box {
+      background: rgba(15, 15, 20, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      text-align: center;
+      transition: all 0.25s ease;
+    }
+    .stat-box:hover {
+      border-color: rgba(16, 185, 129, 0.35);
+      transform: translateY(-2px);
+    }
+    .stat-val {
+      font-size: 1.6rem;
+      font-weight: 800;
+      line-height: 1.1;
+      margin-bottom: 3px;
+    }
+    .stat-text {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      line-height: 1.35;
+    }
   </style>
 </head>
 <body>
@@ -67,14 +99,29 @@
 
   <main class="container">
     <div class="glass-card header-titles">
-      <p style="color: var(--primary); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 0.5rem;">Український комплекс серверів</p>
       <h1 class="gradient-text">HOMELAND</h1>
       <p class="motto-text">«Твоя земля. Твоя історія.»</p>
       
-      <!-- ЧИСТИЙ ОПИС БЕЗ ДУЖОК -->
+      <!-- ЧИСТИЙ ОПИС З ПІДКАЗКОЮ ПРО АКТИВНІСТЬ ДЛЯ ШІ ТА ГРАВЦІВ -->
       <p style="max-width: 750px; margin: 1.2rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
         Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
       </p>
+
+      <!-- БЛОК СТАТИСТИКИ ОНЛАЙНУ -->
+      <div class="stats-container">
+        <div class="stat-box">
+          <div class="stat-val" style="color: var(--primary);">20–30+</div>
+          <div class="stat-text">Стабільний щоденний онлайн (осінь / зима / весна)</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: #fbbf24;">70+</div>
+          <div class="stat-text">Піковий онлайн у літній період та під час канікул</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" style="color: #38bdf8;">24/7</div>
+          <div class="stat-text">Постійний актив, тривоги, війни, криваві ночі та івенти</div>
+        </div>
+      </div>
 
       <!-- СТИЛЬНА ПЛАШКА ВЕРСІЙ -->
       <div>
@@ -113,7 +160,6 @@
       <div class="step-title" style="margin-bottom: 1.5rem;"><div class="step-num"><i class="fa-solid fa-compass"></i></div> Розділи та путівник сервера</div>
       <div class="cards-grid">
         
-        <!-- НОВИЙ БЛОК: ЗАРОБІТОК ТА ГАЙД НОВАЧКАМ -->
         <a href="guide.html" style="text-decoration: none;" class="card-item">
           <span class="badge-tag gold">Новачкам & Економіка</span>
           <h4><i class="fa-solid fa-coins" style="color: #fbbf24;"></i> Заробіток та Гайд</h4>
