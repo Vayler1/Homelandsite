@@ -74,7 +74,7 @@ header {
   z-index: 1000;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  background: rgba(13, 13, 18, 0.85);
+  background: rgba(13, 13, 18, 0.88);
   border-bottom: 1px solid var(--glass-border);
 }
 
@@ -84,11 +84,12 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 1.5rem;
+  padding: 0.8rem 1.5rem;
+  gap: 15px;
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   font-weight: 800;
   text-decoration: none;
   background: linear-gradient(135deg, #10b981, #34d399);
@@ -97,32 +98,63 @@ header {
   letter-spacing: 1.5px;
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+.logo img {
+  height: 40px !important;
+  width: auto !important;
+  object-fit: contain;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1.2rem;
+  gap: 1rem;
   align-items: center;
 }
 
 nav a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   font-weight: 500;
-  transition: all 0.3s ease;
+  transition: all 0.25s ease;
+  white-space: nowrap;
 }
 
 nav a:hover, nav a.active {
   color: var(--primary);
 }
 
+/* Кнопка відкриття мобільного меню (на ПК схована) */
+.mobile-menu-btn {
+  display: none;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid var(--glass-border);
+  color: var(--text-main);
+  font-size: 1.35rem;
+  padding: 0.45rem 0.75rem;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.mobile-menu-btn:hover {
+  color: var(--primary);
+  border-color: var(--primary);
+}
+
 .nav-btns {
   display: flex;
   gap: 10px;
   align-items: center;
+  flex-shrink: 0;
 }
 
 /* Кнопки */
@@ -130,7 +162,7 @@ nav a:hover, nav a.active {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0.6rem 1.25rem;
+  padding: 0.55rem 1.15rem;
   background: linear-gradient(135deg, var(--primary), #047857);
   color: white !important;
   border-radius: 12px;
@@ -138,9 +170,10 @@ nav a:hover, nav a.active {
   text-decoration: none;
   transition: all 0.3s ease;
   box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   border: none;
   cursor: pointer;
+  white-space: nowrap;
 }
 .btn-emerald:hover {
   transform: translateY(-2px);
@@ -151,7 +184,7 @@ nav a:hover, nav a.active {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 0.6rem 1.25rem;
+  padding: 0.55rem 1.15rem;
   background: rgba(88, 101, 242, 0.15);
   border: 1px solid rgba(88, 101, 242, 0.4);
   color: #8599ff !important;
@@ -159,7 +192,8 @@ nav a:hover, nav a.active {
   font-weight: 600;
   text-decoration: none;
   transition: all 0.3s ease;
-  font-size: 0.9rem;
+  font-size: 0.88rem;
+  white-space: nowrap;
 }
 .btn-discord:hover {
   background: #5865f2;
@@ -171,8 +205,8 @@ nav a:hover, nav a.active {
 .container {
   max-width: 1200px;
   width: 100%;
-  margin: 2rem auto;
-  padding: 0 1.5rem;
+  margin: 1.8rem auto;
+  padding: 0 1.25rem;
   z-index: 10;
 }
 
@@ -180,33 +214,33 @@ nav a:hover, nav a.active {
   background: var(--glass-bg);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  padding: 2.5rem;
+  padding: 2.2rem;
   border-radius: 24px;
   border: 1px solid var(--glass-border);
   box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-  margin-bottom: 2rem;
+  margin-bottom: 1.8rem;
 }
 
 /* Заголовки */
 .header-titles {
   text-align: center;
-  margin-bottom: 2.5rem;
+  margin-bottom: 2rem;
 }
 
 .gradient-text {
-  font-size: 2.8rem;
+  font-size: 2.6rem;
   font-weight: 800;
   margin: 0 0 0.4rem 0;
   background: linear-gradient(135deg, #10b981, #34d399);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 1.5px;
   line-height: 1.15;
 }
 
 .motto-text {
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   color: var(--text-muted);
   font-style: italic;
 }
@@ -215,13 +249,13 @@ nav a:hover, nav a.active {
 .step-section {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 16px;
-  padding: 1.75rem;
+  padding: 1.5rem;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .step-title {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 1rem;
   display: flex;
@@ -249,17 +283,18 @@ nav a:hover, nav a.active {
   align-items: center;
   background: var(--danger-bg);
   border: 1px solid rgba(239, 68, 68, 0.3);
-  padding: 1.2rem;
+  padding: 1.1rem;
   border-radius: 14px;
   margin-bottom: 1.5rem;
 }
 .warning-icon {
-  font-size: 1.6rem;
+  font-size: 1.5rem;
   color: var(--danger);
-  margin-right: 1.2rem;
+  margin-right: 1.1rem;
+  flex-shrink: 0;
 }
 .warning-text {
-  font-size: 0.9rem;
+  font-size: 0.88rem;
   line-height: 1.5;
   color: #fca5a5;
 }
@@ -282,7 +317,7 @@ nav a:hover, nav a.active {
   background: var(--card-bg-inner);
   border: 1px solid rgba(255, 255, 255, 0.05);
   border-radius: 14px;
-  padding: 1.4rem;
+  padding: 1.3rem;
   transition: all 0.25s ease;
   display: flex;
   flex-direction: column;
@@ -294,10 +329,10 @@ nav a:hover, nav a.active {
 }
 
 .card-item h4 {
-  font-size: 1.15rem;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -306,14 +341,14 @@ nav a:hover, nav a.active {
 .card-item p, .card-item ul {
   font-size: 0.88rem;
   color: var(--text-muted);
-  line-height: 1.6;
+  line-height: 1.55;
 }
 .card-item ul {
   padding-left: 1.2rem;
   margin-top: 0.5rem;
 }
 .card-item li {
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.35rem;
 }
 
 /* Бейджі */
@@ -323,19 +358,20 @@ nav a:hover, nav a.active {
   padding: 3px 8px;
   border-radius: 6px;
   text-transform: uppercase;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0.5rem;
   display: inline-block;
+  align-self: flex-start;
 }
 .badge-tag.emerald { color: #34d399; background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.2); }
 .badge-tag.gold { color: #fbbf24; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2); }
 .badge-tag.blue { color: #60a5fa; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
 
-/* Команди та крафти */
+/* Команди */
 .cmd-badge {
   font-family: monospace;
   background: rgba(0, 0, 0, 0.45);
   color: #34d399;
-  padding: 0.3rem 0.6rem;
+  padding: 0.25rem 0.55rem;
   border-radius: 6px;
   font-size: 0.85rem;
   border: 1px solid rgba(16, 185, 129, 0.25);
@@ -346,27 +382,6 @@ nav a:hover, nav a.active {
 .cmd-badge:hover {
   background: rgba(16, 185, 129, 0.15);
   border-color: var(--primary);
-}
-
-.crafting-table {
-  display: inline-grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 6px;
-  background: rgba(0, 0, 0, 0.4);
-  padding: 10px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  margin: 1rem 0;
-}
-.craft-cell {
-  background: #0d0d12;
-  padding: 10px 14px;
-  border-radius: 6px;
-  font-family: monospace;
-  font-size: 0.8rem;
-  font-weight: 700;
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 /* IP секції */
@@ -380,7 +395,7 @@ nav a:hover, nav a.active {
   background: rgba(15, 15, 20, 0.7);
   border: 1px solid rgba(255, 255, 255, 0.08);
   border-radius: 16px;
-  padding: 1.25rem 1.5rem;
+  padding: 1.15rem 1.4rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -398,7 +413,7 @@ footer {
   text-align: center;
   color: var(--text-muted);
   font-size: 0.85rem;
-  padding: 2.5rem 1.5rem;
+  padding: 2.2rem 1.5rem;
   border-top: 1px solid var(--glass-border);
   margin-top: auto;
 }
@@ -418,12 +433,9 @@ footer {
   opacity: 0;
   pointer-events: none;
   transition: opacity 0.3s ease;
+  font-size: 0.9rem;
 }
 #toast.show { opacity: 1; }
-
-@media (max-width: 992px) {
-  nav ul { display: none; }
-}
 
 /* --- АНІМАЦІЯ ТА НАБЛИЖЕННЯ КАРТИНОК (LIGHTBOX) --- */
 .zoomable-img {
@@ -432,7 +444,7 @@ footer {
 }
 .zoomable-img:hover {
   opacity: 0.85;
-  transform: scale(1.02);
+  transform: scale(1.015);
 }
 
 .image-modal {
@@ -443,7 +455,7 @@ footer {
   top: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.85);
+  background-color: rgba(0, 0, 0, 0.88);
   backdrop-filter: blur(8px);
   opacity: 0;
   transition: opacity 0.3s ease;
@@ -455,11 +467,11 @@ footer {
 }
 
 .image-modal-content {
-  max-width: 90%;
+  max-width: 92%;
   max-height: 90vh;
   border-radius: 16px;
   box-shadow: 0 0 40px rgba(16, 185, 129, 0.3);
-  transform: scale(0.8);
+  transform: scale(0.85);
   transition: transform 0.3s ease;
   object-fit: contain;
 }
@@ -470,9 +482,9 @@ footer {
 .image-modal-close {
   position: absolute;
   top: 20px;
-  right: 30px;
+  right: 25px;
   color: #f1f1f1;
-  font-size: 45px;
+  font-size: 40px;
   font-weight: bold;
   cursor: pointer;
   transition: 0.3s;
@@ -480,11 +492,129 @@ footer {
 }
 .image-modal-close:hover {
   color: var(--primary);
-  transform: scale(1.1);
 }
 
-.logo img {
-  height: 42px !important;
-  width: auto !important;
-  object-fit: contain;
+
+/* =======================================================
+   МОБІЛЬНА АДАПТИВНІСТЬ ДЛЯ СМАРТФОНІВ ТА ПЛАНШЕТІВ
+======================================================= */
+@media (max-width: 1150px) {
+  /* Вмикаємо кнопку меню ☰ */
+  .mobile-menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Ховаємо горизонтальне меню та робимо зручну шторку */
+  nav ul {
+    display: none;
+    position: fixed;
+    top: 62px;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - 62px);
+    background: rgba(13, 13, 18, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid var(--glass-border);
+    flex-direction: column;
+    padding: 1.25rem 1.25rem 3rem;
+    gap: 0.55rem;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* Коли користувач натиснув ☰ */
+  nav ul.open {
+    display: flex;
+    animation: menuSlideDown 0.3s ease-out forwards;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.05rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+  }
+
+  nav ul li a:hover, nav ul li a.active {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
+  .nav-container {
+    padding: 0.6rem 1rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+  .logo img {
+    height: 35px !important;
+  }
+}
+
+@keyframes menuSlideDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 768px) {
+  .gradient-text {
+    font-size: 1.95rem;
+    letter-spacing: 1px;
+  }
+
+  .motto-text {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 0 0.9rem;
+    margin: 1.2rem auto;
+  }
+
+  .glass-card {
+    padding: 1.35rem 0.95rem;
+    border-radius: 18px;
+  }
+
+  .step-section {
+    padding: 1.1rem 0.9rem;
+    border-radius: 14px;
+  }
+
+  .step-title {
+    font-size: 1.05rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .btn-discord {
+    padding: 0.45rem 0.85rem;
+    font-size: 0.8rem;
+  }
+
+  #toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    text-align: center;
+  }
 }
