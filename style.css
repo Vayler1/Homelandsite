@@ -306,6 +306,74 @@ nav a:hover, nav a.active {
   pointer-events: none;
 }
 
+/* =======================================================
+   ЖИВИЙ ІНДИКАТОР ОНЛАЙНУ СЕРВЕРА
+======================================================= */
+.live-status-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  margin: 1.3rem auto 0.4rem;
+  padding: 0.55rem 1.4rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.35);
+  border-radius: 9999px;
+  font-size: 0.95rem;
+  color: #f8fafc;
+  box-shadow: 0 0 25px rgba(16, 185, 129, 0.18);
+  transition: all 0.3s ease;
+}
+
+.live-status-badge strong {
+  color: #34d399;
+  font-weight: 700;
+}
+
+/* Пульсуюча крапка з ефектом радара */
+.live-ping-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  position: relative;
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.live-ping-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  background: rgba(16, 185, 129, 0.55);
+  animation: radarPing 1.8s cubic-bezier(0, 0, 0.2, 1) infinite;
+}
+
+@keyframes radarPing {
+  0% { transform: scale(0.9); opacity: 1; }
+  100% { transform: scale(2.4); opacity: 0; }
+}
+
+/* Стан якщо сервер офлайн */
+.live-status-badge.offline {
+  background: rgba(239, 68, 68, 0.1);
+  border-color: rgba(239, 68, 68, 0.35);
+  box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
+}
+
+.live-status-badge.offline .live-ping-dot {
+  background: #ef4444;
+}
+
+.live-status-badge.offline .live-ping-dot::after {
+  background: rgba(239, 68, 68, 0.5);
+}
+
+.live-status-badge.offline strong {
+  color: #f87171;
+}
+
 /* --- СТАТИСТИКА ОНЛАЙНУ --- */
 .stats-container {
   display: grid;
@@ -768,11 +836,13 @@ footer {
     font-size: 0.68rem;
     padding: 4px 10px;
   }
+
+  .live-status-badge {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
 }
 
-/* =======================================================
-   МАГІЧНА ПОРТАЛЬНА АРКА (ARCH PORTAL ДЛЯ main.png)
-======================================================= */
 /* =======================================================
    ГОЛОВНИЙ HERO-БАНЕР СЕРВЕРА (main.png)
 ======================================================= */
@@ -803,7 +873,6 @@ footer {
   transform: scale(1.02);
 }
 
-/* Градієнтне затемнення знизу, щоб банер плавно перетікав у контент картки */
 .hero-banner-overlay {
   position: absolute;
   inset: 0;
@@ -817,7 +886,6 @@ footer {
   pointer-events: none;
 }
 
-/* Контентна частина картки під банером */
 .hero-body {
   padding: 1.5rem 2rem 2.2rem;
   text-align: center;
@@ -825,7 +893,6 @@ footer {
   z-index: 2;
 }
 
-/* Адаптація під смартфони */
 @media (max-width: 768px) {
   .hero-banner {
     height: 200px;
@@ -835,9 +902,6 @@ footer {
   }
 }
 
-/* =======================================================
-   ГАЛЕРЕЯ ШЕДЕВРІВ ТА БУДІВЕЛЬ (bigbuild1.png - bigbuild6.png)
-======================================================= */
 /* =======================================================
    ЧИСТА ФОТОГАЛЕРЕЯ БУДІВЕЛЬ (БЕЗ ТЕКСТУ)
 ======================================================= */
