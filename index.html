@@ -26,7 +26,7 @@
   </header>
 
   <main class="container">
-<!-- ГОЛОВНА HERO-КАРТКА З БАНЕРОМ -->
+    <!-- ГОЛОВНА HERO-КАРТКА З БАНЕРОМ -->
     <div class="glass-card hero-card">
       
       <!-- САМ БАНЕР -->
@@ -42,6 +42,12 @@
         <p style="max-width: 750px; margin: 0.9rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
           Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
         </p>
+
+        <!-- ЖИВА ПЛАШКА ОНЛАЙНУ СЕРВЕРА -->
+        <div class="live-status-badge" id="serverStatusBadge">
+          <span class="live-ping-dot"></span>
+          <span class="live-status-text">Опитування сервера...</span>
+        </div>
 
         <!-- БЛОК СТАТИСТИКИ ОНЛАЙНУ -->
         <div class="stats-container">
@@ -167,6 +173,7 @@
   <div id="toast"></div>
 
   <script>
+    // Функція копіювання IP
     function copyText(text, msg) {
       navigator.clipboard.writeText(text);
       const toast = document.getElementById('toast');
@@ -204,6 +211,35 @@
         }, 300);
       }
     }
+
+    // Отримання та оновлення живого онлайну
+    async function updateOnlineStatus() {
+      const badge = document.getElementById('serverStatusBadge');
+      if (!badge) return;
+      const textSpan = badge.querySelector('.live-status-text');
+
+      try {
+        const response = await fetch('https://api.mcsrvstat.us/2/homeland.pp.ua');
+        const data = await response.json();
+
+        if (data.online) {
+          badge.classList.remove('offline');
+          const currentPlayers = data.players ? data.players.online : 0;
+          const maxPlayers = data.players ? data.players.max : 0;
+          textSpan.innerHTML = `Зараз на сервері: <strong>${currentPlayers}</strong> із <strong>${maxPlayers}</strong> гравців`;
+        } else {
+          badge.classList.add('offline');
+          textSpan.innerHTML = `Сервер тимчасово <strong>офлайн</strong>`;
+        }
+      } catch (err) {
+        badge.classList.add('offline');
+        textSpan.innerHTML = `Не вдалося отримати онлайн`;
+      }
+    }
+
+    // Перший запуск та автооновлення кожні 60 секунд
+    updateOnlineStatus();
+    setInterval(updateOnlineStatus, 60000);
   </script>
 </body>
 </html>
