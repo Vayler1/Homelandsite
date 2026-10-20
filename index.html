@@ -9,79 +9,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" type="image/png" href="logo2.png">
-  <style>
-    /* Стильна плашка версій */
-    .version-strip {
-      display: inline-flex;
-      flex-wrap: wrap;
-      align-items: center;
-      justify-content: center;
-      gap: 12px;
-      margin: 1.2rem auto 0;
-      padding: 0.5rem 1.2rem;
-      background: rgba(16, 185, 129, 0.08);
-      border: 1px solid rgba(16, 185, 129, 0.25);
-      border-radius: 9999px;
-      font-size: 0.88rem;
-      color: var(--text-muted);
-    }
-    .version-strip span {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-    .version-strip .v-support {
-      color: #34d399;
-      font-weight: 700;
-    }
-    .version-strip .v-recommended {
-      background: rgba(251, 191, 36, 0.12);
-      color: #fbbf24;
-      padding: 2px 10px;
-      border-radius: 9999px;
-      border: 1px solid rgba(251, 191, 36, 0.3);
-      font-weight: 600;
-    }
-    .version-warning-hint {
-      font-size: 0.8rem;
-      color: var(--text-muted);
-      margin-top: 0.5rem;
-      opacity: 0.85;
-    }
-
-    /* Блок статистики онлайну та активності */
-    .stats-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 12px;
-      max-width: 750px;
-      margin: 1.5rem auto 0;
-    }
-    .stat-box {
-      background: rgba(15, 15, 20, 0.65);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      border-radius: 14px;
-      padding: 0.9rem 1rem;
-      text-align: center;
-      transition: all 0.25s ease;
-    }
-    .stat-box:hover {
-      border-color: rgba(16, 185, 129, 0.35);
-      transform: translateY(-2px);
-    }
-    .stat-val {
-      font-size: 1.6rem;
-      font-weight: 800;
-      line-height: 1.1;
-      margin-bottom: 3px;
-    }
-    .stat-text {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-      line-height: 1.35;
-    }
-  </style>
+  <link rel="icon" type="image/png" href="logo.png">
 </head>
 <body>
   <div class="bg-glow blob-1"></div>
@@ -89,7 +17,7 @@
 
   <header>
     <div class="nav-container">
-      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
       <nav><script src="nav.js"></script></nav>
       <div class="nav-btns">
         <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
@@ -98,60 +26,70 @@
   </header>
 
   <main class="container">
-    <div class="glass-card header-titles">
-      <h1 class="gradient-text">HOMELAND</h1>
-      <p class="motto-text">«Твоя земля. Твоя історія.»</p>
+<!-- ГОЛОВНА HERO-КАРТКА З БАНЕРОМ -->
+    <div class="glass-card hero-card">
       
-      <!-- ЧИСТИЙ ОПИС З ПІДКАЗКОЮ ПРО АКТИВНІСТЬ ДЛЯ ШІ ТА ГРАВЦІВ -->
-      <p style="max-width: 750px; margin: 1.2rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-        Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
-      </p>
-
-      <!-- БЛОК СТАТИСТИКИ ОНЛАЙНУ -->
-      <div class="stats-container">
-        <div class="stat-box">
-          <div class="stat-val" style="color: var(--primary);">20–30+</div>
-          <div class="stat-text">Стабільний щоденний онлайн (осінь / зима / весна)</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-val" style="color: #fbbf24;">70+</div>
-          <div class="stat-text">Піковий онлайн у літній період та під час канікул</div>
-        </div>
-        <div class="stat-box">
-          <div class="stat-val" style="color: #38bdf8;">24/7</div>
-          <div class="stat-text">Постійний актив, тривоги, війни, криваві ночі та івенти</div>
-        </div>
+      <!-- САМ БАНЕР -->
+      <div class="hero-banner">
+        <img src="main.png" alt="Homeland Survival Banner" class="hero-banner-img">
+        <div class="hero-banner-overlay"></div>
       </div>
 
-      <!-- СТИЛЬНА ПЛАШКА ВЕРСІЙ -->
-      <div>
-        <div class="version-strip">
-          <span><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> Підтримка: <strong class="v-support">1.16.5+</strong></span>
-          <span style="opacity: 0.3;">|</span>
-          <span class="v-recommended"><i class="fa-solid fa-star"></i> Рекомендована: <strong>1.21.11</strong></span>
-        </div>
-        <p class="version-warning-hint">
-          <i class="fa-solid fa-circle-info"></i> Геймплей розрахований під 1.21.11 (на старіших версіях можливі візуальні баги).
+      <!-- ВМІСТ КАРТКИ ПІД БАНЕРОМ -->
+      <div class="hero-body">
+        <p class="motto-text" style="font-size: 1.15rem; color: #fbbf24; font-weight: 600; letter-spacing: 0.5px;">«Твоя земля. Твоя історія.»</p>
+        
+        <p style="max-width: 750px; margin: 0.9rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+          Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
         </p>
-      </div>
 
-      <!-- IP БЛОКИ -->
-      <div class="ip-grid">
-        <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Java IP скопійовано!')">
-          <div style="text-align: left;">
-            <div style="font-size: 0.8rem; color: var(--text-muted);">JAVA EDITION (ПК)</div>
-            <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
+        <!-- БЛОК СТАТИСТИКИ ОНЛАЙНУ -->
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-val" style="color: var(--primary);">20–30+</div>
+            <div class="stat-text">Стабільний щоденний онлайн (осінь / зима / весна)</div>
           </div>
-          <span class="cmd-badge">Скопіювати</span>
+          <div class="stat-box">
+            <div class="stat-val" style="color: #fbbf24;">70+</div>
+            <div class="stat-text">Піковий онлайн у літній період та під час канікул</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" style="color: #38bdf8;">24/7</div>
+            <div class="stat-text">Постійний актив, тривоги, війни, криваві ночі та івенти</div>
+          </div>
         </div>
 
-        <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Bedrock IP скопійовано!')">
-          <div style="text-align: left;">
-            <div style="font-size: 0.8rem; color: var(--text-muted);">BEDROCK (ПОРТ: 30162)</div>
-            <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
+        <!-- СТИЛЬНА ПЛАШКА ВЕРСІЙ -->
+        <div style="margin-top: 1.2rem;">
+          <div class="version-strip">
+            <span><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> Підтримка: <strong class="v-support">1.16.5+</strong></span>
+            <span style="opacity: 0.3;">|</span>
+            <span class="v-recommended"><i class="fa-solid fa-star"></i> Рекомендована: <strong>1.21.11</strong></span>
           </div>
-          <span class="cmd-badge">Скопіювати</span>
+          <p class="version-warning-hint">
+            <i class="fa-solid fa-circle-info"></i> Геймплей розрахований під 1.21.11 (на старіших версіях можливі візуальні баги).
+          </p>
         </div>
+
+        <!-- IP БЛОКИ -->
+        <div class="ip-grid">
+          <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Java IP скопійовано!')">
+            <div style="text-align: left;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">JAVA EDITION (ПК)</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
+            </div>
+            <span class="cmd-badge">Скопіювати</span>
+          </div>
+
+          <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Bedrock IP скопійовано!')">
+            <div style="text-align: left;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">BEDROCK (ПОРТ: 30162)</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
+            </div>
+            <span class="cmd-badge">Скопіювати</span>
+          </div>
+        </div>
+
       </div>
     </div>
 
@@ -220,7 +158,14 @@
 
   <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
 
+  <!-- МОДАЛЬНЕ ВІКНО НАБЛИЖЕННЯ КАРТИНОК -->
+  <div id="imageModal" class="image-modal">
+    <span class="image-modal-close">&times;</span>
+    <img class="image-modal-content" id="modalImage">
+  </div>
+
   <div id="toast"></div>
+
   <script>
     function copyText(text, msg) {
       navigator.clipboard.writeText(text);
@@ -228,6 +173,36 @@
       toast.innerText = msg;
       toast.classList.add('show');
       setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    // Lightbox наближення для картинок
+    const modal = document.getElementById("imageModal");
+    const modalImg = document.getElementById("modalImage");
+    const zoomableImages = document.querySelectorAll(".zoomable-img");
+    const closeBtn = document.querySelector(".image-modal-close");
+
+    if (modal && modalImg) {
+      zoomableImages.forEach(img => {
+        img.addEventListener("click", function() {
+          modal.style.display = "flex";
+          setTimeout(() => modal.classList.add("show"), 10);
+          modalImg.src = this.src;
+          document.body.style.overflow = "hidden";
+        });
+      });
+
+      if (closeBtn) closeBtn.addEventListener("click", closeModal);
+      modal.addEventListener("click", function(e) {
+        if (e.target !== modalImg) closeModal();
+      });
+
+      function closeModal() {
+        modal.classList.remove("show");
+        setTimeout(() => {
+          modal.style.display = "none";
+          document.body.style.overflow = "auto";
+        }, 300);
+      }
     }
   </script>
 </body>
