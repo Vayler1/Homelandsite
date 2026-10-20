@@ -106,6 +106,8 @@ header {
   height: 40px !important;
   width: auto !important;
   object-fit: contain;
+  flex-shrink: 0;
+  display: block;
 }
 
 nav {
@@ -133,7 +135,7 @@ nav a:hover, nav a.active {
   color: var(--primary);
 }
 
-/* Кнопка відкриття мобільного меню (на ПК схована) */
+/* Кнопка відкриття мобільного меню */
 .mobile-menu-btn {
   display: none;
   background: rgba(255, 255, 255, 0.05);
@@ -243,6 +245,144 @@ nav a:hover, nav a.active {
   font-size: 1.05rem;
   color: var(--text-muted);
   font-style: italic;
+}
+
+/* --- ОСОБЛИВИЙ СТИЛЬ ДЛЯ ГОЛОВНОГО ПРОМО-АРТУ (main.png) --- */
+.hero-showcase {
+  position: relative;
+  max-width: 920px;
+  margin: 1.8rem auto 1.2rem;
+  border-radius: 20px;
+  padding: 3px;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.55), rgba(251, 191, 36, 0.25), rgba(59, 130, 246, 0.45));
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(16, 185, 129, 0.25);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: zoom-in;
+}
+
+.hero-showcase:hover {
+  transform: translateY(-4px) scale(1.006);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(16, 185, 129, 0.4);
+}
+
+.hero-showcase-inner {
+  position: relative;
+  border-radius: 17px;
+  overflow: hidden;
+  background: #09090d;
+  display: flex;
+}
+
+.hero-showcase-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  aspect-ratio: 16 / 8;
+  transition: transform 0.5s ease;
+}
+
+.hero-showcase:hover .hero-showcase-img {
+  transform: scale(1.02);
+}
+
+.hero-badge-tag {
+  position: absolute;
+  bottom: 12px;
+  right: 14px;
+  background: rgba(13, 13, 18, 0.8);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f1f5f9;
+  padding: 6px 14px;
+  border-radius: 30px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  pointer-events: none;
+}
+
+/* --- СТАТИСТИКА ОНЛАЙНУ --- */
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 12px;
+  max-width: 750px;
+  margin: 1.5rem auto 0;
+}
+
+.stat-box {
+  background: rgba(15, 15, 20, 0.65);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 14px;
+  padding: 0.9rem 1rem;
+  text-align: center;
+  transition: all 0.25s ease;
+}
+
+.stat-box:hover {
+  border-color: rgba(16, 185, 129, 0.35);
+  transform: translateY(-2px);
+}
+
+.stat-val {
+  font-size: 1.6rem;
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 3px;
+}
+
+.stat-text {
+  font-size: 0.78rem;
+  color: var(--text-muted);
+  line-height: 1.35;
+}
+
+/* --- ПЛАШКА ВЕРСІЙ --- */
+.version-strip {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin: 1.2rem auto 0;
+  padding: 0.5rem 1.2rem;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  border-radius: 9999px;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+
+.version-strip span {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.version-strip .v-support {
+  color: #34d399;
+  font-weight: 700;
+}
+
+.version-strip .v-recommended {
+  background: rgba(251, 191, 36, 0.12);
+  color: #fbbf24;
+  padding: 2px 10px;
+  border-radius: 9999px;
+  border: 1px solid rgba(251, 191, 36, 0.3);
+  font-weight: 600;
+}
+
+.version-warning-hint {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  margin-top: 0.5rem;
+  opacity: 0.85;
 }
 
 /* Секції та кроки */
@@ -443,8 +583,7 @@ footer {
   transition: all 0.3s ease !important;
 }
 .zoomable-img:hover {
-  opacity: 0.85;
-  transform: scale(1.015);
+  opacity: 0.9;
 }
 
 .image-modal {
@@ -494,19 +633,16 @@ footer {
   color: var(--primary);
 }
 
-
 /* =======================================================
    МОБІЛЬНА АДАПТИВНІСТЬ ДЛЯ СМАРТФОНІВ ТА ПЛАНШЕТІВ
 ======================================================= */
 @media (max-width: 1150px) {
-  /* Вмикаємо кнопку меню ☰ */
   .mobile-menu-btn {
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  /* Ховаємо горизонтальне меню та робимо зручну шторку */
   nav ul {
     display: none;
     position: fixed;
@@ -525,7 +661,6 @@ footer {
     z-index: 999;
   }
 
-  /* Коли користувач натиснув ☰ */
   nav ul.open {
     display: flex;
     animation: menuSlideDown 0.3s ease-out forwards;
@@ -616,5 +751,136 @@ footer {
     right: 1rem;
     left: 1rem;
     text-align: center;
+  }
+
+  .hero-showcase {
+    margin: 1.2rem auto 0.8rem;
+    border-radius: 16px;
+  }
+
+  .hero-showcase-inner {
+    border-radius: 13px;
+  }
+
+  .hero-badge-tag {
+    bottom: 8px;
+    right: 10px;
+    font-size: 0.68rem;
+    padding: 4px 10px;
+  }
+}
+
+/* =======================================================
+   МАГІЧНА ПОРТАЛЬНА АРКА (ARCH PORTAL ДЛЯ main.png)
+======================================================= */
+/* =======================================================
+   ГОЛОВНИЙ HERO-БАНЕР СЕРВЕРА (main.png)
+======================================================= */
+.hero-card {
+  padding: 0 !important;
+  overflow: hidden;
+  position: relative;
+}
+
+.hero-banner {
+  position: relative;
+  width: 100%;
+  height: 380px;
+  overflow: hidden;
+  background: #09090d;
+}
+
+.hero-banner-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  display: block;
+  transition: transform 0.6s ease;
+}
+
+.hero-card:hover .hero-banner-img {
+  transform: scale(1.02);
+}
+
+/* Градієнтне затемнення знизу, щоб банер плавно перетікав у контент картки */
+.hero-banner-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(13, 13, 18, 0.05) 0%,
+    rgba(13, 13, 18, 0.3) 40%,
+    rgba(25, 25, 35, 0.85) 80%,
+    rgba(25, 25, 35, 1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Контентна частина картки під банером */
+.hero-body {
+  padding: 1.5rem 2rem 2.2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* Адаптація під смартфони */
+@media (max-width: 768px) {
+  .hero-banner {
+    height: 200px;
+  }
+  .hero-body {
+    padding: 1.2rem 1rem 1.8rem;
+  }
+}
+
+/* =======================================================
+   ГАЛЕРЕЯ ШЕДЕВРІВ ТА БУДІВЕЛЬ (bigbuild1.png - bigbuild6.png)
+======================================================= */
+/* =======================================================
+   ЧИСТА ФОТОГАЛЕРЕЯ БУДІВЕЛЬ (БЕЗ ТЕКСТУ)
+======================================================= */
+.builds-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 1.2rem;
+}
+
+.build-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background: #09090d;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  cursor: zoom-in;
+}
+
+.build-card:hover {
+  transform: translateY(-4px) scale(1.02);
+  border-color: rgba(16, 185, 129, 0.5);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.25);
+}
+
+.build-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.build-card:hover img {
+  transform: scale(1.06);
+}
+
+@media (max-width: 768px) {
+  .builds-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
 }
