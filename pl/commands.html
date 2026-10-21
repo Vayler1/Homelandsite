@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <title>Przewodnik po Komendach i Ekonomii | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://homeland.pp.ua/pl/commands.html" />
+  <meta name="description" content="Kompletna lista komend serwera Homeland: zarządzanie miastem Towny, podatki nacji, śluby /marry, łączenie konta Discord i butelkowanie expa." />
+  <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">KOMENDY I SYSTEM EKONOMII</h1>
+      <p class="motto-text">Towny, Podatki nacji, Sakrament Małżeństwa i Butelkowanie Doświadczenia</p>
+    </div>
+
+    <div class="glass-card">
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-brands fa-discord"></i></div> Łączenie konta Discord</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          1. W grze wpisz komendę: <span class="cmd-badge" onclick="copyText('/discord link', 'Skopiowano!')">/discord link</span><br>
+          2. Wygenerowany kod wyślij w prywatnej wiadomości botowi <strong>@Homeland Survival#5789</strong> na naszym serwerze Discord. <em>(Upewnij się, że w ustawieniach prywatności zezwalasz na wiadomości od członków serwera).</em>
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-church"></i></div> Kościół, Kapłani i Śluby</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          Burmistrz miasta może wznieść regionalny <strong>Kościół</strong> i mianować Kapłana (koszt święceń: 5 000 monet).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry', 'Skopiowano!')">/marry [gracz1] [gracz2]</span> — Kapłan udziela ślubu (koszt: 2 500 od każdego z małżonków).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry sethome', 'Skopiowano!')">/marry sethome</span> — Wspólny dom małżeński (12 500 monet).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry tp', 'Skopiowano!')">/marry tp</span> — Teleportacja do małżonka (5 000 monet).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry gift', 'Skopiowano!')">/marry gift</span> — Podarowanie trzymanego przedmiotu (300 monet).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry divorce', 'Skopiowano!')">/marry divorce</span> — Rozwód kościelny (koszt: 500 monet od osoby).
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-coins"></i></div> Progi Podatkowe Nacji</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Bazowy podatek od miasta wynosi 10 monet za chunk. Wraz ze wzrostem populacji Nacji rośnie ogólny podatek:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item"><h4>Ziemie (0+ graczy)</h4><p>Bazowy podatek: 1 000 monet.</p></div>
+          <div class="card-item"><h4>Nacja (10+ graczy)</h4><p>Podatek: 2 000 (+10% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Księstwo (20+ graczy)</h4><p>Podatek: 3 000 (+20% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Królestwo (30+ graczy)</h4><p>Podatek: 8 000 (+30% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Imperium (40+ graczy)</h4><p>Podatek: 15 000 (+40% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Wielkie Imperium (60+)</h4><p>Podatek: 20 000 (+50% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Mocarstwo Światowe (100+)</h4><p>Podatek: 30 000 (+60% do podatku miasta)</p></div>
+          <div class="card-item"><h4>Imperium Galaktyczne (150+)</h4><p>Podatek: 40 000 (+70% do podatku miasta)</p></div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-terminal"></i></div> Komendy Zarządzania Miastem (Towny)</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+          <em>Utrzymanie miasta wynosi 40 monet dziennie (płatne ze skarbca miasta). Pierwszy chunk kosztuje 40 monet, a każdy kolejny drożeje o 0.5% (maksymalnie do 500 monet).</em>
+        </p>
+        <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t new', 'Skopiowano!')">/t new [nazwa]</span><p style="margin-top:4px;">Założenie nowego miasta (200 monet).</p>
+            <span class="cmd-badge" onclick="copyText('/t claim', 'Skopiowano!')" style="margin-top:10px;">/t claim / unclaim</span><p style="margin-top:4px;">Zajęcie lub zwolnienie chunka.</p>
+            <span class="cmd-badge" onclick="copyText('/t deposit', 'Skopiowano!')" style="margin-top:10px;">/t deposit [kwota]</span><p style="margin-top:4px;">Wpłata monet do banku miasta.</p>
+            <span class="cmd-badge" onclick="copyText('/t withdraw', 'Skopiowano!')" style="margin-top:10px;">/t withdraw [kwota]</span><p style="margin-top:4px;">Wypłata z banku (tylko Burmistrz).</p>
+            <span class="cmd-badge" onclick="copyText('/t invite', 'Skopiowano!')" style="margin-top:10px;">/t invite / kick [nick]</span><p style="margin-top:4px;">Zaproszenie lub wyrzucenie mieszkańca.</p>
+            <span class="cmd-badge" onclick="copyText('/t set taxes', 'Skopiowano!')" style="margin-top:10px;">/t set taxes [kwota]</span><p style="margin-top:4px;">Ustalenie podatku od mieszkańców.</p>
+          </div>
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t spawn', 'Skopiowano!')">/t spawn</span><p style="margin-top:4px;">Teleportacja na spawn miasta.</p>
+            <span class="cmd-badge" onclick="copyText('/t set spawn', 'Skopiowano!')" style="margin-top:10px;">/t set homeblock & /t set spawn</span><p style="margin-top:4px;">Zmiana lokalizacji spawnu miasta.</p>
+            <span class="cmd-badge" onclick="copyText('/plot forsale', 'Skopiowano!')" style="margin-top:10px;">/plot forsale [cena]</span><p style="margin-top:4px;">Wystawienie działki na sprzedaż.</p>
+            <span class="cmd-badge" onclick="copyText('/plot claim', 'Skopiowano!')" style="margin-top:10px;">/plot claim / unclaim</span><p style="margin-top:4px;">Zakup lub oddanie działki miastu.</p>
+            <span class="cmd-badge" onclick="copyText('/t toggle pvp', 'Skopiowano!')" style="margin-top:10px;">/t toggle pvp / fire / explosions</span><p style="margin-top:4px;">Włączanie/wyłączanie PvP, ognia i wybuchów.</p>
+            <span class="cmd-badge" onclick="copyText('/t trust add', 'Skopiowano!')" style="margin-top:10px;">/t trust add [nick]</span><p style="margin-top:4px;">Nadanie statusu zaufanego mieszkańca.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-flask"></i></div> Butelkowanie Doświadczenia</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
+          Możesz przelać swoje punkty doświadczenia do butelek z expem! Wystarczy wziąć puste szklane butelki, podejść do aktywnego <strong>Beaconu (Magicznej Latarni)</strong> i kliknąć w niego <strong>PPM</strong>. Twój exp zamieni się w butelki z niewielką prowizją.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. „Twoja ziemia. Twoja historia.”</p></footer>
+
+  <div id="toast"></div>
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Poradnik dla Nowych i Zarobek | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="canonical" href="https://homeland.pp.ua/pl/guide.html" />
+  <meta name="description" content="Poradnik dla początkujących na serwerze Homeland: szybki start przez /rtp, szukanie miasta, stabilny zarobek z prac /jobs, skup /seller i questy /bp." />
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">PORADNIK I SPOSOBY NA ZAROBEK</h1>
+      <p class="motto-text">Od pierwszego teleportu do milionowego majątku na serwerze Homeland</p>
+    </div>
+
+    <div class="glass-card">
+
+      <!-- SEKCJA 1: PIERWSZE KROKI -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Pierwsze kroki w grze (Szybki Start)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Po wejściu na spawn wykonaj poniższe kroki, aby komfortowo rozpocząć przygodę:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag emerald">Krok 1: Teleport</span>
+            <h4>🌍 Wyjście w świat</h4>
+            <p>Wpisz komendę <span class="cmd-badge" onclick="copyText('/rtp', 'Skopiowano!')">/rtp</span>. Otworzy się menu z realnymi regionami Ukrainy (Galicja, Wołyń, Centrum, Słoboda itp.). Wybierz krainę, a zostaniesz tam przeniesiony!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Krok 2: Znajdź dom</span>
+            <h4>🏘️ Dołącz do miasta</h4>
+            <p>Nie buduj samemu! Wpisz <span class="cmd-badge" onclick="copyText('/search', 'Skopiowano!')">/search</span> — aktywni burmistrzowie zobaczą Twoje zgłoszenie i wyślą zaproszenie. Po dołączeniu użyj <span class="cmd-badge" onclick="copyText('/t spawn', 'Skopiowano!')">/t spawn</span>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Własne państwo</span>
+            <h4>🏛️ Załóż miasto</h4>
+            <p>Znalazłeś wolne tereny? Otwórz mapę w <span class="cmd-badge" onclick="copyText('/menu', 'Skopiowano!')">/menu</span> i załóż własną osadę za pomocą <span class="cmd-badge" onclick="copyText('/t new ', 'Skopiowano!')">/t new [nazwa]</span> (koszt: 100–200 monet).</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(56, 189, 248, 0.3);">
+            <span class="badge-tag blue">Wsparcie 24/7</span>
+            <h4>🤖 Asystent AI w grze</h4>
+            <p>Masz pytanie o mechaniki? Zapytaj sztuczną inteligencję serwera bezpośrednio na czacie:<br>
+            <span class="cmd-badge" onclick="copyText('/ask ', 'Skopiowano!')">/ask [twoje pytanie]</span></p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKCJA 2: PIERWSZY ZAROBEK -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Kapitał startowy (Pierwsze pieniądze)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Najprostsze i najbardziej stabilne metody zarobku bez konieczności inwestycji:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag emerald">Stały dochód</span>
+            <h4>💼 Prace (/jobs)</h4>
+            <p>Zatrudnij się w zawodzie komendą <span class="cmd-badge" onclick="copyText('/jobs', 'Skopiowano!')">/jobs</span>. Otrzymuj monety za ścięte drewno, wykopaną rudę, złowione ryby lub zebrane plony.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Wysoki zysk</span>
+            <h4>🔄 Kupiec co godzinę (/seller)</h4>
+            <p>Unikalny handlarz pod <span class="cmd-badge" onclick="copyText('/seller', 'Skopiowano!')">/seller</span>. Co 60 minut zmienia zapotrzebowanie na surowce i płaci za nie zawyżone stawki. Śledź jego oferty!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Nagrody</span>
+            <h4>📜 Zadania i BattlePass (/bp)</h4>
+            <p>Wpisz <span class="cmd-badge" onclick="copyText('/bp', 'Skopiowano!')">/bp</span> i wykonuj dzienne misje oraz wyzwania. Za każdy kolejny poziom zyskasz spore sumy monet i cenne przedmioty.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag">Handel</span>
+            <h4>⚖️ Rynek graczy (/ah)</h4>
+            <p>Handluj z innymi na aukcjach za pomocą <span class="cmd-badge" onclick="copyText('/ah', 'Skopiowano!')">/ah</span>. Sprzedawaj rudy, zbroje, ulepszenia lub kupuj taniej i odsprzedawaj z zyskiem.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Spawn</span>
+            <h4>🏪 Sklepy NPC na spawnie</h4>
+            <p>Bezpośredni skup serwerowy! U handlarzy NPC na spawnie możesz szybko spieniężyć urobek lub zaopatrzyć się w narzędzia i bloki budowlane.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKCJA 3: PRZEMYSŁ I BIZNES -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">3</div> Zyski przemysłowe (Kopalnie, Młyny, Fabryki)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Gdy założysz miasto i zdobędziesz pierwszą gotówkę, zainwestuj w automatyzację:
+        </p>
+
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⛏️ Kopalnie Miejskie</h4>
+            <p>Buduj kopalnie w mieście. Generują czyste rudy do skrzyń co dobę: węgiel (do 6 stacków), żelazo (do 3 stacków), złoto (do 96 szt.) i <strong>diamenty (do 32 szt./dzień)</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍞 Biznes piekarniczy (Młyn + Piekarnia)</h4>
+            <p>Młyn mieli 2 pszenice w 1 chleb (do 2 stacków/godz.), a budynek <strong>Piekarnia</strong> pozwala automatycznie sprzedawać NPC do 128 bochenków na godzinę za świetną stawkę.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍫 Produkcja Czekolady</h4>
+            <p>Fabryka Czekolady produkuje partie słodyczy, które możesz regularnie upłynniać u lokalnych kupców dzięki specjalnemu <strong>Sklepowi ze Słodyczami</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🍺 Elitarny Browar (Brewery)</h4>
+            <p>Warz leżakowane luksusowe alkohole (Whisky, Rum, „Krew Moskala”). Pieczętuj butelki na <em>Stole do Lakowania</em> i sprzedawaj na aukcjach jako napoje dające potężne buffy.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🪵 Przetwórstwo Drewna</h4>
+            <p>Budynek <strong>Tartak</strong> odblokowuje prywatnego NPC drwala, u którego wymienisz przetworzone drewno po znacznie wyższych stawkach skupu.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🚌 Sieć Połączeń Autobusowych</h4>
+            <p>Zbuduj Dworzec Autobusowy i ustal cenę biletu dla podróżnych do 1000 monet (<span class="cmd-badge">/hbus setprice</span>). Pieniądze za przejazdy trafiają wprost do skarbca miasta!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKCJA 4: DOCHÓD PASYWNY -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">4</div> Dochód Pasywny, Turystyka i Zabytki</div>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag gold">Dochód pasywny</span>
+            <h4>🏛️ Wielkie Budowle</h4>
+            <p>Buduj regionalne pomniki historii (od 10 chunków). Za każdy 1000 punktów wartości materiałów miasto pobiera dzienną wypłatę. Arcydzieła dają <strong>+20% zysku</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(168, 85, 247, 0.15); color: #c084fc; border: 1px solid rgba(168, 85, 247, 0.3);">Ekskluzywne</span>
+            <h4>⭐ Budowle Limitowane</h4>
+            <p>Unikalne obiekty (tylko 1 taki budynek na cały serwer). Gwarantują podwyższoną stawkę: <strong>100 monet za każde 1000 punktów</strong> dziennie do skarbca.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Turystyka</span>
+            <h4>🎡 Galerie, Parki, Hotele</h4>
+            <p>Galerie handlowe (od 16 chunków), parki rozrywki, tory wyścigowe i hotele podnoszą status osady, generują stały zysk i przyciągają podatników.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Stan kapłański</span>
+            <h4>⛪ Posługa Kapłana</h4>
+            <p>Wznieś Kościół i przyjmij święcenia kapłańskie. Możesz pobierać oficjalne datki za udzielanie ślubów i przeprowadzanie rozwodów komendą <span class="cmd-badge">/pay</span>.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKCJA 5: RYZYKOWNY ZAROBEK -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #ef4444;">5</div> Ryzykowne Wyprawy (Wysokie ryzyko — ogromny łup)</div>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag red" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Najazdy</span>
+            <h4>🏴‍☠️ Rajdy na Skarbce Nacji</h4>
+            <p>Od 18:00 do 20:00 atakuj wrogie miasta komendą <span class="cmd-badge">/homelandwar raid</span>. Utrzymaj pozycję przez 10 minut i skradnij <strong>5% całego skarbca wrogiej nacji</strong>!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Kosmos</span>
+            <h4>🌙 Posterunki na Księżycu</h4>
+            <p>Przejmuj bazy księżycowe komendą <span class="cmd-badge">/forpost attack</span>. Każda baza wypłaca co godzinę monety i dostarcza rzadkie <strong>Złoto Meteorytowe</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Łowy</span>
+            <h4>🩸 Farmienie Krwawej Nocy</h4>
+            <p>Co 12 dni ruszaj na łowy: ze zmutowanych mobów wypadają czyste diamenty, złoto i <strong>Odłamki netherytu</strong>, a z bossa wypada Gwiazda Netheru.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Subwencje państwowe</span>
+            <h4>🛡️ Fundusz Odbudowy Miast</h4>
+            <p>Każdy wrogi dron, który uderzy w Twoje miasto, jest rekompensowany przez państwo! Burmistrz odbiera od <strong>100 do 500 monet</strong> za trafienie przez <span class="cmd-badge">/rebuildfunds</span>.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. „Twoja ziemia. Twoja historia.”</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Nation Warfare & Raids | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://homeland.pp.ua/en/warfare.html" />
+  <meta name="description" content="Nation military rules on Homeland: war declarations, War Score mechanics, town bank raids, capitulation, reparations, and martial law taxes." />
+  <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">NATION MILITARY DOCTRINE</h1>
+      <p class="motto-text">Geopolitical wars, supremacy campaigns, bank vault heists & War Score</p>
+    </div>
+
+    <!-- FINANCIAL RESTRICTIONS WARNING -->
+    <div class="warning-box">
+      <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div class="warning-text">
+        <span>MARTIAL LAW FINANCIAL LOCKDOWN:</span> During an active war, <strong>withdrawing money from town or nation banks is prohibited</strong> (deposits only). Leaving a nation costs <strong>20,000 coins</strong>, and <strong>disbanding a nation during war is strictly banned</strong>!
+      </div>
+    </div>
+
+    <div class="glass-card">
+      
+      <!-- SECTION 1: WAR DECLARATION -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Declaring War, 48h Grace Period & 24/7 PvP</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Wars are declared <strong>exclusively between nations</strong> (independent towns without a nation cannot engage in formal wars). There is no minimum member threshold, and nations can fight multi-front wars concurrently.
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Initiation</span>
+            <h4>📢 Casus Belli</h4>
+            <p>War can only be declared by the <strong>Nation President</strong> via:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar attack ', 'Copied!')">/homelandwar attack &lt;nation&gt;</span></p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Grace Period</span>
+            <h4>🛡️ 48-Hour Immunity</h4>
+            <p>Newly founded nations enjoy <strong>48 hours of protection</strong>. However, if a young nation initiates an attack, its shield <strong>instantly expires</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Combat Rules</span>
+            <h4>⚔️ 24/7 Mutual PvP</h4>
+            <p>PvP activates across all territories of both belligerents 24/7. Damage can <strong>only be exchanged by combatants</strong>. Third-party interference is blocked!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Diplomacy</span>
+            <h4>🌐 Front Independence</h4>
+            <p>If Nation A fights B and C, while D fights B — every distinct war theater tracks an isolated score independent of external conflicts.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 2: WAR SCORE -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> War Score & Automatic Capitulation</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Wars cannot drag on infinitely in the face of decisive battlefield superiority. The current War Score is displayed on DynMap next to nation titles:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>+10 War Score</h4>
+            <p>Awarded for eliminating an ordinary citizen or soldier of the hostile nation.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">High Value Target</span>
+            <h4>+50 War Score</h4>
+            <p>Awarded for assassinating an enemy <strong>Town Mayor</strong> or <strong>Nation President</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">City Siege</span>
+            <h4>+100 War Score</h4>
+            <p>Awarded for completing a successful bank heist and looting an enemy settlement.</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.06);">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4);">Victory</span>
+            <h4>🏆 1,000 Points = Total Triumph</h4>
+            <p>Upon reaching <strong>1,000 points</strong>, the opposing state suffers unconditional defeat and <strong>automatically capitulates</strong>!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 3: BANK HEISTS -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #fbbf24;">3</div> Town Raids (State Vault Heists)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          If enemies retreat to fortified bases and avoid open ground skirmishes, you can strike their central economic vaults directly:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⏰ Heist Window</h4>
+            <p>Raids can only be launched <strong>from 18:00 to 20:00</strong> Kyiv time. Restricted to <strong>1 raid per 24 hours</strong> against the same nation.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚔️ Siege Protocol</h4>
+            <p>Infiltrators enter the hostile town and trigger:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar raid', 'Copied!')">/homelandwar raid</span><br>
+            The assault lasts <strong>10 minutes</strong>. At least one attacker must hold ground inside the borders continuously.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">War Spoils</span>
+            <h4>💰 Successful Heist Bounty</h4>
+            <p>• Invading nation claims <strong>+100 War Score</strong>.<br>
+            • <strong>5% of the defending NATION'S treasury</strong> is siphoned into the attackers' state budget!</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🛡️ Defense Conditions</h4>
+            <p>If defenders eliminate all raiders or repel them outside town borders before the 10-minute timer expires, the raid completely fails.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 4: MILITARY TAX -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">4</div> War Maintenance Tax (Economic Cost of War)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          War drains economic stability. Remaining in a state of active war levies a daily military upkeep tax:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>📊 Tax Formula</h4>
+            <p><strong>Total nation citizens × 300 coins</strong>.<br>For every citizen, the nation pays 300 coins daily during Towny bank clearing.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🏛️ Treasury Deduction</h4>
+            <p>The tax is deducted directly from the <strong>NATION treasury</strong> (shared state account). DynMap displays total nation war upkeep.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚠️ Withdrawal Ban</h4>
+            <p>Throughout the duration of war, <strong>withdrawing funds</strong> with `/t withdraw` is locked. Only deposits (`/t deposit`) are permitted.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SECTION 5: PEACE & SURRENDER -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-handshake"></i></div> War Resolution: Treaties & Capitulation</div>
+        <div class="cards-grid">
+          
+          <!-- MUTUAL PEACE -->
+          <div class="card-item">
+            <span class="badge-tag emerald">Diplomacy</span>
+            <h4>✍️ Bilateral Peace Treaty</h4>
+            <p style="margin-bottom: 0.5rem;">Wars do not expire automatically. Ending hostilities by mutual consent requires mutual confirmation:</p>
+            <p><strong>Step 1 (Proposer):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar peace ', 'Copied!')">/homelandwar peace &lt;nation&gt;</span></p>
+            <p style="margin-top: 0.5rem;"><strong>Step 2 (Acceptor):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar confirmpeace ', 'Copied!')">/homelandwar confirmpeace &lt;nation&gt;</span></p>
+            <p style="margin-top: 0.5rem; font-size: 0.82rem;">PvP between the two nations ceases; independent wars with other states continue.</p>
+          </div>
+
+          <!-- CAPITULATION -->
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Defeat</span>
+            <h4>🏳️ Capitulation & Reparations</h4>
+            <p style="margin-bottom: 0.5rem;">Unconditional surrender declared by the defeated President:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar capitulate ', 'Copied!')">/homelandwar capitulate &lt;winner&gt;</span></p>
+            <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6;">
+              <li>All active wars end immediately, disabling PvP.</li>
+              <li><strong>20% Reparations:</strong> The surrendered city pays <strong>20% of its treasury daily for 7 days</strong> to the victor nation.</li>
+              <li><strong>Secession Lock:</strong> Member towns cannot leave the victor nation for <strong>7 days</strong>.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. "Your land. Your legacy."</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

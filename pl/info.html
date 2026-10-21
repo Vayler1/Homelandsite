@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Informacje i Linki | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../logo.png">
+  <link rel="canonical" href="https://homeland.pp.ua/pl/info.html" />
+  <meta name="description" content="Adresy IP, wersje Java i Bedrock, interaktywna mapa online DynMap, Wikipedia serwera oraz oficjalna społeczność Discord Homeland." />
+  <style>
+    .link-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      text-decoration: none;
+      color: inherit;
+    }
+    .link-card-content {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .link-card-icon {
+      font-size: 1.8rem;
+      width: 48px;
+      height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      flex-shrink: 0;
+    }
+    .link-card-arrow {
+      color: var(--text-muted);
+      font-size: 1.2rem;
+      transition: transform 0.2s ease, color 0.2s ease;
+    }
+    .link-card:hover .link-card-arrow {
+      color: var(--primary);
+      transform: translateX(4px);
+    }
+  </style>
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">INFORMACJE I LINKI</h1>
+      <p class="motto-text">Wszystko, czego potrzebujesz do gry, komunikacji i monitorowania serwera</p>
+    </div>
+
+    <div class="glass-card">
+
+      <!-- 1. POŁĄCZENIE I WERSJE -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Połączenie i Obsługiwane Wersje</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          <strong>Homeland</strong> to ukraiński projekt geopolitycznego serwera Minecraft ze światem odwzorowującym realną mapę Ukrainy.
+        </p>
+
+        <div class="ip-grid" style="margin-top: 0; margin-bottom: 1.2rem;">
+          <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Skopiowano IP Java!')">
+            <div>
+              <div class="ip-label">Java Edition (PC / Mac)</div>
+              <div class="ip-val"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
+            </div>
+            <span class="cmd-badge">Kopiuj IP</span>
+          </div>
+
+          <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Skopiowano IP Bedrock! (Port: 30162)')">
+            <div>
+              <div class="ip-label">Bedrock Edition (Telefon / Konsola)</div>
+              <div class="ip-val"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
+              <div style="font-size: 0.8rem; color: var(--primary); margin-top: 3px;">Port: 30162</div>
+            </div>
+            <span class="cmd-badge">Kopiuj IP</span>
+          </div>
+        </div>
+
+        <div class="warning-box" style="margin-bottom: 0;">
+          <div class="warning-icon"><i class="fa-solid fa-code-branch"></i></div>
+          <div class="warning-text">
+            <strong>Kompatybilność klientów:</strong> Wejście na serwer jest możliwe od wersji <span>Survival: 1.16.5+</span> wzwyż.<br>
+            Rozgrywka została zoptymalizowana pod wersję <strong>1.21.11</strong> (administracja nie ponosi odpowiedzialności za drobne błędy wizualne na starszych wersjach).
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. SOCIAL MEDIA I LINKI -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Oficjalne Zasoby i Społeczność</div>
+        <div class="cards-grid">
+
+          <a href="http://map.homeland.pp.ua:3026/" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: #38bdf8;"><i class="fa-solid fa-earth-europe"></i></div>
+              <div>
+                <h4 style="margin: 0;">Mapa świata na żywo</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Podgląd mapy SURVIVAL w czasie rzeczywistym</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+          <a href="https://wiki.homelandsurvival.pp.ua/wiki/%D0%93%D0%BE%D0%BB%D0%BE%D0%B2%D0%BD%D0%B0_%D1%81%D1%82%D0%BE%D1%80%D1%96%D0%BD%D0%BA%D0%B0" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: #fbbf24;"><i class="fa-solid fa-book-bookmark"></i></div>
+              <div>
+                <h4 style="margin: 0;">Wikipedia serwera</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Pełna encyklopedia zasad i mechanik</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+          <a href="https://www.tiktok.com/@homelandsurvival?_t=ZM-8x2WZG6RBVF&_r=1" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: #f43f5e;"><i class="fa-brands fa-tiktok"></i></div>
+              <div>
+                <h4 style="margin: 0;">Kanał TikTok</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Filmiki, nowości i najlepsze momenty z gry</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+          <a href="https://t.me/+OtUPQj1ZnzJlYWUy" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: #60a5fa;"><i class="fa-brands fa-telegram"></i></div>
+              <div>
+                <h4 style="margin: 0;">Kanał Telegram</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Szybkie powiadomienia i ogłoszenia</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+          <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: #818cf8;"><i class="fa-brands fa-discord"></i></div>
+              <div>
+                <h4 style="margin: 0;">Serwer Discord</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Główna społeczność, pomoc i czat miast</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+          <a href="https://donate.homeland.pp.ua/" target="_blank" class="card-item link-card">
+            <div class="link-card-content">
+              <div class="link-card-icon" style="color: var(--primary);"><i class="fa-solid fa-gem"></i></div>
+              <div>
+                <h4 style="margin: 0;">Sklep serwerowy</h4>
+                <p style="margin: 2px 0 0; font-size: 0.82rem;">Wesprzyj rozwój projektu i odbierz bonusy</p>
+              </div>
+            </div>
+            <i class="fa-solid fa-arrow-up-right-from-square link-card-arrow"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <!-- 3. SYNCHRONIZACJA DISCORD -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-brands fa-discord"></i></div> Połączenie konta Discord z grą</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Aby otrzymać rangi, bonusy oraz pingi o alarmach powietrznych Twojego miasta, wykonaj dwa proste kroki:
+        </p>
+
+        <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card-item">
+            <span class="badge-tag emerald">Krok 1</span>
+            <h4>Wygeneruj kod w grze</h4>
+            <p>Wejdź na serwer i wpisz na czacie komendę:<br>
+            <span class="cmd-badge" onclick="copyText('/discord link', 'Skopiowano!')" style="margin-top: 8px;">/discord link</span></p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Krok 2</span>
+            <h4>Wyślij kod do bota</h4>
+            <p>Otrzymany kod wyślij w prywatnej wiadomości botowi na Discordzie:<br>
+            <strong style="color: #fff;">@Homeland Survival#5789</strong></p>
+          </div>
+        </div>
+
+        <div class="card-item" style="margin-top: 1rem; border-color: rgba(251, 191, 36, 0.25); background: rgba(251, 191, 36, 0.05);">
+          <div style="display: flex; gap: 12px; align-items: start;">
+            <i class="fa-solid fa-triangle-exclamation" style="color: #fbbf24; font-size: 1.2rem; margin-top: 2px;"></i>
+            <p style="margin: 0; font-size: 0.88rem; color: #fde68a; line-height: 1.5;">
+              <strong>Nie możesz wysłać wiadomości botowi?</strong><br>
+              Jeśli bot odrzuca wiadomość, oznacza to, że Twoje ustawienia prywatności blokują wiadomości prywatne od członków serwera. Wejdź w: <em>Ustawienia użytkownika ➔ Prywatność i bezpieczeństwo ➔ Zezwalaj na wiadomości bezpośrednie od członków serwera</em>, a następnie wyślij kod ponownie.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. „Twoja ziemia. Twoja historia.”</p></footer>
+
+  <div id="toast"></div>
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

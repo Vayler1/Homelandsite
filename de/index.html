@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Homeland Survival — Ukrainischer Minecraft-Server mit realer Ukraine-Karte</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <link rel="icon" type="image/png" href="../logo.png">
+
+  <!-- SEO & CANONICAL -->
+  <link rel="canonical" href="https://homeland.pp.ua/de/index.html" />
+  <link rel="alternate" hreflang="uk" href="https://homeland.pp.ua/index.html" />
+  <link rel="alternate" hreflang="en" href="https://homeland.pp.ua/en/index.html" />
+  <link rel="alternate" hreflang="pl" href="https://homeland.pp.ua/pl/index.html" />
+  <link rel="alternate" hreflang="de" href="https://homeland.pp.ua/de/index.html" />
+  <link rel="alternate" hreflang="x-default" href="https://homeland.pp.ua/index.html" />
+
+  <meta name="description" content="Homeland Survival — geopolitischer Minecraft-Server auf einer realen 1:1 Karte der Ukraine. Towny-Städte, Nationenkriege, Flugabwehr, Blackouts, Brauerei und mythische Bosse auf Java & Bedrock." />
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card hero-card">
+      <div class="hero-banner">
+        <img src="../main.png" alt="Homeland Survival Banner" class="hero-banner-img">
+        <div class="hero-banner-overlay"></div>
+      </div>
+
+      <div class="hero-body">
+        <h1 class="visually-hidden">Homeland Survival — Ukrainischer geopolitischer Minecraft-Server</h1>
+        <p class="motto-text" style="font-size: 1.15rem; color: #fbbf24; font-weight: 600; margin-top: 0;">
+          Dein Land. Deine Geschichte.
+        </p>
+        
+        <p style="max-width: 750px; margin: 0.9rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
+          Willkommen auf einem monumentalen Survival-Server, der Towny-Geopolitik, taktische Kriege und tiefgründige Wirtschaftsmechaniken auf einer maßstabsgetreuen Karte der Ukraine vereint. Gründe Städte, errichte Fabriken und schreibe Geschichte.
+        </p>
+
+        <!-- LIVE STATUS BADGE -->
+        <div class="live-status-badge" id="serverStatusBadge">
+          <span class="live-ping-dot"></span>
+          <span class="live-status-text">Serverstatus wird abgefragt...</span>
+        </div>
+
+        <div class="stats-container">
+          <div class="stat-box">
+            <div class="stat-val" style="color: var(--primary);">20–30+</div>
+            <div class="stat-text">Täglich aktive Spieler (Herbst / Winter / Frühling)</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" style="color: #fbbf24;">70+</div>
+            <div class="stat-text">Spitzenwerte in den Ferien und bei Kriegsevents</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-val" style="color: #38bdf8;">24/7</div>
+            <div class="stat-text">Ständige Action: Alarme, Kriege, Blutnächte & Live-Events</div>
+          </div>
+        </div>
+
+        <!-- VERSION STRIP -->
+        <div style="margin-top: 1.2rem;">
+          <div class="version-strip">
+            <span><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> Unterstützung: <strong class="v-support">1.16.5+</strong></span>
+            <span style="opacity: 0.3;">|</span>
+            <span class="v-recommended"><i class="fa-solid fa-star"></i> Empfohlen: <strong>1.21.11</strong></span>
+          </div>
+          <p class="version-warning-hint">
+            <i class="fa-solid fa-circle-info"></i> Optimiert für Version 1.21.11 (auf älteren Versionen können geringfügige visuelle Fehler auftreten).
+          </p>
+        </div>
+
+        <!-- IP-KARTEN -->
+        <div class="ip-grid">
+          <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Java-IP kopiert!')">
+            <div style="text-align: left;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">JAVA EDITION (PC / MAC)</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
+            </div>
+            <span class="cmd-badge">IP kopieren</span>
+          </div>
+
+          <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Bedrock-IP kopiert! (Port: 30162)')">
+            <div style="text-align: left;">
+              <div style="font-size: 0.8rem; color: var(--text-muted);">BEDROCK (HANDY / KONSOLE)</div>
+              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
+              <div style="font-size: 0.8rem; color: var(--primary); margin-top: 3px;">Port: 30162</div>
+            </div>
+            <span class="cmd-badge">IP kopieren</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- SEKTIONSÜBERSICHT -->
+    <div class="glass-card">
+      <div class="step-title" style="margin-bottom: 1.5rem;">
+        <div class="step-num"><i class="fa-solid fa-compass"></i></div> Serverbereiche & Leitfäden
+      </div>
+      <div class="cards-grid">
+        
+        <a href="guide.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Für Anfänger & Wirtschaft</span>
+          <h4><i class="fa-solid fa-coins" style="color: #fbbf24;"></i> Geld verdienen & Guide</h4>
+          <p>Schnellstart mit /rtp, Berufe /jobs, dynamischer Händler /seller und BattlePass /bp.</p>
+        </a>
+
+        <a href="defence.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Verteidigung</span>
+          <h4><i class="fa-solid fa-shield-virus" style="color: var(--primary);"></i> Flugabwehr & Blackouts</h4>
+          <p>Luftalarm-Sirenen, Kamikaze-Drohnen, Raketenbatterien und städtische Kraftwerke.</p>
+        </a>
+
+        <a href="bosses.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Mythologie</span>
+          <h4><i class="fa-solid fa-skull" style="color: #fbbf24;"></i> Mythische Bosse</h4>
+          <p>Slawische Legenden: Mawka, Polowyk, Rusalka, Hexe, Tschort und Raidboss Wij.</p>
+        </a>
+
+        <a href="bloodnight.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Event</span>
+          <h4><i class="fa-solid fa-droplet" style="color: #ef4444;"></i> Blutnacht</h4>
+          <p>Alle 12 Tage: mutierte Monsterhorden, globales Stadt-PvP und Netherit-Schrott-Beute.</p>
+        </a>
+
+        <a href="warfare.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag blue">Politik</span>
+          <h4><i class="fa-solid fa-crosshairs" style="color: #60a5fa;"></i> Nationenkriege</h4>
+          <p>Kriegspunkte (War Score), Banküberfälle, Belagerungen und Reparationsverträge.</p>
+        </a>
+
+        <a href="towns.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Infrastruktur</span>
+          <h4><i class="fa-solid fa-city" style="color: var(--primary);"></i> Städte & Fabriken</h4>
+          <p>Straßennetz, Logistikzentren, automatisierte Bergwerke, Bäckereien und Buslinien.</p>
+        </a>
+
+        <a href="buildings.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag gold">Architektur</span>
+          <h4><i class="fa-solid fa-building-columns" style="color: #fbbf24;"></i> Monumentale Bauwerke</h4>
+          <p>Regionale Denkmäler, limitierte Weltwunder und passives Steuereinkommen für Städte.</p>
+        </a>
+
+        <a href="moon.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag blue">Weltall</span>
+          <h4><i class="fa-solid fa-moon" style="color: #60a5fa;"></i> Zone «Mond»</h4>
+          <p>Kämpfe bei geringer Schwerkraft, Eroberung von Außenposten und Meteoritengold.</p>
+        </a>
+
+        <a href="brewery.html" style="text-decoration: none;" class="card-item">
+          <span class="badge-tag emerald">Handwerk</span>
+          <h4><i class="fa-solid fa-wine-bottle" style="color: var(--primary);"></i> Brauerei</h4>
+          <p>Braurezepte im Kessel, Destillation und Fassreifung mit mächtigen Trank-Effekten.</p>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. „Dein Land. Deine Geschichte.“</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+
+    async function updateOnlineStatus() {
+      const badge = document.getElementById('serverStatusBadge');
+      if (!badge) return;
+      const textSpan = badge.querySelector('.live-status-text');
+
+      try {
+        const response = await fetch('https://api.mcsrvstat.us/2/homeland.pp.ua');
+        const data = await response.json();
+
+        if (data.online) {
+          badge.classList.remove('offline');
+          const currentPlayers = data.players ? data.players.online : 0;
+          const maxPlayers = data.players ? data.players.max : 0;
+          textSpan.innerHTML = `Gerade online: <strong>${currentPlayers}</strong> von <strong>${maxPlayers}</strong> Spielern`;
+        } else {
+          badge.classList.add('offline');
+          textSpan.innerHTML = `Der Server ist derzeit <strong>offline</strong>`;
+        }
+      } catch (err) {
+        badge.classList.add('offline');
+        textSpan.innerHTML = `Status konnte nicht abgerufen werden`;
+      }
+    }
+
+    updateOnlineStatus();
+    setInterval(updateOnlineStatus, 60000);
+  </script>
+</body>
+</html>

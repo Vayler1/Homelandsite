@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Commands & Economy Handbook | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://homeland.pp.ua/en/commands.html" />
+  <meta name="description" content="Complete command reference for Homeland: Towny management, nation tax tiers, /marry wedding mechanics, Discord synchronization, and beacon XP bottling." />
+  <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">COMMANDS & ECONOMY HANDBOOK</h1>
+      <p class="motto-text">Towny, Nation Taxes, Holy Matrimony & Experience Bottling</p>
+    </div>
+
+    <div class="glass-card">
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-brands fa-discord"></i></div> Discord Account Linking</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          1. In-game, run the command: <span class="cmd-badge" onclick="copyText('/discord link', 'Copied!')">/discord link</span><br>
+          2. Send the one-time code via direct message to <strong>@Homeland Survival#5789</strong> on our Discord server. <em>(Ensure direct messages from server members are enabled in your Discord privacy settings).</em>
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-church"></i></div> Church, Priests & Marriage</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7;">
+          A Town Mayor can build a consecrated regional <strong>Church</strong> and ordain a Priest (ordination fee: 5,000 coins).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry', 'Copied!')">/marry [player1] [player2]</span> — Priest solemnizes marriage (costs 2,500 coins per partner).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry sethome', 'Copied!')">/marry sethome</span> — Establish joint marital home (12,500 coins).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry tp', 'Copied!')">/marry tp</span> — Teleport to spouse (5,000 coins).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry gift', 'Copied!')">/marry gift</span> — Gift held item to partner (300 coins).<br>
+          • <span class="cmd-badge" onclick="copyText('/marry divorce', 'Copied!')">/marry divorce</span> — Priest grants divorce (costs 500 coins per party).
+        </p>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-coins"></i></div> Nation Tax Tiers</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 1rem;">
+          Base town upkeep is 10 coins per chunk. As your nation grows in population, dynamic tax brackets apply:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item"><h4>Settlement (0+ players)</h4><p>Base Tax: 1,000 coins.</p></div>
+          <div class="card-item"><h4>Nation (10+ players)</h4><p>Tax: 2,000 (+10% to town upkeep)</p></div>
+          <div class="card-item"><h4>Duchy (20+ players)</h4><p>Tax: 3,000 (+20% to town upkeep)</p></div>
+          <div class="card-item"><h4>Kingdom (30+ players)</h4><p>Tax: 8,000 (+30% to town upkeep)</p></div>
+          <div class="card-item"><h4>Empire (40+ players)</h4><p>Tax: 15,000 (+40% to town upkeep)</p></div>
+          <div class="card-item"><h4>Great Empire (60+ players)</h4><p>Tax: 20,000 (+50% to town upkeep)</p></div>
+          <div class="card-item"><h4>World Power (100+ players)</h4><p>Tax: 30,000 (+60% to town upkeep)</p></div>
+          <div class="card-item"><h4>Galactic Empire (150+ players)</h4><p>Tax: 40,000 (+70% to town upkeep)</p></div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-terminal"></i></div> Complete Towny Command Reference</div>
+        <p style="color: var(--text-muted); font-size: 0.9rem; margin-bottom: 1rem;">
+          <em>Daily town upkeep is 40 coins (must remain in the town bank). The initial chunk claim costs 40 coins; each subsequent claim price increases by 0.5% (capped at 500 coins).</em>
+        </p>
+        <div class="cards-grid" style="grid-template-columns: 1fr 1fr;">
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t new', 'Copied!')">/t new [name]</span><p style="margin-top:4px;">Create a new town (200 coins).</p>
+            <span class="cmd-badge" onclick="copyText('/t claim', 'Copied!')" style="margin-top:10px;">/t claim / unclaim</span><p style="margin-top:4px;">Claim or release adjacent chunk.</p>
+            <span class="cmd-badge" onclick="copyText('/t deposit', 'Copied!')" style="margin-top:10px;">/t deposit [amount]</span><p style="margin-top:4px;">Deposit coins into town bank.</p>
+            <span class="cmd-badge" onclick="copyText('/t withdraw', 'Copied!')" style="margin-top:10px;">/t withdraw [amount]</span><p style="margin-top:4px;">Withdraw coins (Mayor only).</p>
+            <span class="cmd-badge" onclick="copyText('/t invite', 'Copied!')" style="margin-top:10px;">/t invite / kick [nick]</span><p style="margin-top:4px;">Invite or expel citizens.</p>
+            <span class="cmd-badge" onclick="copyText('/t set taxes', 'Copied!')" style="margin-top:10px;">/t set taxes [amount]</span><p style="margin-top:4px;">Set daily citizen poll tax.</p>
+          </div>
+          <div class="card-item">
+            <span class="cmd-badge" onclick="copyText('/t spawn', 'Copied!')">/t spawn</span><p style="margin-top:4px;">Teleport to town spawnpoint.</p>
+            <span class="cmd-badge" onclick="copyText('/t set spawn', 'Copied!')" style="margin-top:10px;">/t set homeblock & /t set spawn</span><p style="margin-top:4px;">Relocate town spawn.</p>
+            <span class="cmd-badge" onclick="copyText('/plot forsale', 'Copied!')" style="margin-top:10px;">/plot forsale [price]</span><p style="margin-top:4px;">Put plot on sale for citizens.</p>
+            <span class="cmd-badge" onclick="copyText('/plot claim', 'Copied!')" style="margin-top:10px;">/plot claim / unclaim</span><p style="margin-top:4px;">Purchase or surrender plot.</p>
+            <span class="cmd-badge" onclick="copyText('/t toggle pvp', 'Copied!')" style="margin-top:10px;">/t toggle pvp / fire / explosions</span><p style="margin-top:4px;">Toggle PvP, fire spread, explosions.</p>
+            <span class="cmd-badge" onclick="copyText('/t trust add', 'Copied!')" style="margin-top:10px;">/t trust add [nick]</span><p style="margin-top:4px;">Grant trusted resident status.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-flask"></i></div> Bottling Experience into Flasks</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; margin-bottom: 0;">
+          Convert your accumulated player XP into tradeable Bottles o' Enchanting! Hold empty glass bottles, approach an active <strong>Beacon</strong>, and <strong>Right-Click</strong> it. Your experience will bottle automatically with a minor conversion commission.
+        </p>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. "Your land. Your legacy."</p></footer>
+
+  <div id="toast"></div>
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

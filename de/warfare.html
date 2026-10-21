@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Nationenkriege & Raids | Homeland</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="../style.css">
+  <meta name="description" content="Militärdoktrin für Staaten auf Homeland: Kriegserklärungen, War Score Punkte, Stadtbank-Raids, Staatskassenraub, Kapitulation und Reparationen." />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="canonical" href="https://homeland.pp.ua/de/warfare.html" />
+  <link rel="icon" type="image/png" href="../logo.png">
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="../logo.png" alt="Homeland Logo"> HOMELAND</a>
+      <nav><script src="../nav.js"></script></nav>
+      <div class="nav-btns"><a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a></div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">MILITÄRDOKTRIN DER NATIONEN</h1>
+      <p class="motto-text">Staatenkriege, Kampf um die Vorherrschaft, Bankraube und das War-Score-System</p>
+    </div>
+
+    <!-- FINANZSPERREN-WARNUNG -->
+    <div class="warning-box">
+      <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div class="warning-text">
+        <span>KRIEGSRECHT-FINANZSPERRE:</span> Während eines aktiven Krieges ist das <strong>Abheben von Geld aus Stadt- und Nationskassen streng verboten</strong> (nur Einzahlungen erlaubt). Der Austritt einer Stadt aus der Nation kostet <strong>20.000 Münzen</strong>, und das <strong>Auflösen einer Nation während des Krieges ist strikt untersagt</strong>!
+      </div>
+    </div>
+
+    <div class="glass-card">
+      
+      <!-- SEKTION 1: KRIEGSERKLÄRUNG -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Kriegserklärung, 48h-Schutz und 24/7 PvP-Regeln</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Kriege werden <strong>ausschließlich zwischen Nationen</strong> geführt (einzelne Städte ohne Nation können keine formellen Kriege führen). Es gibt keine Mindestmitgliederzahl, und Nationen können mehrere Kriege gleichzeitig führen.
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Eröffnung</span>
+            <h4>📢 Kriegserklärung</h4>
+            <p>Den Krieg kann nur der <strong>Nationspräsident</strong> erklären über:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar attack ', 'Kopiert!')">/homelandwar attack &lt;Nation&gt;</span></p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag blue">Schonfrist</span>
+            <h4>🛡️ 48-Stunden-Schutz</h4>
+            <p>Neu gegründete Nationen genießen <strong>48 Stunden Schutz</strong>. Greift die junge Nation jedoch selbst an, <strong>erlischt der Schutzschild sofort</strong>.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Kampfmodus</span>
+            <h4>⚔️ 24/7 Offenes PvP</h4>
+            <p>PvP wird in allen Städten beider Kriegsparteien rund um die Uhr aktiviert. Schaden können <strong>nur Kriegsteilnehmer</strong> austauschen. Dritte dürfen nicht eingreifen!</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Diplomatie</span>
+            <h4>🌐 Front-Unabhängigkeit</h4>
+            <p>Kämpft Nation A gegen B und C, während D gegen B kämpft — jeder Konflikt hat seinen eigenen Punktestand und wird isoliert abgerechnet.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKTION 2: WAR SCORE -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">2</div> Kriegspunkte (War Score) & Automatische Kapitulation</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Kriege dauern bei klarer Überlegenheit einer Seite nicht endlos an. Der aktuelle War Score wird auf der DynMap neben dem Nationsnamen angezeigt:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>+10 Kriegspunkte</h4>
+            <p>Wird für die Tötung eines einfachen Bürgers oder Soldaten der feindlichen Nation vergeben.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Hochwertiges Ziel</span>
+            <h4>+50 Kriegspunkte</h4>
+            <p>Wird für die Eliminierung des feindlichen <strong>Bürgermeisters</strong> oder <strong>Präsidenten</strong> vergeben.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Stadteroberung</span>
+            <h4>+100 Kriegspunkte</h4>
+            <p>Wird für das erfolgreiche Durchführen eines Raids und das Ausrauben einer Stadt vergeben.</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(239,68,68,0.4); background: rgba(239,68,68,0.06);">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.2); color: #f87171; border: 1px solid rgba(239,68,68,0.4);">Triumph</span>
+            <h4>🏆 1.000 Punkte = Sieg!</h4>
+            <p>Sobald eine Seite <strong>1.000 Punkte</strong> erreicht, erleidet der Gegner eine totale Niederlage und <strong>kapituliert automatisch</strong>!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKTION 3: RAIDS -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num" style="background: #fbbf24;">3</div> Stadt-Raids (Plünderung der Staatskasse)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Verschanzt sich der Feind in sicheren Zonen und meidet das Gefecht, könnt ihr direkt seine zentrale Staatskasse angreifen:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>⏰ Angriffsfenster</h4>
+            <p>Raids können <strong>NUR von 18:00 bis 20:00 Uhr</strong> Kiewer Zeit gestartet werden. Pro 24 Stunden ist nur <strong>1 Raid gegen dieselbe Nation</strong> erlaubt.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚔️ Sturmablauf</h4>
+            <p>Die Angreifer betreten die feindliche Stadt und tippen:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar raid', 'Kopiert!')">/homelandwar raid</span><br>
+            Der Sturm dauert <strong>10 Minuten</strong>. Mindestens ein Angreifer muss ununterbrochen innerhalb der Stadtgrenzen ausharren.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag gold">Kriegsbeute</span>
+            <h4>💰 Belohnung für erfolgreichen Raid</h4>
+            <p>• Die Angreifernation erhält <strong>+100 Kriegspunkte</strong>.<br>
+            • <strong>5% des gesamten Kontostands der verteidigenden NATION</strong> werden gestohlen und der Schatzkammer der Angreifer gutgeschrieben!</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🛡️ Verteidigungsbedingungen</h4>
+            <p>Töten die Verteidiger alle Stürmer oder drängen sie vor Ablauf der 10 Minuten aus den Stadtgrenzen, gilt der Raid als abgewehrt.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKTION 4: KRIEGSSTEUER -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">4</div> Kriegssteuer (Der finanzielle Preis des Krieges)</div>
+        <p style="color: var(--text-muted); font-size: 0.95rem; line-height: 1.7; margin-bottom: 1rem;">
+          Krieg schwächt die Wirtschaft. Der Kriegszustand ist mit einer täglichen Unterhaltsabgabe belegt:
+        </p>
+        <div class="cards-grid">
+          <div class="card-item">
+            <h4>📊 Steuerformel</h4>
+            <p><strong>Bürger der Nation × 300 Münzen</strong>.<br>Für jeden Bürger zahlt der Staat täglich 300 Münzen bei der täglichen Towny-Abrechnung.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>🏛️ Abbuchung</h4>
+            <p>Die Steuer wird direkt von der <strong>Kasse der NATION</strong> abgebucht (zentrales Gemeinschaftskonto). DynMap zeigt die gesamten Kriegskosten.</p>
+          </div>
+
+          <div class="card-item">
+            <h4>⚠️ Abhebeverbot</h4>
+            <p>Während des gesamten Krieges ist das <strong>Abheben von Geld mit withdraw gesperrt</strong>. Erlaubt sind lediglich Einzahlungen (deposit).</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- SEKTION 5: KRIEGSENDE -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num"><i class="fa-solid fa-handshake"></i></div> Kriegsende: Friedensvertrag oder Kapitulation</div>
+        <div class="cards-grid">
+          
+          <!-- FRIEDENSVERTRAG -->
+          <div class="card-item">
+            <span class="badge-tag emerald">Diplomatie</span>
+            <h4>✍️ Friedensvertrag (Beidseitiges Einvernehmen)</h4>
+            <p style="margin-bottom: 0.5rem;">Kriege enden nicht von allein. Um Feindseligkeiten beizulegen, bedarf es zweier Befehle:</p>
+            <p><strong>Schritt 1 (Initiator):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar peace ', 'Kopiert!')">/homelandwar peace &lt;Nation&gt;</span></p>
+            <p style="margin-top: 0.5rem;"><strong>Schritt 2 (Bestätigung):</strong><br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar confirmpeace ', 'Kopiert!')">/homelandwar confirmpeace &lt;Nation&gt;</span></p>
+            <p style="margin-top: 0.5rem; font-size: 0.82rem;">PvP zwischen beiden erlischt; Kriege mit anderen Staaten laufen weiter.</p>
+          </div>
+
+          <!-- KAPITULATION -->
+          <div class="card-item">
+            <span class="badge-tag" style="background: rgba(239,68,68,0.15); color: #f87171; border: 1px solid rgba(239,68,68,0.3);">Niederlage</span>
+            <h4>🏳️ Kapitulation & Reparationen</h4>
+            <p style="margin-bottom: 0.5rem;">Totale Niederlage, eingestanden vom Präsidenten via:<br>
+            <span class="cmd-badge" onclick="copyText('/homelandwar capitulate ', 'Kopiert!')">/homelandwar capitulate &lt;Sieger&gt;</span></p>
+            <ul style="padding-left: 1.2rem; font-size: 0.85rem; line-height: 1.6;">
+              <li>Alle Kriege der Nation enden sofort, PvP schaltet sich ab.</li>
+              <li><strong>20% Reparationen:</strong> Die kapitulierte Stadt zahlt <strong>7 Tage lang täglich 20% ihres Kontostands</strong> an die Siegernation.</li>
+              <li><strong>Austrittssperre:</strong> Keine Stadt darf die Siegernation <strong>7 Tage lang</strong> verlassen.</li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. „Dein Land. Deine Geschichte.“</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyText(text, msg) {
+      navigator.clipboard.writeText(text);
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>

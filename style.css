@@ -1277,3 +1277,32 @@ nav ul {
     display: flex;
   }
 }
+/* Перемикач мов */
+.lang-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 0.45rem 0.75rem !important;
+}
+.lang-btn:hover {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #fff !important;
+}
+.lang-menu {
+  min-width: 155px !important;
+  left: auto !important;
+  right: 0 !important;
+  transform: none !important;
+}
+.lang-menu li a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 600 !important;
+}
