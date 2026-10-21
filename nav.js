@@ -112,7 +112,7 @@ document.addEventListener("DOMContentLoaded", () => {
     navBtns.insertBefore(donateBtn, navBtns.firstChild);
   }
 
-  // Закриття мобільного меню при переході за посиланням
+  // Закриття меню при натисканні на будь-яке посилання
   const menu = document.getElementById('navMenu');
   if (menu) {
     menu.querySelectorAll('a:not(.dropdown-trigger)').forEach(link => {
@@ -127,6 +127,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 window.toggleDropdown = function(e) {
   e.preventDefault();
+  e.stopPropagation();
   const dropdown = e.currentTarget.closest(".nav-dropdown");
   if (dropdown) dropdown.classList.toggle("open");
 };
@@ -137,10 +138,11 @@ window.toggleMobileMenu = function() {
   const header = document.querySelector('header');
   if (!menu) return;
 
-  // Динамічно прив'язуємо меню рівно до низу поточної висоти хедера
   if (header) {
-    const h = header.getBoundingClientRect().height;
-    menu.style.top = Math.round(h) + 'px';
+    const rect = header.getBoundingClientRect();
+    const topOffset = Math.floor(rect.bottom);
+    menu.style.top = topOffset + 'px';
+    menu.style.height = `calc(100dvh - ${topOffset}px)`;
   }
 
   menu.classList.toggle('open');
@@ -149,11 +151,10 @@ window.toggleMobileMenu = function() {
     document.body.style.overflow = 'hidden';
   } else {
     if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
-    document.body.style.overflow = 'auto';
+    document.body.style.overflow = '';
   }
 };
 
-// Захист від зависання скролу при повороті екрану або ресайзі
 window.addEventListener('resize', () => {
   if (window.innerWidth > 1150) {
     const menu = document.getElementById('navMenu');
@@ -161,7 +162,7 @@ window.addEventListener('resize', () => {
     if (menu && menu.classList.contains('open')) {
       menu.classList.remove('open');
       if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
-      document.body.style.overflow = 'auto';
+      document.body.style.overflow = '';
     }
   }
 });
