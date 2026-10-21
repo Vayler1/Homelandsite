@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Голосування за сервер | Homeland Survival</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/png" href="logo.png">
+  <link rel="canonical" href="https://homeland.pp.ua/vote.html" />
+  <meta name="description" content="Голосуй за український сервер Minecraft Homeland на моніторингах! Заробляй ігрову валюту та тримай щоденний стрік від 5 сайтів для помноження нагород." />
+</head>
+<body>
+  <div class="bg-glow blob-1"></div>
+  <div class="bg-glow blob-2"></div>
+
+  <header>
+    <div class="nav-container">
+      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo" style="height: 42px; width: auto; object-fit: contain;"> HOMELAND</a>
+      <nav><script src="nav.js"></script></nav>
+      <div class="nav-btns">
+        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="glass-card header-titles">
+      <h1 class="gradient-text">ГОЛОСУВАННЯ ТА СТРІКИ</h1>
+      <p class="motto-text">Підтримуй Homeland щодня, тримай стрік і заробляй максимум валюти</p>
+    </div>
+
+    <!-- ПОПЕРЕДЖЕННЯ ДЛЯ BEDROCK -->
+    <div class="warning-box">
+      <div class="warning-icon"><i class="fa-solid fa-triangle-exclamation"></i></div>
+      <div class="warning-text">
+        <strong>Гравцям Bedrock:</strong> перед своїм ніком обов'язково вказуйте <span>. (крапку)</span>, наприклад: <code>.PlayerName</code>, щоб плагін зарахував нагороду!
+      </div>
+    </div>
+
+    <!-- ПОЛЕ КОПІЮВАННЯ НІКУ -->
+    <div class="nick-helper-box">
+      <div>
+        <div style="font-weight: 600; color: #fff; font-size: 0.95rem;"><i class="fa-solid fa-wand-magic-sparkles" style="color: var(--primary); margin-right: 6px;"></i> Швидке копіювання нікнейму</div>
+        <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 2px;">Введіть нік тут, щоб зручно вставляти його у форми:</div>
+      </div>
+      <div class="nick-helper-input">
+        <i class="fa-solid fa-user" style="color: var(--text-muted);"></i>
+        <input type="text" id="quickNickInput" placeholder="Ваш точний нік..." />
+      </div>
+      <button class="btn-emerald" onclick="copyNickHelper()">
+        <i class="fa-solid fa-copy"></i> Скопіювати нік
+      </button>
+    </div>
+
+    <div class="glass-card">
+      
+      <!-- СЕКЦІЯ 1: СТРІКИ ТА ВАЛЮТА -->
+      <div class="step-section">
+        <div class="step-title"><div class="step-num">1</div> Як працюють Стріки та Ігрова Валюта</div>
+        <div class="cards-grid">
+          
+          <div class="card-item">
+            <span class="badge-tag gold">Оплата за голос</span>
+            <h4>💰 Ігрова валюта</h4>
+            <p>За кожен підтверджений голос на будь-якому моніторингу ви отримуєте монети на баланс у грі.</p>
+          </div>
+
+          <div class="card-item" style="border-color: rgba(239, 68, 68, 0.35); background: rgba(239, 68, 68, 0.05);">
+            <span class="badge-tag" style="background: rgba(239, 68, 68, 0.2); color: #f87171; border: 1px solid rgba(239, 68, 68, 0.4);">Головна фішка</span>
+            <h4>🔥 Стрік від 5 сайтів</h4>
+            <p>Голосуйте щодня <strong>мінімум на 5 моніторингах</strong> зі списку, щоб щоденний стрік зростав.</p>
+          </div>
+
+          <div class="card-item">
+            <span class="badge-tag emerald">Прогресія</span>
+            <h4>📈 Множник нагород</h4>
+            <p>Чим довша ваша безперервна серія днів — тим більше валюти приносить кожен наступний голос.</p>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- СЕКЦІЯ 2: САЙТИ ДЛЯ ГОЛОСУВАННЯ -->
+      <div class="step-section" style="margin-bottom: 0;">
+        <div class="step-title"><div class="step-num" style="background: #fbbf24; color: #000;">2</div> Оберіть сайти для голосування (від 5 на день для стріку)</div>
+
+        <div class="vote-grid">
+
+          <!-- 1. MCUA.TOP -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag gold"><i class="fa-solid fa-flag"></i> Український</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-shield-halved" style="color: #fbbf24;"></i> MCUA.TOP</div>
+              <p class="vote-card-desc">Головний український рейтинг серверів із найвищою активністю.</p>
+            </div>
+            <a href="https://mcua.top/server-homeland-polit.48/vote#vote-review-form-48" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 2. ALLMC.IN.UA -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag gold"><i class="fa-solid fa-flag"></i> Український</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-cube" style="color: #fbbf24;"></i> AllMC.in.ua</div>
+              <p class="vote-card-desc">Популярний каталог українських проєктів Minecraft.</p>
+            </div>
+            <a href="https://allmc.in.ua/homeland-pp-ua" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 3. PLANET MINECRAFT -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag" style="background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.35);"><i class="fa-solid fa-globe"></i> Міжнародний</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-earth-americas" style="color: #60a5fa;"></i> Planet Minecraft</div>
+              <p class="vote-card-desc">Найбільший світовий портал. Просувай Україну у світі!</p>
+            </div>
+            <a href="https://www.planetminecraft.com/server/homeland-survival-6344291/" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 4. MINECRAFT-MP -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag" style="background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.35);"><i class="fa-solid fa-globe"></i> Міжнародний</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-server" style="color: #60a5fa;"></i> Minecraft-MP</div>
+              <p class="vote-card-desc">Один із найстаріших світових моніторингів.</p>
+            </div>
+            <a href="https://minecraft-mp.com/server-s356909" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 5. TOPG.ORG -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag" style="background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.35);"><i class="fa-solid fa-globe"></i> Міжнародний</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-award" style="color: #60a5fa;"></i> TopG.org</div>
+              <p class="vote-card-desc">Великий ігровий агрегатор серверів із високим онлайном.</p>
+            </div>
+            <a href="https://topg.org/minecraft-servers/server-681475" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 6. MINECRAFTSERVERS.ORG -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag" style="background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.35);"><i class="fa-solid fa-globe"></i> Міжнародний</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-ranking-star" style="color: #60a5fa;"></i> MinecraftServers</div>
+              <p class="vote-card-desc">Швидкий та зручний світовий топ серверів.</p>
+            </div>
+            <a href="https://minecraftservers.org/vote/664352" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+          <!-- 7. MINECRAFT-SERVER-LIST.COM -->
+          <div class="vote-card">
+            <div>
+              <div class="vote-card-header">
+                <span class="badge-tag" style="background: rgba(59, 130, 246, 0.18); color: #60a5fa; border: 1px solid rgba(96, 165, 250, 0.35);"><i class="fa-solid fa-globe"></i> Міжнародний</span>
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Раз на 24 год</span>
+              </div>
+              <div class="vote-card-title"><i class="fa-solid fa-list-ol" style="color: #60a5fa;"></i> Server-List</div>
+              <p class="vote-card-desc">Популярний та перевірений міжнародний каталог.</p>
+            </div>
+            <a href="https://minecraft-server-list.com/server/519422/vote/" target="_blank" rel="noopener noreferrer" class="btn-vote">
+              Проголосувати <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
+
+  <div id="toast"></div>
+
+  <script>
+    function copyNickHelper() {
+      const input = document.getElementById('quickNickInput');
+      const val = input.value.trim();
+      if (!val) {
+        showToast("Введіть свій нікнейм у поле!");
+        input.focus();
+        return;
+      }
+      navigator.clipboard.writeText(val);
+      showToast("Нік скопійовано: " + val);
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      toast.innerText = msg;
+      toast.classList.add('show');
+      setTimeout(() => toast.classList.remove('show'), 2500);
+    }
+  </script>
+</body>
+</html>
