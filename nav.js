@@ -1,6 +1,5 @@
 // --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) ---
 
-// Визначаємо поточну мову та файл
 const path = window.location.pathname;
 let lang = "uk";
 if (path.includes("/en/")) lang = "en";
@@ -12,7 +11,6 @@ if (!currentFile || currentFile === "" || currentFile === "en" || currentFile ==
   currentFile = "index.html";
 }
 
-// Чіткі векторні SVG-прапорці (ідеально відображаються на Windows, Android, iOS)
 const flagSVG = {
   uk: `<svg width="18" height="13" viewBox="0 0 18 13" fill="none" style="border-radius:2px; flex-shrink:0; vertical-align:middle;"><rect width="18" height="6.5" fill="#0057B7"/><rect y="6.5" width="18" height="6.5" fill="#FFD700"/></svg>`,
   en: `<svg width="18" height="13" viewBox="0 0 18 13" fill="none" style="border-radius:2px; flex-shrink:0; vertical-align:middle;"><rect width="18" height="13" fill="#B22234"/><path d="M0 2h18M0 4h18M0 6h18M0 8h18M0 10h18M0 12h18" stroke="#fff" stroke-width="1"/><rect width="8" height="7" fill="#3C3B6E"/><circle cx="2" cy="2" r="0.6" fill="#fff"/><circle cx="4" cy="2" r="0.6" fill="#fff"/><circle cx="6" cy="2" r="0.6" fill="#fff"/><circle cx="3" cy="3.5" r="0.6" fill="#fff"/><circle cx="5" cy="3.5" r="0.6" fill="#fff"/><circle cx="2" cy="5" r="0.6" fill="#fff"/><circle cx="4" cy="5" r="0.6" fill="#fff"/><circle cx="6" cy="5" r="0.6" fill="#fff"/></svg>`,
@@ -27,7 +25,6 @@ const langLabels = {
   de: "DEU"
 };
 
-// Словник перекладів навігації
 const i18n = {
   uk: {
     home: "Головна", info: "Інфо", vote: "Голосування", guide: "Гайд", mechanics: "Механіки", commands: "Довідник", donate: "Донат",
@@ -87,7 +84,7 @@ let navHTML = `
 
     <li><a href="${prefix}commands.html" class="nav-link ${currentFile === 'commands.html' ? 'active' : ''}"><i class="fa-solid fa-terminal"></i> ${t.commands}</a></li>
 
-    <!-- ПЕРЕМИКАЧ МОВ З SVG-ПРАПОРЦЯМИ -->
+    <!-- ПЕРЕМИКАЧ МОВ -->
     <li class="nav-dropdown lang-switch-dropdown">
       <a href="javascript:void(0)" class="nav-link lang-btn dropdown-trigger" onclick="toggleDropdown(event)">
         ${flagSVG[lang]} <span>${langLabels[lang]}</span> <i class="fa-solid fa-chevron-down caret-icon"></i>
@@ -104,7 +101,6 @@ let navHTML = `
 
 document.write(navHTML);
 
-// Автоматичне додавання кнопки "Донат" поруч з Discord
 document.addEventListener("DOMContentLoaded", () => {
   const navBtns = document.querySelector(".nav-btns");
   if (navBtns && !document.querySelector(".btn-donate")) {
@@ -114,6 +110,18 @@ document.addEventListener("DOMContentLoaded", () => {
     donateBtn.className = "btn-donate";
     donateBtn.innerHTML = `<i class="fa-solid fa-gem"></i> ${t.donate}`;
     navBtns.insertBefore(donateBtn, navBtns.firstChild);
+  }
+
+  // Закриття мобільного меню при переході за посиланням
+  const menu = document.getElementById('navMenu');
+  if (menu) {
+    menu.querySelectorAll('a:not(.dropdown-trigger)').forEach(link => {
+      link.addEventListener('click', () => {
+        if (menu.classList.contains('open')) {
+          window.toggleMobileMenu();
+        }
+      });
+    });
   }
 });
 
@@ -126,7 +134,15 @@ window.toggleDropdown = function(e) {
 window.toggleMobileMenu = function() {
   const menu = document.getElementById('navMenu');
   const icon = document.querySelector('.mobile-menu-btn i');
+  const header = document.querySelector('header');
   if (!menu) return;
+
+  // Динамічно прив'язуємо меню рівно до низу поточної висоти хедера
+  if (header) {
+    const h = header.getBoundingClientRect().height;
+    menu.style.top = Math.round(h) + 'px';
+  }
+
   menu.classList.toggle('open');
   if (menu.classList.contains('open')) {
     if (icon) { icon.classList.remove('fa-bars'); icon.classList.add('fa-xmark'); }
@@ -136,3 +152,16 @@ window.toggleMobileMenu = function() {
     document.body.style.overflow = 'auto';
   }
 };
+
+// Захист від зависання скролу при повороті екрану або ресайзі
+window.addEventListener('resize', () => {
+  if (window.innerWidth > 1150) {
+    const menu = document.getElementById('navMenu');
+    const icon = document.querySelector('.mobile-menu-btn i');
+    if (menu && menu.classList.contains('open')) {
+      menu.classList.remove('open');
+      if (icon) { icon.classList.remove('fa-xmark'); icon.classList.add('fa-bars'); }
+      document.body.style.overflow = 'auto';
+    }
+  }
+});

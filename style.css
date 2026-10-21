@@ -1,4 +1,4 @@
-/* --- СТИЛЬ САЙТУ HOMELAND (ПОВНА ВІДПОВІДНІСТЬ ДОНАТ-САЙТУ) --- */
+/* --- СТИЛЬ САЙТУ HOMELAND --- */
 :root {
   --bg-color: #0d0d12;
   --primary: #10b981;
@@ -67,7 +67,7 @@ body {
   100% { transform: translate(40px, 60px) scale(1.1); }
 }
 
-/* Навігація */
+/* Шапка та Навігація */
 header {
   position: sticky;
   top: 0;
@@ -118,24 +118,52 @@ nav {
 nav ul {
   display: flex;
   list-style: none;
-  gap: 1rem;
+  gap: 0.4rem;
   align-items: center;
 }
 
-nav a {
+.nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 0.45rem 0.85rem;
+  border-radius: 10px;
   color: var(--text-muted);
   text-decoration: none;
   font-size: 0.88rem;
   font-weight: 500;
-  transition: all 0.25s ease;
+  border: 1px solid transparent;
+  background: transparent;
+  transition: all 0.2s ease;
   white-space: nowrap;
 }
 
-nav a:hover, nav a.active {
+.nav-link i {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+.nav-link:hover i {
   color: var(--primary);
 }
 
-/* Кнопка відкриття мобільного меню */
+.nav-link.active,
+.nav-dropdown.active > .nav-link {
+  color: #fff;
+  background: rgba(16, 185, 129, 0.12);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+.nav-link.active i,
+.nav-dropdown.active > .nav-link i {
+  color: var(--primary);
+}
+
 .mobile-menu-btn {
   display: none;
   background: rgba(255, 255, 255, 0.05);
@@ -152,6 +180,128 @@ nav a:hover, nav a.active {
   border-color: var(--primary);
 }
 
+/* Випадаюче меню */
+.nav-dropdown {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: -10px;
+}
+
+.caret-icon {
+  font-size: 0.65rem !important;
+  margin-left: 2px;
+  transition: transform 0.25s ease;
+}
+
+.nav-dropdown:hover .caret-icon,
+.nav-dropdown.open .caret-icon {
+  transform: rotate(180deg);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(15, 15, 22, 0.96);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  border-radius: 14px;
+  padding: 8px;
+  min-width: 230px;
+  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.12);
+  flex-direction: column;
+  gap: 3px;
+  z-index: 1002;
+  list-style: none;
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+  background: transparent;
+}
+
+@media (min-width: 1151px) {
+  .nav-dropdown:hover .dropdown-menu {
+    display: flex;
+    animation: dropFade 0.2s ease forwards;
+  }
+}
+
+.dropdown-menu li {
+  width: 100%;
+}
+
+.dropdown-menu li a {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  padding: 0.55rem 0.85rem !important;
+  font-size: 0.85rem !important;
+  color: var(--text-muted) !important;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.dropdown-menu li a i {
+  width: 18px;
+  text-align: center;
+  color: var(--primary);
+  font-size: 0.85rem;
+}
+
+.dropdown-menu li a:hover,
+.dropdown-menu li a.active {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #fff !important;
+  transform: translateX(4px);
+}
+
+@keyframes dropFade {
+  from { opacity: 0; transform: translateX(-50%) translateY(5px); }
+  to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Перемикач мов */
+.lang-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.04) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 10px !important;
+  padding: 0.45rem 0.75rem !important;
+}
+.lang-btn:hover {
+  background: rgba(16, 185, 129, 0.12) !important;
+  border-color: rgba(16, 185, 129, 0.3) !important;
+  color: #fff !important;
+}
+.lang-menu {
+  min-width: 155px !important;
+  left: auto !important;
+  right: 0 !important;
+  transform: none !important;
+}
+.lang-menu li a {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  font-weight: 600 !important;
+}
+
+/* Кнопки шапки */
 .nav-btns {
   display: flex;
   gap: 10px;
@@ -159,7 +309,43 @@ nav a:hover, nav a.active {
   flex-shrink: 0;
 }
 
-/* Кнопки */
+.btn-donate,
+.btn-discord {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 0.5rem 1.1rem;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 0.86rem;
+  text-decoration: none;
+  transition: all 0.25s ease;
+  white-space: nowrap;
+}
+
+.btn-donate {
+  background: linear-gradient(135deg, #fbbf24, #f59e0b);
+  color: #000 !important;
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
+  border: 1px solid rgba(251, 191, 36, 0.4);
+}
+.btn-donate:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 22px rgba(251, 191, 36, 0.45);
+}
+
+.btn-discord {
+  background: rgba(88, 101, 242, 0.15);
+  border: 1px solid rgba(88, 101, 242, 0.4);
+  color: #8599ff !important;
+}
+.btn-discord:hover {
+  background: #5865f2;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
 .btn-emerald {
   display: inline-flex;
   align-items: center;
@@ -182,27 +368,6 @@ nav a:hover, nav a.active {
   box-shadow: 0 12px 25px rgba(16, 185, 129, 0.45);
 }
 
-.btn-discord {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.55rem 1.15rem;
-  background: rgba(88, 101, 242, 0.15);
-  border: 1px solid rgba(88, 101, 242, 0.4);
-  color: #8599ff !important;
-  border-radius: 12px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  font-size: 0.88rem;
-  white-space: nowrap;
-}
-.btn-discord:hover {
-  background: #5865f2;
-  color: #fff !important;
-  transform: translateY(-2px);
-}
-
 /* Контейнери */
 .container {
   max-width: 1200px;
@@ -223,7 +388,6 @@ nav a:hover, nav a.active {
   margin-bottom: 1.8rem;
 }
 
-/* Заголовки */
 .header-titles {
   text-align: center;
   margin-bottom: 2rem;
@@ -247,68 +411,7 @@ nav a:hover, nav a.active {
   font-style: italic;
 }
 
-/* --- ОСОБЛИВИЙ СТИЛЬ ДЛЯ ГОЛОВНОГО ПРОМО-АРТУ (main.png) --- */
-.hero-showcase {
-  position: relative;
-  max-width: 920px;
-  margin: 1.8rem auto 1.2rem;
-  border-radius: 20px;
-  padding: 3px;
-  background: linear-gradient(135deg, rgba(16, 185, 129, 0.55), rgba(251, 191, 36, 0.25), rgba(59, 130, 246, 0.45));
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.75), 0 0 35px rgba(16, 185, 129, 0.25);
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
-  cursor: zoom-in;
-}
-
-.hero-showcase:hover {
-  transform: translateY(-4px) scale(1.006);
-  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.85), 0 0 45px rgba(16, 185, 129, 0.4);
-}
-
-.hero-showcase-inner {
-  position: relative;
-  border-radius: 17px;
-  overflow: hidden;
-  background: #09090d;
-  display: flex;
-}
-
-.hero-showcase-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  object-fit: cover;
-  aspect-ratio: 16 / 8;
-  transition: transform 0.5s ease;
-}
-
-.hero-showcase:hover .hero-showcase-img {
-  transform: scale(1.02);
-}
-
-.hero-badge-tag {
-  position: absolute;
-  bottom: 12px;
-  right: 14px;
-  background: rgba(13, 13, 18, 0.8);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: #f1f5f9;
-  padding: 6px 14px;
-  border-radius: 30px;
-  font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  display: flex;
-  align-items: center;
-  gap: 7px;
-  pointer-events: none;
-}
-
-/* =======================================================
-   ЖИВИЙ ІНДИКАТОР ОНЛАЙНУ СЕРВЕРА
-======================================================= */
+/* Живий статус сервера */
 .live-status-badge {
   display: inline-flex;
   align-items: center;
@@ -330,7 +433,6 @@ nav a:hover, nav a.active {
   font-weight: 700;
 }
 
-/* Пульсуюча крапка з ефектом радара */
 .live-ping-dot {
   width: 10px;
   height: 10px;
@@ -355,26 +457,15 @@ nav a:hover, nav a.active {
   100% { transform: scale(2.4); opacity: 0; }
 }
 
-/* Стан якщо сервер офлайн */
 .live-status-badge.offline {
   background: rgba(239, 68, 68, 0.1);
   border-color: rgba(239, 68, 68, 0.35);
   box-shadow: 0 0 25px rgba(239, 68, 68, 0.15);
 }
+.live-status-badge.offline .live-ping-dot { background: #ef4444; }
+.live-status-badge.offline .live-ping-dot::after { background: rgba(239, 68, 68, 0.5); }
+.live-status-badge.offline strong { color: #f87171; }
 
-.live-status-badge.offline .live-ping-dot {
-  background: #ef4444;
-}
-
-.live-status-badge.offline .live-ping-dot::after {
-  background: rgba(239, 68, 68, 0.5);
-}
-
-.live-status-badge.offline strong {
-  color: #f87171;
-}
-
-/* --- СТАТИСТИКА ОНЛАЙНУ --- */
 .stats-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -410,7 +501,6 @@ nav a:hover, nav a.active {
   line-height: 1.35;
 }
 
-/* --- ПЛАШКА ВЕРСІЙ --- */
 .version-strip {
   display: inline-flex;
   flex-wrap: wrap;
@@ -426,17 +516,8 @@ nav a:hover, nav a.active {
   color: var(--text-muted);
 }
 
-.version-strip span {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-}
-
-.version-strip .v-support {
-  color: #34d399;
-  font-weight: 700;
-}
-
+.version-strip span { display: inline-flex; align-items: center; gap: 6px; }
+.version-strip .v-support { color: #34d399; font-weight: 700; }
 .version-strip .v-recommended {
   background: rgba(251, 191, 36, 0.12);
   color: #fbbf24;
@@ -453,7 +534,7 @@ nav a:hover, nav a.active {
   opacity: 0.85;
 }
 
-/* Секції та кроки */
+/* Секції */
 .step-section {
   background: rgba(0, 0, 0, 0.2);
   border-radius: 16px;
@@ -485,7 +566,6 @@ nav a:hover, nav a.active {
   flex-shrink: 0;
 }
 
-/* Попередження */
 .warning-box {
   display: flex;
   align-items: center;
@@ -559,7 +639,6 @@ nav a:hover, nav a.active {
   margin-bottom: 0.35rem;
 }
 
-/* Бейджі */
 .badge-tag {
   font-size: 0.75rem;
   font-weight: 700;
@@ -574,7 +653,6 @@ nav a:hover, nav a.active {
 .badge-tag.gold { color: #fbbf24; background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.2); }
 .badge-tag.blue { color: #60a5fa; background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.2); }
 
-/* Команди */
 .cmd-badge {
   font-family: monospace;
   background: rgba(0, 0, 0, 0.45);
@@ -592,7 +670,6 @@ nav a:hover, nav a.active {
   border-color: var(--primary);
 }
 
-/* IP секції */
 .ip-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -616,7 +693,6 @@ nav a:hover, nav a.active {
   background: rgba(15, 15, 20, 0.95);
 }
 
-/* Футер */
 footer {
   text-align: center;
   color: var(--text-muted);
@@ -626,7 +702,6 @@ footer {
   margin-top: auto;
 }
 
-/* Toast */
 #toast {
   position: fixed;
   bottom: 2rem;
@@ -645,14 +720,11 @@ footer {
 }
 #toast.show { opacity: 1; }
 
-/* --- АНІМАЦІЯ ТА НАБЛИЖЕННЯ КАРТИНОК (LIGHTBOX) --- */
 .zoomable-img {
   cursor: zoom-in;
   transition: all 0.3s ease !important;
 }
-.zoomable-img:hover {
-  opacity: 0.9;
-}
+.zoomable-img:hover { opacity: 0.9; }
 
 .image-modal {
   display: none;
@@ -669,9 +741,7 @@ footer {
   justify-content: center;
   align-items: center;
 }
-.image-modal.show {
-  opacity: 1;
-}
+.image-modal.show { opacity: 1; }
 
 .image-modal-content {
   max-width: 92%;
@@ -682,9 +752,7 @@ footer {
   transition: transform 0.3s ease;
   object-fit: contain;
 }
-.image-modal.show .image-modal-content {
-  transform: scale(1);
-}
+.image-modal.show .image-modal-content { transform: scale(1); }
 
 .image-modal-close {
   position: absolute;
@@ -697,155 +765,8 @@ footer {
   transition: 0.3s;
   z-index: 10001;
 }
-.image-modal-close:hover {
-  color: var(--primary);
-}
+.image-modal-close:hover { color: var(--primary); }
 
-/* =======================================================
-   МОБІЛЬНА АДАПТИВНІСТЬ ДЛЯ СМАРТФОНІВ ТА ПЛАНШЕТІВ
-======================================================= */
-@media (max-width: 1150px) {
-  .mobile-menu-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  nav ul {
-    display: none;
-    position: fixed;
-    top: 62px;
-    left: 0;
-    width: 100%;
-    height: calc(100vh - 62px);
-    background: rgba(13, 13, 18, 0.98);
-    backdrop-filter: blur(25px);
-    -webkit-backdrop-filter: blur(25px);
-    border-top: 1px solid var(--glass-border);
-    flex-direction: column;
-    padding: 1.25rem 1.25rem 3rem;
-    gap: 0.55rem;
-    overflow-y: auto;
-    z-index: 999;
-  }
-
-  nav ul.open {
-    display: flex;
-    animation: menuSlideDown 0.3s ease-out forwards;
-  }
-
-  nav ul li {
-    width: 100%;
-  }
-
-  nav ul li a {
-    display: flex;
-    align-items: center;
-    padding: 0.85rem 1.2rem;
-    font-size: 1.05rem;
-    border-radius: 12px;
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    color: var(--text-main);
-  }
-
-  nav ul li a:hover, nav ul li a.active {
-    background: rgba(16, 185, 129, 0.15);
-    border-color: var(--primary);
-    color: var(--primary);
-  }
-
-  .nav-container {
-    padding: 0.6rem 1rem;
-  }
-
-  .logo {
-    font-size: 1.2rem;
-  }
-  .logo img {
-    height: 35px !important;
-  }
-}
-
-@keyframes menuSlideDown {
-  from { opacity: 0; transform: translateY(-15px); }
-  to { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .gradient-text {
-    font-size: 1.95rem;
-    letter-spacing: 1px;
-  }
-
-  .motto-text {
-    font-size: 0.95rem;
-  }
-
-  .container {
-    padding: 0 0.9rem;
-    margin: 1.2rem auto;
-  }
-
-  .glass-card {
-    padding: 1.35rem 0.95rem;
-    border-radius: 18px;
-  }
-
-  .step-section {
-    padding: 1.1rem 0.9rem;
-    border-radius: 14px;
-  }
-
-  .step-title {
-    font-size: 1.05rem;
-  }
-
-  .cards-grid {
-    grid-template-columns: 1fr !important;
-  }
-
-  .ip-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .btn-discord {
-    padding: 0.45rem 0.85rem;
-    font-size: 0.8rem;
-  }
-
-  #toast {
-    bottom: 1rem;
-    right: 1rem;
-    left: 1rem;
-    text-align: center;
-  }
-
-  .hero-showcase {
-    margin: 1.2rem auto 0.8rem;
-    border-radius: 16px;
-  }
-
-  .hero-showcase-inner {
-    border-radius: 13px;
-  }
-
-  .hero-badge-tag {
-    bottom: 8px;
-    right: 10px;
-    font-size: 0.68rem;
-    padding: 4px 10px;
-  }
-
-  .live-status-badge {
-    font-size: 0.85rem;
-    padding: 0.45rem 1rem;
-  }
-}
-
-/* =======================================================
-   ГОЛОВНИЙ HERO-БАНЕР СЕРВЕРА (main.png)
-======================================================= */
 .hero-card {
   padding: 0 !important;
   overflow: hidden;
@@ -869,9 +790,7 @@ footer {
   transition: transform 0.6s ease;
 }
 
-.hero-card:hover .hero-banner-img {
-  transform: scale(1.02);
-}
+.hero-card:hover .hero-banner-img { transform: scale(1.02); }
 
 .hero-banner-overlay {
   position: absolute;
@@ -893,18 +812,6 @@ footer {
   z-index: 2;
 }
 
-@media (max-width: 768px) {
-  .hero-banner {
-    height: 200px;
-  }
-  .hero-body {
-    padding: 1.2rem 1rem 1.8rem;
-  }
-}
-
-/* =======================================================
-   ЧИСТА ФОТОГАЛЕРЕЯ БУДІВЕЛЬ (БЕЗ ТЕКСТУ)
-======================================================= */
 .builds-gallery-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
@@ -937,18 +844,8 @@ footer {
   display: block;
   transition: transform 0.5s ease;
 }
+.build-card:hover img { transform: scale(1.06); }
 
-.build-card:hover img {
-  transform: scale(1.06);
-}
-
-@media (max-width: 768px) {
-  .builds-gallery-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-/* Приховує елемент візуально, але залишає для Google */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -959,9 +856,8 @@ footer {
   clip: rect(0, 0, 0, 0);
   border: 0;
 }
-/* =======================================================
-   СТОРІНКА ГОЛОСУВАННЯ (vote.html)
-======================================================= */
+
+/* Сторінка голосування */
 .vote-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -1057,213 +953,70 @@ footer {
   width: 100%;
   outline: none;
 }
-/* =======================================================
-   ОНОВЛЕНА НАВІГАЦІЯ: ВИПАДАЮЧЕ МЕНЮ, ІНФО ТА ДОНАТ
-======================================================= */
 
 /* =======================================================
-   ЄДИНИЙ СТАНДАРТ НАВІГАЦІЇ (HEADER & DROPDOWN)
+   МОБІЛЬНА АДАПТИВНІСТЬ (ЧІТКО В КІНЦІ ФАЙЛУ)
 ======================================================= */
-
-nav ul {
-  display: flex;
-  list-style: none;
-  gap: 0.4rem;
-  align-items: center;
-}
-
-/* Усі посилання меню приведені до однієї форми та розміру */
-.nav-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  padding: 0.45rem 0.85rem;
-  border-radius: 10px;
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 0.88rem;
-  font-weight: 500;
-  border: 1px solid transparent;
-  background: transparent;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.nav-link i {
-  font-size: 0.85rem;
-  color: var(--text-muted);
-  transition: color 0.2s ease;
-}
-
-/* Стан наведення однаковий для всіх */
-.nav-link:hover {
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(255, 255, 255, 0.08);
-}
-.nav-link:hover i {
-  color: var(--primary);
-}
-
-/* Активна вкладка (поточна сторінка) */
-.nav-link.active,
-.nav-dropdown.active > .nav-link {
-  color: #fff;
-  background: rgba(16, 185, 129, 0.12);
-  border-color: rgba(16, 185, 129, 0.3);
-}
-.nav-link.active i,
-.nav-dropdown.active > .nav-link i {
-  color: var(--primary);
-}
-
-
-/* --- ВИПАДАЮЧЕ МЕНЮ "МЕХАНІКИ" (ВИПРАВЛЕНИЙ БАГ ЗАКРИТТЯ) --- */
-.nav-dropdown {
-  position: relative;
-  /* Додаємо невеликий нижній padding, щоб не було мертвої зони */
-  padding-bottom: 10px;
-  margin-bottom: -10px;
-}
-
-.caret-icon {
-  font-size: 0.65rem !important;
-  margin-left: 2px;
-  transition: transform 0.25s ease;
-}
-
-.nav-dropdown:hover .caret-icon,
-.nav-dropdown.open .caret-icon {
-  transform: rotate(180deg);
-}
-
-.dropdown-menu {
-  display: none;
-  position: absolute;
-  top: 100%; /* Стиковано без щілини */
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(15, 15, 22, 0.96);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid var(--glass-border);
-  border-radius: 14px;
-  padding: 8px;
-  min-width: 230px;
-  box-shadow: 0 20px 45px rgba(0, 0, 0, 0.7), 0 0 25px rgba(16, 185, 129, 0.12);
-  flex-direction: column;
-  gap: 3px;
-  z-index: 1002;
-  list-style: none;
-}
-
-/* НЕВИДИМИЙ МІСТ (запобігає зникненню при переміщенні мишки) */
-.dropdown-menu::before {
-  content: '';
-  position: absolute;
-  top: -14px;
-  left: 0;
-  right: 0;
-  height: 14px;
-  background: transparent;
-}
-
-/* Відкриття при наведенні для ПК */
-@media (min-width: 1151px) {
-  .nav-dropdown:hover .dropdown-menu {
-    display: flex;
-    animation: dropFade 0.2s ease forwards;
-  }
-}
-
-.dropdown-menu li {
-  width: 100%;
-}
-
-.dropdown-menu li a {
-  display: flex !important;
-  align-items: center;
-  gap: 10px;
-  padding: 0.55rem 0.85rem !important;
-  font-size: 0.85rem !important;
-  color: var(--text-muted) !important;
-  border-radius: 8px;
-  text-decoration: none;
-  transition: all 0.2s ease;
-  white-space: nowrap;
-}
-
-.dropdown-menu li a i {
-  width: 18px;
-  text-align: center;
-  color: var(--primary);
-  font-size: 0.85rem;
-}
-
-.dropdown-menu li a:hover,
-.dropdown-menu li a.active {
-  background: rgba(16, 185, 129, 0.15) !important;
-  color: #fff !important;
-  transform: translateX(4px);
-}
-
-@keyframes dropFade {
-  from { opacity: 0; transform: translateX(-50%) translateY(5px); }
-  to { opacity: 1; transform: translateX(-50%) translateY(0); }
-}
-
-/* --- КНОПКИ СПРАВА (Донат & Discord) --- */
-.nav-btns {
-  display: flex;
-  gap: 10px;
-  align-items: center;
-  flex-shrink: 0;
-}
-
-.btn-donate,
-.btn-discord {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 0.5rem 1.1rem;
-  border-radius: 12px;
-  font-weight: 600;
-  font-size: 0.86rem;
-  text-decoration: none;
-  transition: all 0.25s ease;
-  white-space: nowrap;
-}
-
-.btn-donate {
-  background: linear-gradient(135deg, #fbbf24, #f59e0b);
-  color: #000 !important;
-  font-weight: 700;
-  box-shadow: 0 4px 15px rgba(251, 191, 36, 0.25);
-  border: 1px solid rgba(251, 191, 36, 0.4);
-}
-.btn-donate:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 22px rgba(251, 191, 36, 0.45);
-}
-
-.btn-discord {
-  background: rgba(88, 101, 242, 0.15);
-  border: 1px solid rgba(88, 101, 242, 0.4);
-  color: #8599ff !important;
-}
-.btn-discord:hover {
-  background: #5865f2;
-  color: #fff !important;
-  transform: translateY(-2px);
-}
-
-/* Мобільна адаптація */
 @media (max-width: 1150px) {
+  .mobile-menu-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Мобільне меню за замовчуванням СХОВАНЕ */
+  nav ul {
+    display: none !important;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(13, 13, 18, 0.98);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border-top: 1px solid var(--glass-border);
+    flex-direction: column;
+    padding: 1.25rem 1.25rem 3rem;
+    gap: 0.55rem;
+    overflow-y: auto;
+    z-index: 999;
+  }
+
+  /* Відкривається ТІЛЬКИ при кліку по кнопці */
+  nav ul.open {
+    display: flex !important;
+    animation: menuSlideDown 0.3s ease-out forwards;
+  }
+
+  nav ul li {
+    width: 100%;
+  }
+
+  nav ul li a {
+    display: flex;
+    align-items: center;
+    padding: 0.85rem 1.2rem;
+    font-size: 1.02rem;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    color: var(--text-main);
+  }
+
+  nav ul li a:hover, nav ul li a.active {
+    background: rgba(16, 185, 129, 0.15);
+    border-color: var(--primary);
+    color: var(--primary);
+  }
+
   .nav-dropdown {
     width: 100%;
     padding-bottom: 0;
     margin-bottom: 0;
   }
+
   .dropdown-menu {
     position: static;
     transform: none;
@@ -1272,37 +1025,116 @@ nav ul {
     margin-top: 5px;
     padding: 6px;
     border-radius: 10px;
+    width: 100%;
+    display: none;
+    animation: none;
   }
+
   .nav-dropdown.open .dropdown-menu {
     display: flex;
   }
+
+  .nav-container {
+    padding: 0.6rem 1rem;
+    gap: 10px;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+  .logo img {
+    height: 35px !important;
+  }
 }
-/* Перемикач мов */
-.lang-btn {
-  display: inline-flex !important;
-  align-items: center !important;
-  gap: 7px !important;
-  font-weight: 700 !important;
-  color: #fff !important;
-  background: rgba(255, 255, 255, 0.04) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  border-radius: 10px !important;
-  padding: 0.45rem 0.75rem !important;
+
+@keyframes menuSlideDown {
+  from { opacity: 0; transform: translateY(-15px); }
+  to { opacity: 1; transform: translateY(0); }
 }
-.lang-btn:hover {
-  background: rgba(16, 185, 129, 0.12) !important;
-  border-color: rgba(16, 185, 129, 0.3) !important;
-  color: #fff !important;
+
+@media (max-width: 768px) {
+  .gradient-text {
+    font-size: 1.95rem;
+    letter-spacing: 1px;
+  }
+
+  .motto-text {
+    font-size: 0.95rem;
+  }
+
+  .container {
+    padding: 0 0.9rem;
+    margin: 1.2rem auto;
+  }
+
+  .glass-card {
+    padding: 1.35rem 0.95rem;
+    border-radius: 18px;
+  }
+
+  .step-section {
+    padding: 1.1rem 0.9rem;
+    border-radius: 14px;
+  }
+
+  .step-title {
+    font-size: 1.05rem;
+  }
+
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .ip-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .nav-btns {
+    gap: 6px;
+  }
+
+  .btn-donate,
+  .btn-discord {
+    padding: 0.45rem 0.8rem;
+    font-size: 0.78rem;
+  }
+
+  #toast {
+    bottom: 1rem;
+    right: 1rem;
+    left: 1rem;
+    text-align: center;
+  }
+
+  .hero-banner {
+    height: 200px;
+  }
+  .hero-body {
+    padding: 1.2rem 1rem 1.8rem;
+  }
+
+  .builds-gallery-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .live-status-badge {
+    font-size: 0.85rem;
+    padding: 0.45rem 1rem;
+  }
 }
-.lang-menu {
-  min-width: 155px !important;
-  left: auto !important;
-  right: 0 !important;
-  transform: none !important;
-}
-.lang-menu li a {
-  display: flex !important;
-  align-items: center !important;
-  gap: 10px !important;
-  font-weight: 600 !important;
+
+@media (max-width: 440px) {
+  .logo {
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+  }
+  .logo img {
+    height: 30px !important;
+  }
+  .btn-donate,
+  .btn-discord {
+    padding: 0.4rem 0.6rem;
+    font-size: 0.74rem;
+  }
 }
