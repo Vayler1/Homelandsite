@@ -1,256 +1,158 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Homeland Survival — Український сервер Minecraft</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Homeland | Донат-магазин</title>
+
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" href="logo.png">
-<link rel="canonical" href="https://homeland.pp.ua/" />
-<link rel="alternate" hreflang="uk" href="https://homeland.pp.ua/index.html" />
-<link rel="alternate" hreflang="en" href="https://homeland.pp.ua/en/index.html" />
-<link rel="alternate" hreflang="pl" href="https://homeland.pp.ua/pl/index.html" />
-<link rel="alternate" hreflang="de" href="https://homeland.pp.ua/de/index.html" />
-<link rel="alternate" hreflang="x-default" href="https://homeland.pp.ua/index.html" />
-<meta name="description" content="Homeland — український сервер Minecraft тематики виживання з елементами політики та з мапою реальної України. Міста Towny, боси, ППО, броварня та безкоштовний вхід з версій 1.16.5–1.21." />
 </head>
 <body>
+
+  <!-- Анімований фон -->
   <div class="bg-glow blob-1"></div>
   <div class="bg-glow blob-2"></div>
 
-  <header>
-    <div class="nav-container">
-      <a href="index.html" class="logo"><img src="logo.png" alt="Homeland Logo"> HOMELAND</a>
-      <nav><script src="nav.js"></script></nav>
-      <div class="nav-btns">
-        <a href="https://discord.gg/F8avpX8Vug" target="_blank" class="btn-discord"><i class="fa-brands fa-discord"></i> Discord</a>
+  <!-- ВІКНО ВИБОРУ МОВИ (ПРИ СТАРТІ АБО ЗА КЛІКОМ) -->
+  <div id="language-modal" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <img src="https://img.icons8.com/fluency/96/language.png" alt="Language" class="modal-icon">
+        <h2>Оберіть мову</h2>
+        <p class="en-subtext">Select your language</p>
+      </div>
+      <div class="modal-buttons">
+        <button class="lang-modal-btn" onclick="setLanguage('uk')">
+          <img src="https://flagcdn.com/w40/ua.png" class="flag-img" alt="UKR">
+          <span class="lang-name">Українська</span>
+        </button>
+        <button class="lang-modal-btn" onclick="setLanguage('en')">
+          <img src="https://flagcdn.com/w40/gb.png" class="flag-img" alt="ENG">
+          <span class="lang-name">English</span>
+        </button>
+        <button class="lang-modal-btn" onclick="setLanguage('de')">
+          <img src="https://flagcdn.com/w40/de.png" class="flag-img" alt="DEU">
+          <span class="lang-name">Deutsch</span>
+        </button>
+        <button class="lang-modal-btn" onclick="setLanguage('pl')">
+          <img src="https://flagcdn.com/w40/pl.png" class="flag-img" alt="POL">
+          <span class="lang-name">Polski</span>
+        </button>
+        <button class="lang-modal-btn" onclick="setLanguage('fr')">
+          <img src="https://flagcdn.com/w40/fr.png" class="flag-img" alt="FRA">
+          <span class="lang-name">Français</span>
+        </button>
+        <button class="lang-modal-btn" onclick="setLanguage('es')">
+          <img src="https://flagcdn.com/w40/es.png" class="flag-img" alt="ESP">
+          <span class="lang-name">Español</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ШАПКА З ПЕРЕХОДОМ НА САЙТ ТА ПЕРЕМИКАЧЕМ МОВИ -->
+  <header class="top-nav">
+    <div class="top-nav-inner">
+      <a href="https://homeland.pp.ua/" class="nav-logo">
+        <img src="logo.png" alt="Homeland Logo" onerror="this.style.display='none'">
+        <span>HOMELAND</span>
+      </a>
+
+      <div class="top-nav-actions">
+        <!-- Кнопка зміни мови -->
+        <button class="btn-subtle" onclick="openLanguageModal()" title="Змінити мову / Change language">
+          <i class="fa-solid fa-globe"></i>
+          <span id="currentLangLabel">UA</span>
+        </button>
+
+        <!-- Кнопка повернення на сайт -->
+        <a href="https://homeland.pp.ua/" class="btn-back">
+          <i class="fa-solid fa-house"></i>
+          <span id="backToSiteText">На головну</span>
+        </a>
       </div>
     </div>
   </header>
 
-  <main class="container">
-    <!-- ГОЛОВНА HERO-КАРТКА З БАНЕРОМ -->
-    <div class="glass-card hero-card">
-      
-      <!-- САМ БАНЕР -->
-      <div class="hero-banner">
-        <img src="main.png" alt="Homeland Survival Banner" class="hero-banner-img">
-        <div class="hero-banner-overlay"></div>
+  <!-- ГОЛОВНА ФОРМА (МАГАЗИН) -->
+  <main class="page-wrapper">
+    <div class="store-container fade-in">
+      <div class="header-titles">
+        <a href="https://homeland.pp.ua/" class="store-logo-link" title="Перейти на сайт">
+          <img src="logo.png" alt="Homeland" class="header-brand-logo" onerror="this.style.display='none'">
+        </a>
+        <h1 class="gradient-text">Homeland</h1>
+        <p class="motto-text" id="mottoText">Твоя земля. Твоя історія.</p>
+        
+        <div class="version-tag">
+          <i class="fa-solid fa-cube"></i> Minecraft 1.16.5 — 1.21.x
+        </div>
       </div>
 
-      <!-- ВМІСТ КАРТКИ ПІД БАНЕРОМ -->
-      <div class="hero-body">
-<h1 class="visually-hidden">Homeland Survival — Український сервер Minecraft з містами та мапою України</h1>
-<p class="motto-text" style="font-size: 1.15rem; color: #fbbf24; font-weight: 600; margin-top: 0;">
-  Твоя земля. Твоя історія.
-</p>
-        
-        <p style="max-width: 750px; margin: 0.9rem auto 0; color: var(--text-muted); font-size: 0.95rem; line-height: 1.6;">
-          Ласкаво просимо на масштабний український сервер із тематикою виживання та елементами геополітики. Створюйте власні міста, керуйте економікою, будуйте альянси та пишіть власну історію на карті України.
+      <!-- КРОК 1: Нікнейм -->
+      <div class="step-section">
+        <div class="step-title">
+          <span class="step-num">1</span>
+          <span id="step1Text">Введіть ваші дані</span>
+        </div>
+
+        <div class="warning-box">
+          <div class="warning-icon"><i class="fas fa-triangle-exclamation"></i></div>
+          <div class="warning-text" id="warningText">
+            <strong>Гравцям Bedrock!</strong> Не забудьте вказати <span>. (крапку)</span> перед ніком!
+          </div>
+        </div>
+
+        <div class="form-group">
+          <div class="input-wrapper">
+            <i class="fas fa-user"></i>
+            <input type="text" id="nickname" placeholder="Ваш ігровий нікнейм..." required autocomplete="off" />
+          </div>
+        </div>
+      </div>
+
+      <!-- КРОК 2: Вибір товару -->
+      <div class="step-section">
+        <div class="step-title">
+          <span class="step-num">2</span>
+          <span id="step2Text">Оберіть товар</span>
+        </div>
+
+        <!-- Категорії (Вкладки) -->
+        <div class="category-tabs" id="categoryTabs"></div>
+
+        <!-- Сітка карток товарів -->
+        <div class="products-grid" id="productsGrid"></div>
+      </div>
+
+      <!-- КРОК 3: Оплата -->
+      <div class="checkout-section">
+        <div class="selected-info" id="selectedInfo">
+          Оберіть товар, щоб продовжити
+        </div>
+        <button id="submitBtn" onclick="generateLink()" disabled>
+          <span id="payText">Оплатити</span>
+          <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+
+      <!-- ДИСКЛЕЙМЕР -->
+      <div class="disclaimer-box">
+        <p class="disclaimer-text" id="disclaimerText">
+          Здійснюючи оплату, ви погоджуєтесь з умовами придбання цифрових товарів. Кошти за придбані товари поверненню не підлягають. З кожної транзакції сплачуються податки до бюджету України 🇺🇦.
         </p>
-
-        <!-- ЖИВА ПЛАШКА ОНЛАЙНУ СЕРВЕРА -->
-        <div class="live-status-badge" id="serverStatusBadge">
-          <span class="live-ping-dot"></span>
-          <span class="live-status-text">Опитування сервера...</span>
-        </div>
-
-        <!-- БЛОК СТАТИСТИКИ ОНЛАЙНУ -->
-        <div class="stats-container">
-          <div class="stat-box">
-            <div class="stat-val" style="color: var(--primary);">20–30+</div>
-            <div class="stat-text">Стабільний щоденний онлайн (осінь / зима / весна)</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" style="color: #fbbf24;">70+</div>
-            <div class="stat-text">Піковий онлайн у літній період та під час канікул</div>
-          </div>
-          <div class="stat-box">
-            <div class="stat-val" style="color: #38bdf8;">24/7</div>
-            <div class="stat-text">Постійний актив, тривоги, війни, криваві ночі та івенти</div>
-          </div>
-        </div>
-
-        <!-- СТИЛЬНА ПЛАШКА ВЕРСІЙ -->
-        <div style="margin-top: 1.2rem;">
-          <div class="version-strip">
-            <span><i class="fa-solid fa-code-branch" style="color: var(--primary);"></i> Підтримка: <strong class="v-support">1.16.5+</strong></span>
-            <span style="opacity: 0.3;">|</span>
-            <span class="v-recommended"><i class="fa-solid fa-star"></i> Рекомендована: <strong>1.21.11</strong></span>
-          </div>
-          <p class="version-warning-hint">
-            <i class="fa-solid fa-circle-info"></i> Геймплей розрахований під 1.21.11 (на старіших версіях можливі візуальні баги).
-          </p>
-        </div>
-
-        <!-- IP БЛОКИ -->
-        <div class="ip-grid">
-          <div class="ip-card" onclick="copyText('homeland.pp.ua', 'Java IP скопійовано!')">
-            <div style="text-align: left;">
-              <div style="font-size: 0.8rem; color: var(--text-muted);">JAVA EDITION (ПК)</div>
-              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-server"></i> homeland.pp.ua</div>
-            </div>
-            <span class="cmd-badge">Скопіювати</span>
-          </div>
-
-          <div class="ip-card" onclick="copyText('bedrock.homeland.pp.ua', 'Bedrock IP скопійовано!')">
-            <div style="text-align: left;">
-              <div style="font-size: 0.8rem; color: var(--text-muted);">BEDROCK (ПОРТ: 30162)</div>
-              <div style="font-size: 1.1rem; font-weight: 700; color: #fff;"><i class="fa-solid fa-mobile-screen"></i> bedrock.homeland.pp.ua</div>
-            </div>
-            <span class="cmd-badge">Скопіювати</span>
-          </div>
-        </div>
-
       </div>
     </div>
+  </main>
 
-    <!-- КАРТКИ РОЗДІЛІВ -->
-    <div class="glass-card">
-      <div class="step-title" style="margin-bottom: 1.5rem;"><div class="step-num"><i class="fa-solid fa-compass"></i></div> Розділи та путівник сервера</div>
-      <div class="cards-grid">
-        
-        <a href="guide.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag gold">Новачкам & Економіка</span>
-          <h4><i class="fa-solid fa-coins" style="color: #fbbf24;"></i> Заробіток та Гайд</h4>
-          <p>Швидкий старт, професії /jobs, щогодинний скупник /seller, квести /bp та всі види заробітку.</p>
-        </a>
-
-        <a href="defence.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag emerald">Оборона</span>
-          <h4><i class="fa-solid fa-shield-virus" style="color: var(--primary);"></i> ППО та Блекаути</h4>
-          <p>Повітряні тривоги, реактивні шахеди, сирени та міські електростанції.</p>
-        </a>
-
-        <a href="bosses.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag gold">Міфологія</span>
-          <h4><i class="fa-solid fa-skull" style="color: #fbbf24;"></i> Міфічні Боси</h4>
-          <p>Мавка, Польовик, Русалка, Відьма, Чорт та рейд-бос Вій.</p>
-        </a>
-
-        <a href="bloodnight.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag" style="background: rgba(239, 68, 68, 0.1); color: #ef4444; border: 1px solid rgba(239, 68, 68, 0.2);">Івент</span>
-          <h4><i class="fa-solid fa-droplet" style="color: #ef4444;"></i> Кривава Ніч</h4>
-          <p>Жорстке виживання, мутовані моби та глобальне PvP.</p>
-        </a>
-
-        <a href="warfare.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag blue">Політика</span>
-          <h4><i class="fa-solid fa-crosshairs" style="color: #60a5fa;"></i> Війни Націй</h4>
-          <p>Очки війни (War Score), пограбування банків та репарації.</p>
-        </a>
-
-        <a href="towns.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag emerald">Інфраструктура</span>
-          <h4><i class="fa-solid fa-city" style="color: var(--primary);"></i> Міста та Заводи</h4>
-          <p>Дороги, копальні, заводи та розвиток міст.</p>
-        </a>
-
-        <a href="buildings.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag gold">Архітектура</span>
-          <h4><i class="fa-solid fa-building-columns" style="color: #fbbf24;"></i> Великі будівлі</h4>
-          <p>Регіональні пам'ятки, лімітовані будівлі та пасивний дохід.</p>
-        </a>
-
-        <a href="moon.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag blue">Космос</span>
-          <h4><i class="fa-solid fa-moon" style="color: #60a5fa;"></i> Зона «Місяць»</h4>
-          <p>Космічні битви, захоплення форпостів та анархія.</p>
-        </a>
-
-        <a href="brewery.html" style="text-decoration: none;" class="card-item">
-          <span class="badge-tag emerald">Крафти</span>
-          <h4><i class="fa-solid fa-wine-bottle" style="color: var(--primary);"></i> Броварня</h4>
-          <p>Рецепти варіння еліксирів, дистиляція та старіння напоїв.</p>
-        </a>
-
-      </div>
-    </div>
-
-    <!-- ІНТЕРАКТИВНА ОНЛАЙН-КАРТА -->
-
-  <footer><p>Homeland Network © 2026. «Твоя земля. Твоя історія.»</p></footer>
-
-  <!-- МОДАЛЬНЕ ВІКНО НАБЛИЖЕННЯ КАРТИНОК -->
-  <div id="imageModal" class="image-modal">
-    <span class="image-modal-close">&times;</span>
-    <img class="image-modal-content" id="modalImage">
-  </div>
-
-  <div id="toast"></div>
-
-  <script>
-    // Функція копіювання IP
-    function copyText(text, msg) {
-      navigator.clipboard.writeText(text);
-      const toast = document.getElementById('toast');
-      toast.innerText = msg;
-      toast.classList.add('show');
-      setTimeout(() => toast.classList.remove('show'), 2500);
-    }
-
-    // Lightbox наближення для картинок
-    const modal = document.getElementById("imageModal");
-    const modalImg = document.getElementById("modalImage");
-    const zoomableImages = document.querySelectorAll(".zoomable-img");
-    const closeBtn = document.querySelector(".image-modal-close");
-
-    if (modal && modalImg) {
-      zoomableImages.forEach(img => {
-        img.addEventListener("click", function() {
-          modal.style.display = "flex";
-          setTimeout(() => modal.classList.add("show"), 10);
-          modalImg.src = this.src;
-          document.body.style.overflow = "hidden";
-        });
-      });
-
-      if (closeBtn) closeBtn.addEventListener("click", closeModal);
-      modal.addEventListener("click", function(e) {
-        if (e.target !== modalImg) closeModal();
-      });
-
-      function closeModal() {
-        modal.classList.remove("show");
-        setTimeout(() => {
-          modal.style.display = "none";
-          document.body.style.overflow = "auto";
-        }, 300);
-      }
-    }
-
-    // Отримання та оновлення живого онлайну
-    async function updateOnlineStatus() {
-      const badge = document.getElementById('serverStatusBadge');
-      if (!badge) return;
-      const textSpan = badge.querySelector('.live-status-text');
-
-      try {
-        const response = enlargement = await fetch('https://api.mcsrvstat.us/2/homeland.pp.ua');
-        const data = await response.json();
-
-        if (data.online) {
-          badge.classList.remove('offline');
-          const currentPlayers = data.players ? data.players.online : 0;
-          const maxPlayers = data.players ? data.players.max : 0;
-          textSpan.innerHTML = `Зараз на сервері: <strong>${currentPlayers}</strong> із <strong>${maxPlayers}</strong> гравців`;
-        } else {
-          badge.classList.add('offline');
-          textSpan.innerHTML = `Сервер тимчасово <strong>офлайн</strong>`;
-        }
-      } catch (err) {
-        badge.classList.add('offline');
-        textSpan.innerHTML = `Не вдалося отримати онлайн`;
-      }
-    }
-
-    // Перший запуск та автооновлення кожні 60 секунд
-    updateOnlineStatus();
-    setInterval(updateOnlineStatus, 60000);
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
