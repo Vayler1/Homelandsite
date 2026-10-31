@@ -1,4 +1,4 @@
-// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) + АВТОМАТИЧНИЙ БАНЕР VATRAMC ---
+// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) + ПРЕМІУМ-БАНЕР VATRAMC ---
 
 const path = window.location.pathname;
 let lang = "uk";
@@ -30,37 +30,53 @@ const i18n = {
     home: "Головна", info: "Інфо", vote: "Голосування", guide: "Гайд", mechanics: "Механіки", commands: "Довідник", donate: "Донат",
     towns: "Міста та Заводи", warfare: "Війни Націй", defence: "ППО & Блекаути", bloodnight: "Кривава Ніч",
     bosses: "Міфічні Боси", buildings: "Великі Будівлі", moon: "Зона «Місяць»", brewery: "Броварня",
-    vatramcBadge: "🔥 Український моніторинг нового покоління",
+    vatramcBadge: "🔥 Моніторинг нового покоління",
+    partnerTag: "Офіційний партнер Homeland",
     vatramcTitle: "Знайди свій світ у вогнищі Minecraft разом з VatraMC",
-    vatramcDesc: "Офіційний партнер Homeland Survival! Відкривай найкращі українські Minecraft сервери, відстежуй ігровий час, отримуй ачівки та збирай щоденні стріки.",
-    vatramcBtn: "Перейти на VatraMC"
+    vatramcDesc: "Відкривай найкращі українські Minecraft сервери, відстежуй ігровий час, отримуй унікальні ачівки та підтримуй щоденний стрік.",
+    vatramcBtn: "Перейти на VatraMC",
+    featTime: "Час у грі", featTimeSub: "Точний облік онлайн-годин",
+    featAchieve: "Система ачівок", featAchieveSub: "Унікальні нагороди сервера",
+    featStreak: "Щоденні стріки", featStreakSub: "Множники за активність"
   },
   en: {
     home: "Home", info: "Info", vote: "Vote & Streaks", guide: "Guide", mechanics: "Mechanics", commands: "Commands", donate: "Store",
     towns: "Towns & Industry", warfare: "Nation Wars", defence: "Air Defense & Blackouts", bloodnight: "Blood Night",
     bosses: "Mythic Bosses", buildings: "Grand Landmarks", moon: "Moon Anarchy", brewery: "Brewery",
-    vatramcBadge: "🔥 Next-Gen Ukrainian Server List",
+    vatramcBadge: "🔥 Next-Gen Server List",
+    partnerTag: "Official Homeland Partner",
     vatramcTitle: "Find Your World in the Fire of Minecraft with VatraMC",
-    vatramcDesc: "Official Homeland Partner! Discover top Ukrainian Minecraft servers, track in-game playtime, unlock server achievements, and level up your daily streaks.",
-    vatramcBtn: "Explore VatraMC"
+    vatramcDesc: "Discover top Ukrainian Minecraft servers, track in-game playtime stats, earn exclusive achievements, and level up your daily streaks.",
+    vatramcBtn: "Explore VatraMC",
+    featTime: "Playtime Stats", featTimeSub: "Accurate time tracking",
+    featAchieve: "Server Badges", featAchieveSub: "Unlock rare achievements",
+    featStreak: "Daily Streaks", featStreakSub: "Activity reward multipliers"
   },
   pl: {
     home: "Główna", info: "Info", vote: "Głosowanie", guide: "Poradnik", mechanics: "Mechaniki", commands: "Komendy", donate: "Sklep",
     towns: "Miasta i Fabryki", warfare: "Wojny Nacji", defence: "Obrona Plot i Blackouty", bloodnight: "Krwawa Noc",
     bosses: "Mityczni Bossowie", buildings: "Wielkie Budowle", moon: "Strefa Księżyc", brewery: "Browar",
-    vatramcBadge: "🔥 Ukraiński monitoring nowej generacji",
+    vatramcBadge: "🔥 Monitoring nowej generacji",
+    partnerTag: "Oficjalny partner Homeland",
     vatramcTitle: "Odkryj swój świat w płomieniach Minecrafta z VatraMC",
-    vatramcDesc: "Oficjalny partner Homeland! Odkrywaj ukraińskie serwery Minecraft, sprawdzaj czas w grze, zdobywaj osiągnięcia i buduj swój codzienny streak.",
-    vatramcBtn: "Odwiedź VatraMC"
+    vatramcDesc: "Odkrywaj ukraińskie serwery Minecraft, sprawdzaj czas spędzony w grze, zdobywaj odznaki i powiększaj swój codzienny streak.",
+    vatramcBtn: "Odwiedź VatraMC",
+    featTime: "Czas w grze", featTimeSub: "Precyzyjne statystyki",
+    featAchieve: "Osiągnięcia", featAchieveSub: "Unikalne nagrody serwerowe",
+    featStreak: "Codzienne streaki", featStreakSub: "Mnożniki nagród za głosy"
   },
   de: {
     home: "Startseite", info: "Info", vote: "Voten", guide: "Guide", mechanics: "Mechaniken", commands: "Befehle", donate: "Shop",
     towns: "Städte & Fabriken", warfare: "Nationenkriege", defence: "Flugabwehr & Blackouts", bloodnight: "Blutnacht",
     bosses: "Mythische Bosse", buildings: "Monumentale Bauten", moon: "Zone Mond", brewery: "Brauerei",
-    vatramcBadge: "🔥 Ukrainische Serverliste der nächsten Generation",
+    vatramcBadge: "🔥 Serverliste der nächsten Gen",
+    partnerTag: "Offizieller Homeland Partner",
     vatramcTitle: "Finde deine Welt im Feuer von Minecraft mit VatraMC",
-    vatramcDesc: "Offizieller Partner von Homeland! Entdecke ukrainische Minecraft-Server, verfolge deine Spielzeit, schalte Erfolge frei und halte deinen Streak.",
-    vatramcBtn: "Zu VatraMC"
+    vatramcDesc: "Entdecke ukrainische Minecraft-Server, verfolge deine Spielzeit, schalte Ingame-Erfolge frei und halte tägliche Streaks aktiv.",
+    vatramcBtn: "Zu VatraMC",
+    featTime: "Spielzeit-Stats", featTimeSub: "Präzise Zeiterfassung",
+    featAchieve: "Server-Erfolge", featAchieveSub: "Seltene Auszeichnungen",
+    featStreak: "Tägliche Streaks", featStreakSub: "Belohnungsmultiplikatoren"
   }
 };
 
@@ -120,7 +136,6 @@ document.write(navHTML);
 document.addEventListener("DOMContentLoaded", () => {
   const navBtns = document.querySelector(".nav-btns");
   if (navBtns) {
-    // Кнопка VatraMC у шапці
     if (!document.querySelector(".btn-vatramc-nav")) {
       const vatraNavBtn = document.createElement("a");
       vatraNavBtn.href = "https://vatramc.com";
@@ -141,30 +156,73 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // АВТОМАТИЧНА ВСТАВКА ВЕЛИКОГО БАНЕРА VATRAMC НА ВСІХ СТОРІНКАХ САЙТУ
-  const mainContainer = document.querySelector("main.container") || document.querySelector(".container");
-  if (mainContainer && !document.querySelector(".vatramc-site-banner")) {
+  // АВТОМАТИЧНИЙ ЗБАЛАНСОВАНИЙ БАНЕР VATRAMC У КОНТЕНТІ
+  if (!document.querySelector(".vatramc-site-banner")) {
     const bannerBox = document.createElement("div");
     bannerBox.className = "vatramc-site-banner";
     bannerBox.innerHTML = `
       <div class="vatramc-banner-glow"></div>
-      <div class="vatramc-banner-content">
-        <div class="vatramc-banner-text">
+      <div class="vatramc-inner">
+        <div class="vatramc-top-line">
           <span class="vatramc-badge-pill">${t.vatramcBadge}</span>
-          <h3><i class="fa-solid fa-fire"></i> ${t.vatramcTitle}</h3>
-          <p>${t.vatramcDesc}</p>
+          <span class="vatramc-partner-pill"><i class="fa-solid fa-handshake"></i> ${t.partnerTag}</span>
         </div>
-        <div class="vatramc-banner-action">
-          <a href="https://vatramc.com" target="_blank" rel="noopener noreferrer" class="btn-vatramc-banner">
-            ${t.vatramcBtn} <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
+
+        <div class="vatramc-main-content">
+          <div class="vatramc-info">
+            <h3><i class="fa-solid fa-fire"></i> ${t.vatramcTitle}</h3>
+            <p>${t.vatramcDesc}</p>
+          </div>
+
+          <div class="vatramc-action-col">
+            <a href="https://vatramc.com" target="_blank" rel="noopener noreferrer" class="btn-vatramc-banner">
+              ${t.vatramcBtn} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <span class="vatramc-domain-hint"><i class="fa-solid fa-globe"></i> vatramc.com</span>
+          </div>
+        </div>
+
+        <div class="vatramc-features-grid">
+          <div class="vatramc-feat-item">
+            <i class="fa-solid fa-stopwatch" style="color: #fb923c;"></i>
+            <div>
+              <strong>${t.featTime}</strong>
+              <span>${t.featTimeSub}</span>
+            </div>
+          </div>
+          <div class="vatramc-feat-item">
+            <i class="fa-solid fa-trophy" style="color: #fbbf24;"></i>
+            <div>
+              <strong>${t.featAchieve}</strong>
+              <span>${t.featAchieveSub}</span>
+            </div>
+          </div>
+          <div class="vatramc-feat-item">
+            <i class="fa-solid fa-fire-flame-curved" style="color: #f87171;"></i>
+            <div>
+              <strong>${t.featStreak}</strong>
+              <span>${t.featStreakSub}</span>
+            </div>
+          </div>
         </div>
       </div>
     `;
-    mainContainer.appendChild(bannerBox);
+
+    const heroCard = document.querySelector(".hero-card");
+    const footer = document.querySelector("footer");
+    const mainContainer = document.querySelector("main.container") || document.querySelector(".container");
+
+    if (heroCard) {
+      // На головній сторінці — під блоком герою та IP
+      heroCard.after(bannerBox);
+    } else if (footer) {
+      // На всіх інших сторінках — акуратно над футером
+      footer.parentNode.insertBefore(bannerBox, footer);
+    } else if (mainContainer) {
+      mainContainer.appendChild(bannerBox);
+    }
   }
 
-  // Закриття меню при натисканні на посилання
   const menu = document.getElementById('navMenu');
   if (menu) {
     menu.querySelectorAll('a:not(.dropdown-trigger)').forEach(link => {
