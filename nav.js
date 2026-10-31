@@ -1,4 +1,4 @@
-// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) + ПРЕМІУМ-БАНЕР VATRAMC ---
+// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) + ПОВНА СИНХРОНІЗАЦІЯ З СSS VATRAMC ---
 
 const path = window.location.pathname;
 let lang = "uk";
@@ -156,70 +156,66 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // АВТОМАТИЧНИЙ ЗБАЛАНСОВАНИЙ БАНЕР VATRAMC У КОНТЕНТІ
-  if (!document.querySelector(".vatramc-site-banner")) {
+  // АВТОМАТИЧНА ВСТАВКА БАНЕРА VATRAMC: СТРОГО В КІНЦІ КОНТЕНТУ ПЕРЕД ФУТЕРОМ
+  if (!document.querySelector(".vatramc-banner-wrapper")) {
     const bannerBox = document.createElement("div");
-    bannerBox.className = "vatramc-site-banner";
+    bannerBox.className = "vatramc-banner-wrapper";
     bannerBox.innerHTML = `
-      <div class="vatramc-banner-glow"></div>
-      <div class="vatramc-inner">
-        <div class="vatramc-top-line">
-          <span class="vatramc-badge-pill">${t.vatramcBadge}</span>
-          <span class="vatramc-partner-pill"><i class="fa-solid fa-handshake"></i> ${t.partnerTag}</span>
-        </div>
-
-        <div class="vatramc-main-content">
+      <div class="vatramc-card">
+        <div class="vatramc-glow"></div>
+        <div class="vatramc-header">
           <div class="vatramc-info">
-            <h3><i class="fa-solid fa-fire"></i> ${t.vatramcTitle}</h3>
-            <p>${t.vatramcDesc}</p>
+            <div class="vatramc-badge">
+              <span>${t.vatramcBadge}</span>
+              <span class="vatramc-badge-dot">•</span>
+              <span>${t.partnerTag}</span>
+            </div>
+            <h3 class="vatramc-title"><i class="fa-solid fa-fire" style="color:#f97316;"></i> ${t.vatramcTitle}</h3>
+            <p class="vatramc-desc">${t.vatramcDesc}</p>
           </div>
-
-          <div class="vatramc-action-col">
-            <a href="https://vatramc.com" target="_blank" rel="noopener noreferrer" class="btn-vatramc-banner">
-              ${t.vatramcBtn} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          <div class="vatramc-btn-col">
+            <a href="https://vatramc.com" target="_blank" rel="noopener noreferrer" class="vatramc-btn">
+              ${t.vatramcBtn} <i class="fa-solid fa-arrow-up-right-from-square vatramc-btn-arrow"></i>
             </a>
-            <span class="vatramc-domain-hint"><i class="fa-solid fa-globe"></i> vatramc.com</span>
+            <span class="vatramc-domain"><i class="fa-solid fa-globe"></i> vatramc.com</span>
           </div>
         </div>
 
-        <div class="vatramc-features-grid">
+        <div class="vatramc-features">
           <div class="vatramc-feat-item">
-            <i class="fa-solid fa-stopwatch" style="color: #fb923c;"></i>
+            <div class="vatramc-feat-icon" style="color: #fb923c;"><i class="fa-solid fa-stopwatch"></i></div>
             <div>
-              <strong>${t.featTime}</strong>
-              <span>${t.featTimeSub}</span>
+              <div class="vatramc-feat-title">${t.featTime}</div>
+              <div class="vatramc-feat-sub">${t.featTimeSub}</div>
             </div>
           </div>
           <div class="vatramc-feat-item">
-            <i class="fa-solid fa-trophy" style="color: #fbbf24;"></i>
+            <div class="vatramc-feat-icon" style="color: #fbbf24;"><i class="fa-solid fa-trophy"></i></div>
             <div>
-              <strong>${t.featAchieve}</strong>
-              <span>${t.featAchieveSub}</span>
+              <div class="vatramc-feat-title">${t.featAchieve}</div>
+              <div class="vatramc-feat-sub">${t.featAchieveSub}</div>
             </div>
           </div>
           <div class="vatramc-feat-item">
-            <i class="fa-solid fa-fire-flame-curved" style="color: #f87171;"></i>
+            <div class="vatramc-feat-icon" style="color: #f87171;"><i class="fa-solid fa-fire-flame-curved"></i></div>
             <div>
-              <strong>${t.featStreak}</strong>
-              <span>${t.featStreakSub}</span>
+              <div class="vatramc-feat-title">${t.featStreak}</div>
+              <div class="vatramc-feat-sub">${t.featStreakSub}</div>
             </div>
           </div>
         </div>
       </div>
     `;
 
-    const heroCard = document.querySelector(".hero-card");
     const footer = document.querySelector("footer");
     const mainContainer = document.querySelector("main.container") || document.querySelector(".container");
 
-    if (heroCard) {
-      // На головній сторінці — під блоком герою та IP
-      heroCard.after(bannerBox);
-    } else if (footer) {
-      // На всіх інших сторінках — акуратно над футером
-      footer.parentNode.insertBefore(bannerBox, footer);
+    if (footer && mainContainer && footer.parentNode === mainContainer) {
+      mainContainer.insertBefore(bannerBox, footer);
     } else if (mainContainer) {
       mainContainer.appendChild(bannerBox);
+    } else if (footer) {
+      footer.parentNode.insertBefore(bannerBox, footer);
     }
   }
 
