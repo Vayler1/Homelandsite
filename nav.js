@@ -1,4 +1,4 @@
-// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) ---
+// --- NAV.JS: 4 МОВИ (UK, EN, PL, DE) + АВТОМАТИЧНИЙ БАНЕР VATRAMC ---
 
 const path = window.location.pathname;
 let lang = "uk";
@@ -29,22 +29,38 @@ const i18n = {
   uk: {
     home: "Головна", info: "Інфо", vote: "Голосування", guide: "Гайд", mechanics: "Механіки", commands: "Довідник", donate: "Донат",
     towns: "Міста та Заводи", warfare: "Війни Націй", defence: "ППО & Блекаути", bloodnight: "Кривава Ніч",
-    bosses: "Міфічні Боси", buildings: "Великі Будівлі", moon: "Зона «Місяць»", brewery: "Броварня"
+    bosses: "Міфічні Боси", buildings: "Великі Будівлі", moon: "Зона «Місяць»", brewery: "Броварня",
+    vatramcBadge: "🔥 Український моніторинг нового покоління",
+    vatramcTitle: "Знайди свій світ у вогнищі Minecraft разом з VatraMC",
+    vatramcDesc: "Офіційний партнер Homeland Survival! Відкривай найкращі українські Minecraft сервери, відстежуй ігровий час, отримуй ачівки та збирай щоденні стріки.",
+    vatramcBtn: "Перейти на VatraMC"
   },
   en: {
     home: "Home", info: "Info", vote: "Vote & Streaks", guide: "Guide", mechanics: "Mechanics", commands: "Commands", donate: "Store",
     towns: "Towns & Industry", warfare: "Nation Wars", defence: "Air Defense & Blackouts", bloodnight: "Blood Night",
-    bosses: "Mythic Bosses", buildings: "Grand Landmarks", moon: "Moon Anarchy", brewery: "Brewery"
+    bosses: "Mythic Bosses", buildings: "Grand Landmarks", moon: "Moon Anarchy", brewery: "Brewery",
+    vatramcBadge: "🔥 Next-Gen Ukrainian Server List",
+    vatramcTitle: "Find Your World in the Fire of Minecraft with VatraMC",
+    vatramcDesc: "Official Homeland Partner! Discover top Ukrainian Minecraft servers, track in-game playtime, unlock server achievements, and level up your daily streaks.",
+    vatramcBtn: "Explore VatraMC"
   },
   pl: {
     home: "Główna", info: "Info", vote: "Głosowanie", guide: "Poradnik", mechanics: "Mechaniki", commands: "Komendy", donate: "Sklep",
     towns: "Miasta i Fabryki", warfare: "Wojny Nacji", defence: "Obrona Plot i Blackouty", bloodnight: "Krwawa Noc",
-    bosses: "Mityczni Bossowie", buildings: "Wielkie Budowle", moon: "Strefa Księżyc", brewery: "Browar"
+    bosses: "Mityczni Bossowie", buildings: "Wielkie Budowle", moon: "Strefa Księżyc", brewery: "Browar",
+    vatramcBadge: "🔥 Ukraiński monitoring nowej generacji",
+    vatramcTitle: "Odkryj swój świat w płomieniach Minecrafta z VatraMC",
+    vatramcDesc: "Oficjalny partner Homeland! Odkrywaj ukraińskie serwery Minecraft, sprawdzaj czas w grze, zdobywaj osiągnięcia i buduj swój codzienny streak.",
+    vatramcBtn: "Odwiedź VatraMC"
   },
   de: {
     home: "Startseite", info: "Info", vote: "Voten", guide: "Guide", mechanics: "Mechaniken", commands: "Befehle", donate: "Shop",
     towns: "Städte & Fabriken", warfare: "Nationenkriege", defence: "Flugabwehr & Blackouts", bloodnight: "Blutnacht",
-    bosses: "Mythische Bosse", buildings: "Monumentale Bauten", moon: "Zone Mond", brewery: "Brauerei"
+    bosses: "Mythische Bosse", buildings: "Monumentale Bauten", moon: "Zone Mond", brewery: "Brauerei",
+    vatramcBadge: "🔥 Ukrainische Serverliste der nächsten Generation",
+    vatramcTitle: "Finde deine Welt im Feuer von Minecraft mit VatraMC",
+    vatramcDesc: "Offizieller Partner von Homeland! Entdecke ukrainische Minecraft-Server, verfolge deine Spielzeit, schalte Erfolge frei und halte deinen Streak.",
+    vatramcBtn: "Zu VatraMC"
   }
 };
 
@@ -103,16 +119,52 @@ document.write(navHTML);
 
 document.addEventListener("DOMContentLoaded", () => {
   const navBtns = document.querySelector(".nav-btns");
-  if (navBtns && !document.querySelector(".btn-donate")) {
-    const donateBtn = document.createElement("a");
-    donateBtn.href = "https://donate.homeland.pp.ua/";
-    donateBtn.target = "_blank";
-    donateBtn.className = "btn-donate";
-    donateBtn.innerHTML = `<i class="fa-solid fa-gem"></i> ${t.donate}`;
-    navBtns.insertBefore(donateBtn, navBtns.firstChild);
+  if (navBtns) {
+    // Кнопка VatraMC у шапці
+    if (!document.querySelector(".btn-vatramc-nav")) {
+      const vatraNavBtn = document.createElement("a");
+      vatraNavBtn.href = "https://vatramc.com";
+      vatraNavBtn.target = "_blank";
+      vatraNavBtn.rel = "noopener noreferrer";
+      vatraNavBtn.className = "btn-vatramc-nav";
+      vatraNavBtn.innerHTML = `<i class="fa-solid fa-fire"></i> VatraMC`;
+      navBtns.insertBefore(vatraNavBtn, navBtns.firstChild);
+    }
+
+    if (!document.querySelector(".btn-donate")) {
+      const donateBtn = document.createElement("a");
+      donateBtn.href = "https://donate.homeland.pp.ua/";
+      donateBtn.target = "_blank";
+      donateBtn.className = "btn-donate";
+      donateBtn.innerHTML = `<i class="fa-solid fa-gem"></i> ${t.donate}`;
+      navBtns.insertBefore(donateBtn, navBtns.firstChild);
+    }
   }
 
-  // Закриття меню при натисканні на будь-яке посилання
+  // АВТОМАТИЧНА ВСТАВКА ВЕЛИКОГО БАНЕРА VATRAMC НА ВСІХ СТОРІНКАХ САЙТУ
+  const mainContainer = document.querySelector("main.container") || document.querySelector(".container");
+  if (mainContainer && !document.querySelector(".vatramc-site-banner")) {
+    const bannerBox = document.createElement("div");
+    bannerBox.className = "vatramc-site-banner";
+    bannerBox.innerHTML = `
+      <div class="vatramc-banner-glow"></div>
+      <div class="vatramc-banner-content">
+        <div class="vatramc-banner-text">
+          <span class="vatramc-badge-pill">${t.vatramcBadge}</span>
+          <h3><i class="fa-solid fa-fire"></i> ${t.vatramcTitle}</h3>
+          <p>${t.vatramcDesc}</p>
+        </div>
+        <div class="vatramc-banner-action">
+          <a href="https://vatramc.com" target="_blank" rel="noopener noreferrer" class="btn-vatramc-banner">
+            ${t.vatramcBtn} <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </div>
+    `;
+    mainContainer.appendChild(bannerBox);
+  }
+
+  // Закриття меню при натисканні на посилання
   const menu = document.getElementById('navMenu');
   if (menu) {
     menu.querySelectorAll('a:not(.dropdown-trigger)').forEach(link => {
