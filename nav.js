@@ -136,15 +136,7 @@ document.write(navHTML);
 document.addEventListener("DOMContentLoaded", () => {
   const navBtns = document.querySelector(".nav-btns");
   if (navBtns) {
-    if (!document.querySelector(".btn-vatramc-nav")) {
-      const vatraNavBtn = document.createElement("a");
-      vatraNavBtn.href = "https://vatramc.com";
-      vatraNavBtn.target = "_blank";
-      vatraNavBtn.rel = "noopener noreferrer";
-      vatraNavBtn.className = "btn-vatramc-nav";
-      vatraNavBtn.innerHTML = `<i class="fa-solid fa-fire"></i> VatraMC`;
-      navBtns.insertBefore(vatraNavBtn, navBtns.firstChild);
-    }
+
 
     if (!document.querySelector(".btn-donate")) {
       const donateBtn = document.createElement("a");
